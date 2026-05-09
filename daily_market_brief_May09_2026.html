@@ -1,0 +1,293 @@
+
+<style>
+  .dmb-wrap { background: #0d0f14; border-radius: 16px; padding: 32px 28px; font-family: 'Inter', 'Segoe UI', sans-serif; color: #e8eaf0; max-width: 860px; margin: 0 auto; box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
+  .dmb-overline { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #6b7280; text-transform: uppercase; margin-bottom: 8px; }
+  .dmb-date { font-size: 28px; font-weight: 800; color: #fff; margin: 0 0 8px; }
+  .dmb-mood { font-size: 14px; color: #9ca3af; font-style: italic; margin: 0; }
+  .dmb-divider { height: 2px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent); margin: 24px 0; border: none; }
+  .dmb-pill { display: inline-block; background: #1e2330; border: 1px solid #2d3348; border-radius: 20px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .dmb-pill-macro { color: #60a5fa; }
+  .dmb-pill-markets { color: #34d399; }
+  .dmb-pill-ai { color: #a78bfa; }
+  .dmb-pill-take { color: #f59e0b; }
+  .dmb-section-sep { height: 1px; background: #1e2330; margin: 8px 0 20px; border: none; }
+  .dmb-section { margin-bottom: 40px; }
+  .dmb-region-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: #6b7280; text-transform: uppercase; margin-bottom: 12px; }
+  .dmb-card { background: #111520; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; border-left: 3px solid #2d3348; }
+  .dmb-card-alert { border-left: 3px solid #ef4444; background: #1a1015; }
+  .dmb-card-title { font-size: 15px; font-weight: 700; color: #e8eaf0; margin: 0 0 6px; }
+  .dmb-card-body { font-size: 13px; color: #9ca3af; line-height: 1.65; margin: 0; }
+  .dmb-region-block { margin-bottom: 24px; }
+  .dmb-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .dmb-metric { background: #111520; border-radius: 10px; padding: 14px 16px; border: 1px solid #1e2330; }
+  .dmb-metric-top { display: flex; justify-content: space-between; align-items: center; }
+  .dmb-metric-name { font-size: 10px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.08em; }
+  .dmb-metric-value { font-size: 20px; font-weight: 800; color: #fff; margin: 6px 0 4px; }
+  .dmb-metric-reason { font-size: 11px; color: #6b7280; line-height: 1.4; }
+  .pill-up { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #052e1a; color: #34d399; }
+  .pill-down { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #2a0f0f; color: #f87171; }
+  .pill-neutral { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #1e2330; color: #9ca3af; }
+  .dmb-ai-card { background: linear-gradient(135deg, #0f172a, #1a1f35); border-radius: 10px; padding: 16px 18px; border: 1px solid #2d3348; margin-bottom: 14px; }
+  .dmb-ai-tag { display: inline-block; background: #1e2a45; color: #60a5fa; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .dmb-ai-title { font-size: 15px; font-weight: 700; color: #e8eaf0; margin: 8px 0 6px; }
+  .dmb-ai-body { font-size: 13px; color: #9ca3af; line-height: 1.65; margin: 0; }
+  .dmb-take-row { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; }
+  .dmb-take-num { font-size: 28px; font-weight: 900; color: #1e2330; width: 36px; flex-shrink: 0; line-height: 1; }
+  .dmb-take-text { font-size: 14px; color: #e8eaf0; line-height: 1.6; }
+  .dmb-take-sep { height: 1px; background: #1a1d27; margin: 0; border: none; }
+  .dmb-sources { background: #0a0c10; border-radius: 10px; padding: 12px 16px; margin-top: 32px; }
+  .dmb-sources-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #4b5563; margin: 0 0 4px; }
+  .dmb-sources-text { font-size: 11px; color: #6b7280; margin: 0; }
+  .up { color: #34d399; }
+  .dn { color: #f87171; }
+</style>
+
+<div class="dmb-wrap">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Daily market brief for Saturday May 9 2026 covering global macro, markets snapshot, AI watch and key takeaways</h2>
+
+  <div class="dmb-overline">Daily Market Brief</div>
+  <p class="dmb-date">Saturday, May 9, 2026</p>
+  <p class="dmb-mood">Cautious risk-on. Jobs beat lifts equities. Oil volatile. Hormuz still the swing factor.</p>
+  <hr class="dmb-divider">
+
+  <div class="dmb-section">
+    <div class="dmb-pill dmb-pill-macro">01 &nbsp; Global Macro</div>
+    <hr class="dmb-section-sep">
+
+    <div class="dmb-region-block">
+      <div class="dmb-region-label">United States</div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">April Jobs Report Delivers Surprise — 115K Added vs 55K Expected</p>
+        <p class="dmb-card-body">The Bureau of Labor Statistics reported 115,000 nonfarm payrolls added in April, more than double the 55,000 consensus. Unemployment held at 4.3%. Healthcare led gains at 37K, followed by transportation and warehousing at 30K. Federal government employment shed another 9K, now down 348K since October 2024. Wage growth softened to 3.6% annually. The beat removed near-term recession fears but also cemented expectations that the Fed stays on hold well into 2027 — no cuts are coming while energy-driven inflation sits at 3.3%.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">S&P 500 Closes Week at Record 7,399 — Six-Week Win Streak</p>
+        <p class="dmb-card-body">Friday's jobs beat drove the S&P 500 up 0.84% to 7,398.93, a new all-time closing high, while the Nasdaq surged 1.71% to 26,247.08. Both indices posted six consecutive winning weeks, their longest streak since 2024. The rally is heavily concentrated in megacap AI and tech — a narrow breadth that analysts at Motley Fool warn makes it fragile if AI confidence wavers. The forward P/E ratio at 20.9x is above both the 5-year and 10-year averages.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Fed Leadership Transition: Powell's Last Meeting, Warsh Takes Over</p>
+        <p class="dmb-card-body">April was Jerome Powell's final FOMC meeting as Chair. His term ends May 15. Kevin Warsh is expected to assume a temporary seat, with markets watching for any shift in tone. With CPI at 3.3% year-on-year and core PCE above 3%, there is no fundamental basis for the Fed to ease. The dot plot still signals rates steady at 3.50–3.75% through the near term. Markets now price less than 6% probability of a June cut.</p>
+      </div>
+    </div>
+
+    <div class="dmb-region-block">
+      <div class="dmb-region-label">India</div>
+
+      <div class="dmb-card dmb-card-alert">
+        <p class="dmb-card-title">Operation Sindoor Anniversary: Nifty Defence Index +20% YTD While Nifty 50 Loses 7%</p>
+        <p class="dmb-card-body">May 7 marked one year since India launched Operation Sindoor. In the twelve months since, the Nifty India Defence Index delivered +34% annualised returns, with the FY27 defence budget allocation reaching a record ₹7.85 lakh crore — up 15.19%. Companies like MTAR Technologies (+179% YTD), GSRE, and BEL (+41–68% in a year) massively outperformed. Meanwhile the broader Nifty 50 lost approximately 7% YTD due to persistent energy shock spillovers from the Iran war on Indian supply chains and consumption sentiment.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Nifty 50 Closes at 24,176 — FII Selling Pressure Persists</p>
+        <p class="dmb-card-body">The Nifty 50 closed at 24,176 on May 8, down 0.62% for the session. FII (foreign institutional investors) sold net ₹5,834.9 crore in May so far, while domestic institutions (DII) absorbed ₹6,836.87 crore, preventing a steeper fall. The 24,000 zone is emerging as a critical trend-direction decider — a decisive weekly close above 24,400 would signal bullish momentum resumption. India's BSE Sensex is among the worst-performing global benchmarks year-to-date, down approximately 9.3%.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">India–Pakistan Ceasefire Holds at One-Year Mark</p>
+        <p class="dmb-card-body">The May 10, 2025 ceasefire between India and Pakistan is holding at its first anniversary, according to a Washington Post analysis from May 5. Commercial flights have resumed and normalcy has largely returned. However, the ceasefire remains fragile — tensions can re-escalate. For markets, the sustained peace has allowed FPI flows into India to gradually turn positive from late March, with Jefferies noting a shift from underweight to neutral on India among international investors.</p>
+      </div>
+    </div>
+
+    <div class="dmb-region-block">
+      <div class="dmb-region-label">Europe</div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">ECB Holds Rates Unchanged — May 28–29 Meeting Expected to Maintain Course</p>
+        <p class="dmb-card-body">The ECB is widely expected to keep its three key rates unchanged at its upcoming May 28–29 meeting, with the main refinancing rate near 2.15%. Eurozone headline inflation is projected to average 2.6% for full-year 2026, above the 2% target. Energy-driven price pressures from the Iran war are the primary overshoot driver. The euro remains supported by a higher-for-longer rate outlook. Additional tightening remains on the table if energy price pressures persist into Q3.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Bank of England Holds at 3.75% — Inflation Overshoot Blocks Cuts</p>
+        <p class="dmb-card-body">The BoE MPC voted unanimously to hold at 3.75% at its April 29 meeting, overriding earlier rate-cut expectations. Persistent Middle East energy shocks have kept UK inflation elevated. Sterling is holding near recent highs against both the USD and EUR, supported by expectations that the BoE will tighten further later in 2026 if inflation remains above target. The UK economy faces a similar bind to the US — labor market resilience with inflationary pressure blocking monetary easing.</p>
+      </div>
+
+      <div class="dmb-card dmb-card-alert">
+        <p class="dmb-card-title">Trump Threatens "Much Higher" EU Tariffs If No Deal by July 4</p>
+        <p class="dmb-card-body">US President Trump issued a fresh tariff threat against the European Union, warning of significantly higher rates if no trade deal is concluded by July 4. This adds a new layer of geopolitical uncertainty for European equities and the euro. Trade disruption risks are compounded by already-elevated energy costs from the Hormuz closure. European export-facing sectors are particularly vulnerable to both the tariff threat and weakening global demand.</p>
+      </div>
+    </div>
+
+    <div class="dmb-region-block">
+      <div class="dmb-region-label">China</div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Q1 2026 GDP Prints 5.0% — But Domestic Weakness Beneath the Surface</p>
+        <p class="dmb-card-body">China officially recorded 5.0% GDP growth in Q1 2026, accelerating from 4.5% in Q4 2025, driven by strong exports of electrical and mechanical goods. However, retail sales growth slowed to 1.7% in March from 2.8% in February, auto sales dropped 9.1% in Q1, and PPI turned positive for the first time in three years due to oil-cost pass-through. The headline number masks persistent consumer weakness and a property sector that remains in structural decline. Capital Economics describes China as "ever more dependent on external demand."</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">China Blocks Meta's Acquisition of Manus AI Startup</p>
+        <p class="dmb-card-body">China's NDRC blocked Meta's proposed acquisition of Manus, an AI agent startup with Chinese roots, citing technology competition and supply chain leverage concerns. Beijing is tightening its grip on AI innovations, aiming to keep frontier AI capabilities within its domestic ecosystem. This signals an intensification of the US-China AI decoupling trend — Chinese authorities now actively using regulatory tools to prevent outbound transfers of AI assets to US companies.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">China Semiconductor Imports Hit Record $135B in Q1 — AI Compute Demand Surging</p>
+        <p class="dmb-card-body">China imported a record $135 billion in semiconductors in Q1 2026, driven by insatiable AI compute demand. This partially compressed China's trade surplus to a four-year low. The data underscores China's continued dependence on foreign-made advanced chips despite its domestic substitution push. For global chip makers like NVIDIA's supply chain partners, this represents a structurally large demand source — even as US export restrictions tighten.</p>
+      </div>
+    </div>
+
+    <div class="dmb-region-block">
+      <div class="dmb-region-label">APAC</div>
+
+      <div class="dmb-card dmb-card-alert">
+        <p class="dmb-card-title">Strait of Hormuz Closure Continues — IEA Warns of 14M Barrels/Day Supply Disruption</p>
+        <p class="dmb-card-body">The Strait of Hormuz has been effectively closed since late February due to the US-Iran military conflict. The IEA estimates approximately 14 million barrels per day of global crude supply are being disrupted. Iran is reviewing a US peace memorandum delivered through Pakistani mediators, with a response expected within days. US forces conducted defensive strikes in the strait this week even as diplomacy progresses — any misstep could reignite the conflict and push oil back toward $110+.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Australia Hikes Rates for a Third Time — Inflation Still Elevated</p>
+        <p class="dmb-card-body">Australia's central bank raised its official cash rate for a third time amid persistent inflation driven by energy costs. The RBA joins the BoE and ECB in a higher-for-longer posture, reflecting the global inflationary spillover from the Middle East conflict. This tightening cycle adds pressure to Australian mortgage holders and could weigh on consumption-exposed sectors in the region.</p>
+      </div>
+
+      <div class="dmb-card">
+        <p class="dmb-card-title">Nikkei 225 Leads Global Indices — Up 18.2% Year-to-Date</p>
+        <p class="dmb-card-body">Japan's Nikkei 225 is the top performer among tracked global indices, up 18.2% year-to-date as of early May. Japan's relatively insulated energy position, structural corporate reforms, and JPY weakness driving export earnings have all contributed. Tokyo is even relaxing its traditionally rigid office dress codes amid energy cost pressures — a signal of broader economic adaptation underway across the region.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dmb-section">
+    <div class="dmb-pill dmb-pill-markets">02 &nbsp; Markets Snapshot</div>
+    <hr class="dmb-section-sep">
+    <div class="dmb-metric-grid">
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">S&amp;P 500</span>
+          <span class="pill-up">+0.84%</span>
+        </div>
+        <div class="dmb-metric-value">7,399</div>
+        <div class="dmb-metric-reason">Record close; April jobs beat 2x estimates drove risk appetite</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Nasdaq</span>
+          <span class="pill-up">+1.71%</span>
+        </div>
+        <div class="dmb-metric-value">26,247</div>
+        <div class="dmb-metric-reason">Record high; AI infrastructure stocks led; 6th straight winning week</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Dow Jones</span>
+          <span class="pill-neutral">+0.02%</span>
+        </div>
+        <div class="dmb-metric-value">49,609</div>
+        <div class="dmb-metric-reason">Flat; value names lagged as AI stocks led the rally</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Nifty 50</span>
+          <span class="pill-down">-0.62%</span>
+        </div>
+        <div class="dmb-metric-value">24,176</div>
+        <div class="dmb-metric-reason">FII outflows continue; Iran war energy costs weigh on India</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Brent Crude</span>
+          <span class="pill-up">+1.66%</span>
+        </div>
+        <div class="dmb-metric-value">$101.73</div>
+        <div class="dmb-metric-reason">Hormuz closure ongoing; US-Iran peace memo review in progress</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">WTI Crude</span>
+          <span class="pill-down">-0.22%</span>
+        </div>
+        <div class="dmb-metric-value">$94.60</div>
+        <div class="dmb-metric-reason">Down from $110+ peaks on Iran deal optimism; still historically elevated</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Gold (XAU)</span>
+          <span class="pill-up">+2%+ wk</span>
+        </div>
+        <div class="dmb-metric-value">$4,715</div>
+        <div class="dmb-metric-reason">Highest since Apr 22; Iran deal optimism eased rate-hike fears</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">Bitcoin</span>
+          <span class="pill-down">-0.19%</span>
+        </div>
+        <div class="dmb-metric-value">~$81,460</div>
+        <div class="dmb-metric-reason">Flat; higher-for-longer rates limit crypto upside despite risk-on tone</div>
+      </div>
+      <div class="dmb-metric">
+        <div class="dmb-metric-top">
+          <span class="dmb-metric-name">US 10Y Yield</span>
+          <span class="pill-down">-1.36%</span>
+        </div>
+        <div class="dmb-metric-value">4.356%</div>
+        <div class="dmb-metric-reason">Softened after jobs data; softer wages eased long-end rate pressure</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dmb-section">
+    <div class="dmb-pill dmb-pill-ai">03 &nbsp; AI Watch</div>
+    <hr class="dmb-section-sep">
+
+    <div class="dmb-ai-card">
+      <span class="dmb-ai-tag">Funding Round</span>
+      <p class="dmb-ai-title">Anthropic Eyes $50B Round at ~$900B Valuation — Among Highest-Ever for a Private Company</p>
+      <p class="dmb-ai-body">The Financial Times reported that Anthropic is structuring a funding round targeting up to $50 billion at a valuation of roughly $900 billion. If completed, Anthropic would rank among the most valuable private companies in history. The round reflects a broader rerating of frontier AI safety labs as the revenue gap narrows — Anthropic is approaching $19B in annualised revenue against OpenAI's $25B. For markets, this level of private capital concentration in AI signals that frontier model development is becoming a capital market event of the scale typically associated with major IPOs.</p>
+    </div>
+
+    <div class="dmb-ai-card">
+      <span class="dmb-ai-tag">Model Launch</span>
+      <p class="dmb-ai-title">Meta Launches Muse Spark — First Proprietary Flagship LLM Under Superintelligence Labs</p>
+      <p class="dmb-ai-body">Meta launched Muse Spark, its first flagship proprietary large language model, departing from its previous open-source Llama strategy. The model was developed under Alexandr Wang's new Meta Superintelligence Labs. Meta simultaneously committed $115–135 billion in AI capital expenditure for 2026 — nearly double last year — even as investors punished the stock for spending without yet demonstrating returns. Muse Spark's launch positions Meta as a direct competitor in the closed frontier model race, placing it alongside OpenAI, Anthropic, and Google Gemini for enterprise contracts.</p>
+    </div>
+
+    <div class="dmb-ai-card">
+      <span class="dmb-ai-tag">Regulation</span>
+      <p class="dmb-ai-title">Five Eyes Nations Release Joint Agentic AI Security Guidance for Critical Infrastructure</p>
+      <p class="dmb-ai-body">Intelligence agencies from the Five Eyes alliance — the US, UK, Canada, Australia, and New Zealand — released coordinated security guidance specifically targeting agentic AI systems deployed in critical infrastructure. This is the first unified regulatory signal from allied governments on AI agents operating autonomously in high-stakes environments. The guidance signals the beginning of a compliance layer for enterprise AI deployment that will affect how infrastructure-facing companies build and certify their AI systems.</p>
+    </div>
+  </div>
+
+  <div class="dmb-section">
+    <div class="dmb-pill dmb-pill-take">04 &nbsp; Key Takeaways</div>
+    <hr class="dmb-section-sep">
+
+    <div class="dmb-take-row">
+      <div class="dmb-take-num">1</div>
+      <div class="dmb-take-text">The Hormuz closure is the single variable driving every other variable. Oil at $101 Brent is structurally keeping inflation above 3%, which is keeping the Fed on hold, which is compressing bond prices, which is raising the equity risk premium even as stocks hit records. A durable Iran deal is the most market-moving event of 2026 — watch for Tehran's response to the US peace memo in the next 48–72 hours.</div>
+    </div>
+    <hr class="dmb-take-sep">
+
+    <div class="dmb-take-row">
+      <div class="dmb-take-num">2</div>
+      <div class="dmb-take-text">The US equity rally is historically narrow. Both the S&P 500 and Nasdaq hit records, but the move is concentrated in a small cohort of AI megacaps. The forward P/E of 20.9x prices in perfect execution. If AI capital spending — currently at levels like Meta's $115–135B — fails to produce measurable revenue returns, the derating could be swift and severe.</div>
+    </div>
+    <hr class="dmb-take-sep">
+
+    <div class="dmb-take-row">
+      <div class="dmb-take-num">3</div>
+      <div class="dmb-take-text">Gold's paradox: it is down more than 10% since the Iran war started, even as geopolitical risk is at multi-decade highs. The reason is that oil-driven inflation raises the risk that central banks hike rather than cut, making the opportunity cost of holding gold (which pays no yield) higher. Gold rallied this week only because Iran peace optimism reduced oil — and thus reduced inflation expectations. If Hormuz reopens, gold could see a sharp re-rating upward as rate-cut expectations return.</div>
+    </div>
+    <hr class="dmb-take-sep">
+
+    <div class="dmb-take-row">
+      <div class="dmb-take-num">4</div>
+      <div class="dmb-take-text">India is experiencing a structural bifurcation: the Nifty Defence index is up 20% YTD while the Nifty 50 loses 7%. This is not noise — it reflects a fundamental policy reallocation of capital toward national security following Operation Sindoor. For investors with a multi-year horizon, Indian defence PSUs with record order books (BEL, HAL, MTAR) represent a structural growth story embedded in the sovereign budget. FII re-entry into broader Indian markets is likely to accelerate if energy costs stabilise.</div>
+    </div>
+    <hr class="dmb-take-sep">
+
+    <div class="dmb-take-row">
+      <div class="dmb-take-num">5</div>
+      <div class="dmb-take-text">What to watch in the next 72 hours: Iran's formal response to the US peace memorandum (routed through Pakistani mediators) — any acceptance could send Brent below $90 and trigger a simultaneous bond rally, gold breakout, and equity rotation into value/energy-exposed names. Separately, the April US CPI release on May 12 will either confirm or complicate the Fed's hold narrative and set the tone for equities heading into the summer.</div>
+    </div>
+  </div>
+
+  <div class="dmb-sources">
+    <p class="dmb-sources-label">Sources</p>
+    <p class="dmb-sources-text">CNBC · Bureau of Labor Statistics · Fortune · Trading Economics · Reuters · Upstox · BusinessToday · Business Standard · AI Tools Recap · US-China Economic and Security Review Commission · IC Markets · Crestwood Advisors · LiteFinance · Washington Post · FNArena · NSE India</p>
+  </div>
+</div>
