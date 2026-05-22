@@ -1,273 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Market Brief — May 21, 2026 | Yuvraj Sureka</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #08090d; display: flex; justify-content: center; padding: 32px 16px; }
-    .brief { background: #0d0f14; border-radius: 16px; box-shadow: 0 4px 40px rgba(0,0,0,0.4); padding: 32px 28px; font-family: 'Inter', 'Segoe UI', sans-serif; color: #e8eaf0; max-width: 860px; width: 100%; }
-    .byline { font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.08em; margin-bottom: 6px; }
-    .byline span { font-weight: 800; color: #a78bfa; }
-    .brief-label { font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
-    .brief-date { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-    .mood { font-size: 14px; color: #9ca3af; font-style: italic; margin-bottom: 0; }
-    .divider { height: 2px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent); margin: 24px 0; }
-    .section-pill { display: inline-block; padding: 6px 14px; border-radius: 20px; background: #1e2330; border: 1px solid #2d3348; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
-    .pill-macro { color: #60a5fa; }
-    .pill-markets { color: #34d399; }
-    .pill-ai { color: #a78bfa; }
-    .pill-takeaways { color: #fb923c; }
-    .region-label { font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin: 18px 0 10px; }
-    .news-card { background: #151821; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; border-left: 3px solid #2d3348; }
-    .news-card.alert { border-left: 3px solid #f87171; background: #1a1014; }
-    .news-headline { font-size: 13px; font-weight: 700; color: #e8eaf0; margin-bottom: 5px; line-height: 1.45; }
-    .news-why { font-size: 12px; color: #9ca3af; line-height: 1.6; }
-    .news-why span.pos { color: #34d399; font-weight: 600; }
-    .news-why span.neg { color: #f87171; font-weight: 600; }
-    .section-gap { margin-bottom: 32px; }
-    .markets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-bottom: 10px; }
-    .mcard { background: #151821; border-radius: 10px; padding: 14px 16px; border: 1px solid #2d3348; }
-    .mcard-label { font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-    .mcard-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-    .mcard-price { font-size: 18px; font-weight: 800; color: #fff; }
-    .mcard-chg { font-size: 12px; font-weight: 700; }
-    .up { color: #34d399; }
-    .down { color: #f87171; }
-    .neutral { color: #9ca3af; }
-    .mcard-reason { font-size: 11px; color: #6b7280; line-height: 1.5; margin-top: 4px; }
-    .ai-card { background: #16121f; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #8b5cf6; margin-bottom: 10px; }
-    .ai-tag { display: inline-block; background: #261e3a; color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; margin-bottom: 8px; }
-    .ai-headline { font-size: 13px; font-weight: 700; color: #e8eaf0; margin-bottom: 5px; }
-    .ai-body { font-size: 12px; color: #9ca3af; line-height: 1.6; }
-    .takeaway { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1e2330; align-items: flex-start; }
-    .takeaway:last-child { border-bottom: none; }
-    .takeaway-num { font-size: 28px; font-weight: 800; color: #2d3348; min-width: 30px; line-height: 1; }
-    .takeaway-text { font-size: 13px; color: #c9ccd6; line-height: 1.65; padding-top: 4px; }
-    .sources { font-size: 10px; color: #4b5563; margin-top: 28px; padding-top: 14px; border-top: 1px solid #1e2330; }
-    .disclaimer { font-size: 10px; color: #4b5563; margin-top: 8px; line-height: 1.6; }
-    .disclaimer span { color: #a78bfa; font-weight: 700; }
-    .author-card { background: #151821; border-radius: 12px; padding: 18px 20px; margin-top: 24px; display: flex; align-items: center; gap: 16px; border: 1px solid #2d3348; }
-    .author-avatar { width: 46px; height: 46px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: #fff; flex-shrink: 0; }
-    .author-name { font-size: 16px; font-weight: 800; color: #fff; }
-    .author-meta { font-size: 11px; color: #a78bfa; margin-top: 2px; }
-    .author-contact { font-size: 11px; color: #6b7280; margin-top: 3px; }
-  </style>
-</head>
-<body>
-<div class="brief">
- 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter','Segoe UI',sans-serif}
+.wrap{background:#0d0f14;color:#e8eaf0;padding:32px 28px;border-radius:16px;max-width:860px;margin:0 auto;box-shadow:0 4px 40px rgba(0,0,0,.4)}
+.byline{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:.08em;margin-bottom:6px}
+.byline span{font-weight:800;color:#a78bfa}
+.brief-label{font-size:11px;letter-spacing:.15em;font-weight:700;color:#6b7280;text-transform:uppercase;margin-bottom:4px}
+.date-head{font-size:28px;font-weight:800;color:#fff;margin-bottom:6px}
+.mood{font-size:14px;color:#9ca3af;font-style:italic;margin-bottom:0}
+.grad-line{background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);height:2px;margin:24px 0}
+.section-pill{display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.pill-macro{color:#60a5fa}
+.pill-snap{color:#34d399}
+.pill-ai{color:#a78bfa}
+.pill-key{color:#fbbf24}
+.region-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin:18px 0 10px}
+.news-card{background:#111827;border:1px solid #1e2330;border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.news-card.geo{border-left:3px solid #f87171;background:#1a1010}
+.news-head{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:5px}
+.news-why{font-size:12px;color:#9ca3af;line-height:1.6}
+.snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:10px}
+.snap-card{background:#111827;border:1px solid #1e2330;border-radius:10px;padding:14px}
+.snap-asset{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.snap-price{font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
+.snap-change{font-size:12px;font-weight:700}
+.snap-reason{font-size:11px;color:#6b7280;line-height:1.5;margin-top:6px}
+.up{color:#34d399}
+.down{color:#f87171}
+.neu{color:#9ca3af}
+.ai-card{background:#13101e;border:1px solid #2d2050;border-left:3px solid #8b5cf6;border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.ai-tag{display:inline-block;background:#1e1535;color:#a78bfa;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.ai-head{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:5px}
+.ai-body{font-size:12px;color:#9ca3af;line-height:1.6}
+.takeaway-block{border-bottom:1px solid #1e2330;padding:14px 0}
+.takeaway-block:last-child{border-bottom:none}
+.takeaway-num{font-size:32px;font-weight:800;color:#1e2330;float:left;margin-right:14px;line-height:1}
+.takeaway-text{font-size:12.5px;color:#c9cdd6;line-height:1.65;overflow:hidden}
+.sources-line{font-size:10px;color:#4b5563;margin-top:28px;margin-bottom:8px}
+.disclaimer{font-size:10px;color:#374151;line-height:1.6}
+.disclaimer span{color:#a78bfa;font-weight:700}
+.author-card{background:#111827;border:1px solid #1e2330;border-radius:12px;padding:20px;margin-top:28px;display:flex;align-items:center;gap:16px}
+.avatar{width:48px;height:48px;border-radius:50%;background:#5b21b6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;flex-shrink:0}
+.author-by{font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.author-name{font-size:18px;font-weight:800;color:#fff;margin-bottom:3px}
+.author-creds{font-size:11px;color:#a78bfa;margin-bottom:2px}
+.author-contact{font-size:10px;color:#6b7280}
+.tagline{text-align:center;font-size:11px;color:#6b7280;font-style:italic;margin-top:10px}
+</style>
+
+<div class="wrap">
+  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — May 22 2026 curated by Yuvraj Sureka</h2>
+
   <div class="byline">Curated by <span>Yuvraj Sureka</span></div>
   <div class="brief-label">Daily Market Brief</div>
-  <div class="brief-date">Thursday, May 21, 2026</div>
-  <div class="mood">Cautious risk-on. Nvidia beats, Iran talks offer hope, but yields and oil keep everyone selective.</div>
-  <div class="divider"></div>
- 
-  <!-- GLOBAL MACRO -->
-  <div class="section-gap">
-    <div class="section-pill pill-macro">Global Macro</div>
- 
-    <div class="region-label">United States</div>
- 
-    <div class="news-card">
-      <div class="news-headline">Nvidia Q1 FY2027: Revenue hits $81B+, Jensen calls agentic AI "parabolic"</div>
-      <div class="news-why">Nvidia reported after close on May 20 with data center revenue nearly doubling to <span class="pos">$75.2B</span> — 92% of total sales. Q2 guidance of $91B came in slightly below some aggressive analyst whispers, and Nvidia refrained from forecasting China sales. Stock pared after-hours losses to trade <span class="pos">+0.5%</span> extended. This matters because Nvidia's results are the single most important data point for the AI infrastructure narrative that has underpinned the entire tech bull run.</div>
+  <div class="date-head">Friday, May 22, 2026</div>
+  <div class="mood">Cautious. Geopolitics dominates. Oil volatile. AI IPO season begins.</div>
+  <div class="grad-line"></div>
+
+  <div class="section-pill pill-macro">Global Macro</div>
+
+  <div class="region-label">United States</div>
+
+  <div class="news-card geo">
+    <div class="news-head">US–Iran Peace Talks Stall on Uranium and Strait Control</div>
+    <div class="news-why">Iran's Supreme Leader has directed that near-weapons-grade uranium must not leave the country — directly contradicting a core US demand. Tehran has also announced a "Persian Gulf Strait Authority" to enforce controlled maritime passage through Hormuz. Trump says he will wait "a few days" before resuming pressure. This is the dominant risk variable across oil, equities, and bonds. Until a deal is confirmed, $95–$105 WTI is the operating range markets are pricing in.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-head">Fed Minutes: December Rate Hike Back on the Table</div>
+    <div class="news-why">The latest FOMC minutes show most policymakers believe an additional rate increase remains warranted if inflation stays above 2%. Markets currently price about a 40–50% chance of a 25bps hike in December. The 10Y yield has been oscillating near 4.6%, creating a ceiling on equity valuations. Higher-for-longer is now the base case through at least mid-2027 for the first cut.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-head">Government Awards $2 Billion to Quantum Computing Firms</div>
+    <div class="news-why">The Trump administration is deploying CHIPS Act capital into quantum computing: IBM gets $1 billion, GlobalFoundries $375 million, and D-Wave, Rigetti, and IonQ each receive roughly $100 million, with government equity stakes attached. Rigetti jumped over 30%, D-Wave surged 22%. This signals a structural shift — the US government now views quantum computing as a strategic national asset, not just a research curiosity.</div>
+  </div>
+
+  <div class="region-label">India</div>
+
+  <div class="news-card">
+    <div class="news-head">Sensex Opens Higher on Peace Deal Optimism; Tech Stocks Weigh</div>
+    <div class="news-why">The Sensex opened around 75,500 on Friday, recovering from Thursday's 135-point drop, with HDFC Bank, ICICI Bank, and Bajaj Finserv as top gainers. Technology stocks remain the weak spot — Infosys and Tech Mahindra fell over 1.3% amid FII outflows and global demand concerns. India VIX had eased to 17.60, suggesting reduced near-term panic, but the market remains in a broad sideways range. India's HSBC PMI flash readings for May showed private sector expansion moderated, reflecting softer global demand and Middle East pressure.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-head">Rupee Under Structural Pressure Near Record Lows</div>
+    <div class="news-why">The Indian rupee recently hit record lows near Rs 96.82 against the dollar before recovering slightly to Rs 96.30. A combination of elevated oil import costs, FII selling in equities, and a broadly stronger dollar in a higher-for-longer rate environment is structuring the pressure. For Indian markets, a weak rupee compounds the inflation problem and narrows RBI's room to cut rates.</div>
+  </div>
+
+  <div class="region-label">Europe</div>
+
+  <div class="news-card geo">
+    <div class="news-head">ECB Holds Rates Amid Energy Shock; GDP Contractions Forecast Across Eurozone</div>
+    <div class="news-why">The ECB is keeping policy rates on hold while monitoring how the Iran conflict passes through to energy prices and core inflation. S&P Global now forecasts short-lived GDP contractions in Germany, France, Italy, and the UK in 2026. An additional round of ECB rate hikes has been priced in by S&P staff. The "second China shock" — Chinese exports flooding euro area markets as the US cut low-value Chinese imports — is adding disinflation in goods but creating a structural competitiveness threat for European industry.</div>
+  </div>
+
+  <div class="region-label">China &amp; APAC</div>
+
+  <div class="news-card">
+    <div class="news-head">Chinese AI Models Now Command 60% of Developer Usage on OpenRouter</div>
+    <div class="news-why">Databricks CEO disclosed that Chinese AI models — DeepSeek V3.2, Kimi K2.6, and Zhipu GLM-5.1 — grew from 1% of usage on OpenRouter in 2024 to over 60% by May 2026. These models are now benchmark-competitive with OpenAI and Anthropic at a fraction of the cost. This is not just a tech story — it is a market share and geopolitical signal about where AI infrastructure spending is migrating globally.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-head">Japan Q1 GDP Beats Estimates at 2.1% Annualized</div>
+    <div class="news-why">Japan grew at an annualized 2.1% in Q1 2026, well above the 1.7% consensus estimate and ahead of the prior quarter's 1.3%. This positions Japan as one of the stronger performing developed economies this year. However, the improvement predates the full impact of the Iran-driven energy shock on Asian manufacturing chains, so Q2 will be the real test.</div>
+  </div>
+
+  <div class="grad-line"></div>
+
+  <div class="section-pill pill-snap">Markets Snapshot</div>
+  <div style="font-size:11px;color:#6b7280;margin-bottom:14px">Data as of May 21, 2026 close</div>
+
+  <div class="snap-grid">
+    <div class="snap-card">
+      <div class="snap-asset">S&amp;P 500</div>
+      <div class="snap-price">7,445</div>
+      <div class="snap-change up">+0.17%</div>
+      <div class="snap-reason">Eight sectors green; Dow hit a record close of 50,285 on peace deal optimism despite oil volatility</div>
     </div>
- 
-    <div class="news-card alert">
-      <div class="news-headline">US 10Y yield at 16-month high near 4.67%; 30Y crosses 5.12% — a level last seen in 2007</div>
-      <div class="news-why">Treasury yields are surging as oil-driven inflation fears push back expectations for Fed rate cuts. Markets now price a <span class="neg">50% chance of a rate hike in December 2026</span>. When yields rise this sharply, bond prices fall and stocks face a twin headwind — higher discount rates compress valuations, and a stronger dollar pressures emerging markets and commodities. India, as a net importer, feels this acutely.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Nasdaq</div>
+      <div class="snap-price">26,293</div>
+      <div class="snap-change up">+0.09%</div>
+      <div class="snap-reason">Small gain driven by a tech comeback; Nvidia earnings day kept sentiment cautious</div>
     </div>
- 
-    <div class="news-card">
-      <div class="news-headline">S&amp;P 500 +1%, Dow +1.2% on May 20 — Trump signals Iran deal "very quickly"</div>
-      <div class="news-why">Equities rallied as three supertankers exited the Strait of Hormuz and Trump walked back a planned US strike on Iran. Lower oil prices eased energy inflation fears, giving equity bulls room to bid. Goldman Sachs, Nike, and Boeing led gains. The correlation between equities and bonds has reached its most negative level since the 1990s — meaning rising yields are now actively hurting stocks, not just competing with them.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Dow Jones</div>
+      <div class="snap-price">50,285</div>
+      <div class="snap-change up">+0.55%</div>
+      <div class="snap-reason">Record close; blue-chip index benefiting from rotation into defensive and value names</div>
     </div>
- 
-    <div class="region-label">India</div>
- 
-    <div class="news-card alert">
-      <div class="news-headline">Rupee at record lows near 96.6/USD; RBI intervenes with dollar sales</div>
-      <div class="news-why">The rupee has lost <span class="neg">over 7% this year</span>, making it Asia's worst-performing major currency. The culprit is a triple squeeze: surging oil import costs (Brent near $107), a stronger dollar from elevated US yields, and a record $23B in FII outflows from Indian equities in 2026. The RBI is selling dollars to arrest the slide, but intervention has limits. A weaker rupee directly inflates fuel costs, widens the current account deficit, and delays RBI rate cuts.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Nifty 50</div>
+      <div class="snap-price">~23,700</div>
+      <div class="snap-change neu">Mixed</div>
+      <div class="snap-reason">Gap-up open Friday on GIFT Nifty premium of 103 pts; banking gainers, IT laggards</div>
     </div>
- 
-    <div class="news-card">
-      <div class="news-headline">Nifty holds above 23,650 with sharp 250-point intraday recovery on May 20</div>
-      <div class="news-why">Markets opened weak but buyers emerged at key support zones (23,200–23,000), closing the Sensex at 75,318 (<span class="pos">+0.16%</span>). FIIs turned net sellers after three buying sessions, while G-Sec yields rose to six-week highs — delaying the lending rate relief markets had been pricing in. Technically, the Nifty needs to break above 23,900 to shift from a defense posture to a genuine recovery.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Sensex</div>
+      <div class="snap-price">~75,183</div>
+      <div class="snap-change down">-0.18% Thu</div>
+      <div class="snap-reason">IT and Bajaj Finance dragged; HDFC Bank and Adani Ports provided support</div>
     </div>
- 
-    <div class="news-card">
-      <div class="news-headline">India faces fuel price hike of ~Rs 10/litre spread over FY27 — IDFC First Bank</div>
-      <div class="news-why">With Brent near $107–$111/bbl and the rupee at record lows, India's fuel subsidy burden is growing unsustainable. A phased hike of Rs 10/litre would add <span class="neg">30–50 bps to headline CPI</span>, directly constraining the RBI's ability to cut rates further. For equity markets, this compresses consumer discretionary margins and raises input costs across autos, logistics, and chemicals.</div>
+    <div class="snap-card">
+      <div class="snap-asset">US 10Y Yield</div>
+      <div class="snap-price">~4.60%</div>
+      <div class="snap-change neu">Elevated</div>
+      <div class="snap-reason">Pulled back from Tuesday's near-19-year high of 5.19% on 30Y; 40-50% chance of Dec hike priced in</div>
     </div>
- 
-    <div class="region-label">Europe</div>
- 
-    <div class="news-card">
-      <div class="news-headline">Stoxx 600 +0.2% on May 20 as UK inflation undershoots; bond yields dominate sentiment</div>
-      <div class="news-why">A lower-than-expected UK inflation print offered brief relief, but markets are firmly anchored to the bond yield narrative. US 30Y yields above 5.2% are dragging European government bonds higher in sympathy, raising borrowing costs across the bloc. Miners and tech led gains while retail and media lagged. The Iran ceasefire optimism drove European energy stocks higher, but defense names softened on peace-deal hopes.</div>
+    <div class="snap-card">
+      <div class="snap-asset">WTI Crude</div>
+      <div class="snap-price">~$99.50</div>
+      <div class="snap-change up">Volatile</div>
+      <div class="snap-reason">Up 45% since Iran war began; peace deal hope vs. uranium deadlock = whipsaw trading sessions</div>
     </div>
- 
-    <div class="news-card">
-      <div class="news-headline">G7 finance ministers conclude Paris meeting; flagged rising public debt and bond market volatility</div>
-      <div class="news-why">G7 officials acknowledged the sharp global rise in long-duration yields as a systemic concern. With 30Y US yields at 18-year highs, the "term premium" — the extra yield investors demand for holding long bonds — is expanding. This has fiscal implications: higher debt servicing costs squeeze government budgets globally, and markets are beginning to price sovereign credit risk more aggressively.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Brent Crude</div>
+      <div class="snap-price">~$106.90</div>
+      <div class="snap-change up">+1.9% intra</div>
+      <div class="snap-reason">Driven by same Hormuz uncertainty; strategic petroleum reserve at largest drawdown since COVID</div>
     </div>
- 
-    <div class="region-label">China</div>
- 
-    <div class="news-card">
-      <div class="news-headline">Trump-Xi summit (May 14–15) produces modest stabilization; Xi expressed interest in buying US oil</div>
-      <div class="news-why">The first high-level US-China meeting in nearly a decade produced a fragile trade truce rather than a structural deal. Xi agreed to explore US oil purchases — a signal toward rebalancing. Analysts at HSBC call this a "defining test" for the G2 dynamic but warn of low deliverables. For markets, the summit reduces near-term tariff escalation risk but leaves underlying tension on Taiwan and tech supply chains unresolved.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Gold</div>
+      <div class="snap-price">~$4,500</div>
+      <div class="snap-change up">Holding</div>
+      <div class="snap-reason">Sustained above $4,500 on safe-haven demand; geopolitical risk and inflation hedge demand remain firm</div>
     </div>
- 
-    <div class="news-card alert">
-      <div class="news-headline">China economy under pressure: bank failures, real estate decline, rising youth unemployment</div>
-      <div class="news-why">China's economic slowdown is compounding from multiple angles — US tariffs, an aging demographic transition, a deflating property sector, and now an oil shock through energy import costs from the Hormuz disruption. The PBOC faces a policy dilemma: stimulus risks yuan weakness; inaction risks a deeper growth miss. Shanghai Composite was <span class="pos">+0.92%</span> on May 19 but the macro picture remains structurally stressed.</div>
-    </div>
- 
-    <div class="region-label">APAC</div>
- 
-    <div class="news-card">
-      <div class="news-headline">Nikkei 225 at 60,550; Japan benefits from yen weakness but inflation risk is building</div>
-      <div class="news-why">Japan's equity markets remain elevated as a weaker yen supports exporter earnings. But rising global yields are pressuring the Bank of Japan to eventually allow JGB yields to rise — a move that would strengthen the yen and potentially trigger a major reversal in carry trades funded by cheap yen. Markets are watching the BOJ closely. Any signal of yield curve control adjustment could move USD/JPY by 300–500 pips in a session.</div>
+    <div class="snap-card">
+      <div class="snap-asset">Bitcoin</div>
+      <div class="snap-price">~$77,000</div>
+      <div class="snap-change down">~-0.2%</div>
+      <div class="snap-reason">Pressure from $635M ETF outflows on May 13; trading below key $80,800 resistance level</div>
     </div>
   </div>
- 
-  <!-- MARKETS SNAPSHOT -->
-  <div class="section-gap">
-    <div class="section-pill pill-markets">Markets Snapshot</div>
- 
-    <div class="markets-grid">
-      <div class="mcard">
-        <div class="mcard-label">S&amp;P 500</div>
-        <div class="mcard-row"><span class="mcard-price">7,423</span><span class="mcard-chg up">+0.94%</span></div>
-        <div class="mcard-reason">Iran deal optimism + Nvidia earnings boost. Tech and financials led.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Nasdaq</div>
-        <div class="mcard-row"><span class="mcard-price">26,217</span><span class="mcard-chg up">+1.34%</span></div>
-        <div class="mcard-reason">AI chip euphoria post-Nvidia report. Marvell, Astera Labs also surged.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Dow Jones</div>
-        <div class="mcard-row"><span class="mcard-price">49,817</span><span class="mcard-chg up">+0.92%</span></div>
-        <div class="mcard-reason">Goldman Sachs +5.7%, Nike +4.2%, Boeing +3.3% led broad rally.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Nifty 50</div>
-        <div class="mcard-row"><span class="mcard-price">23,659</span><span class="mcard-chg up">+0.17%</span></div>
-        <div class="mcard-reason">Cautious open expected. Macro headwinds from rupee, crude, FII selling.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Sensex</div>
-        <div class="mcard-row"><span class="mcard-price">75,318</span><span class="mcard-chg up">+0.16%</span></div>
-        <div class="mcard-reason">Closed May 20 with financials and metals offsetting IT selling pressure.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Stoxx 600</div>
-        <div class="mcard-row"><span class="mcard-price">~flatline</span><span class="mcard-chg up">+0.2%</span></div>
-        <div class="mcard-reason">Mixed. Miners and tech led; retail and media lagged. Bond yield pressure.</div>
-      </div>
-    </div>
- 
-    <div class="markets-grid">
-      <div class="mcard">
-        <div class="mcard-label">US 10Y Yield</div>
-        <div class="mcard-row"><span class="mcard-price">4.67%</span><span class="mcard-chg down">16-mo high</span></div>
-        <div class="mcard-reason">Oil-driven inflation fear delays Fed cuts. 30Y at 5.12% — worst since 2007.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Brent Crude</div>
-        <div class="mcard-row"><span class="mcard-price">$107</span><span class="mcard-chg down">-3.8%</span></div>
-        <div class="mcard-reason">Fell from $111+ as Iran deal hopes lifted. Hormuz still largely restricted.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">WTI Crude</div>
-        <div class="mcard-row"><span class="mcard-price">~$100</span><span class="mcard-chg down">2nd session fall</span></div>
-        <div class="mcard-reason">Touching $100 psychological level. Supply recovery unlikely before late 2027.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Gold (XAU)</div>
-        <div class="mcard-row"><span class="mcard-price">~$4,527</span><span class="mcard-chg up">+0.34%</span></div>
-        <div class="mcard-reason">Supported by geopolitical risk and central bank buying (244T in Q1).</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">Bitcoin</div>
-        <div class="mcard-row"><span class="mcard-price">$77,690</span><span class="mcard-chg up">+1.63%</span></div>
-        <div class="mcard-reason">Edged above $77K on Iran deal optimism. Risk-on bounce; macro caps upside.</div>
-      </div>
-      <div class="mcard">
-        <div class="mcard-label">USD/INR</div>
-        <div class="mcard-row"><span class="mcard-price">96.60</span><span class="mcard-chg down">Record lows</span></div>
-        <div class="mcard-reason">RBI intervening. Rupee down 7%+ YTD. Asia's worst-performing currency 2026.</div>
-      </div>
-    </div>
+
+  <div class="grad-line"></div>
+
+  <div class="section-pill pill-ai">AI Watch</div>
+
+  <div class="ai-card">
+    <div class="ai-tag">IPO Filing</div>
+    <div class="ai-head">OpenAI Files Confidential S-1 With SEC — September Debut in View</div>
+    <div class="ai-body">OpenAI is filing a confidential IPO prospectus today with Goldman Sachs and Morgan Stanley as bookrunners, targeting a September 2026 listing at a valuation of $852 billion to $1 trillion. This follows a record $122 billion funding round and a legal win over Elon Musk that removed a major structural obstacle. If it lists this year, it would be one of the largest public market debuts in history. Anthropic and SpaceX are also targeting 2026 listings. The AI sector is entering a new phase — from private capital formation to public market accountability.</div>
   </div>
- 
-  <!-- AI WATCH -->
-  <div class="section-gap">
-    <div class="section-pill pill-ai">AI Watch</div>
- 
-    <div class="ai-card">
-      <div class="ai-tag">Earnings Beat</div>
-      <div class="ai-headline">Nvidia Q1 FY2027: Data center revenue nearly doubles to $75.2B — "Demand has gone parabolic"</div>
-      <div class="ai-body">Nvidia beat consensus across the board. Jensen Huang declared "Agentic AI has arrived" and confirmed Nvidia runs every frontier model — Anthropic, OpenAI, SpaceXAI, Meta, and Google Gemini. Sovereign AI crossed $30B in FY26, more than tripling year-over-year and now representing ~14% of total revenue. This matters strategically because sovereign AI is the cleanest hedge against hyperscaler concentration risk. The Q2 guidance of $91B, while slightly below some whisper numbers, still represents extraordinary sequential growth. Stock reaction was muted post-earnings — a pattern seen in 4 of the last 5 quarters, reflecting the high bar already embedded in valuations.</div>
-    </div>
- 
-    <div class="ai-card">
-      <div class="ai-tag">Infrastructure Signal</div>
-      <div class="ai-headline">Blackwell drives 70%+ of Nvidia data center compute; Rubin platform timeline in focus</div>
-      <div class="ai-body">The Blackwell GPU architecture is now the primary revenue engine, with hyperscalers including Microsoft, Meta, Google, Amazon, and Oracle absorbing supply. Investors on the call were watching for two things: Rubin platform (next-gen GPU) launch timeline, and any signal on China sales. Nvidia gave no China revenue forecast, despite CEO Jensen Huang's Beijing visit with Trump on May 14. The $5.5B H20 inventory charge from earlier in Q1 remains a risk if export restrictions tighten further.</div>
-    </div>
- 
-    <div class="ai-card">
-      <div class="ai-tag">Market Structure</div>
-      <div class="ai-headline">AI convertible bond issuance at record pace as corporates fund data center buildout</div>
-      <div class="ai-body">Corporate America is tapping the convertible bond market at record pace to fund AI infrastructure — a signal that AI capex is now large enough to reshape corporate capital structures. Meta has already raised its 2026 capex guidance. This debt-fueled AI buildout has created a second-order risk: if AI monetization timelines slip, overleveraged companies face a painful repricing. For now, markets are rewarding the spend — but the clock is ticking on delivery.</div>
-    </div>
+
+  <div class="ai-card">
+    <div class="ai-tag">Revenue Milestone</div>
+    <div class="ai-head">Anthropic Projects $10.9 Billion in Q2 Revenue — Up 130% QoQ</div>
+    <div class="ai-body">Anthropic shared projections with investors showing $10.9 billion in revenue for the quarter ending June 2026, up 130% from $4.8 billion in Q1. This is one of the fastest revenue ramp rates in AI history. Alongside a reported $900 billion valuation and October 2026 IPO target, Anthropic is emerging as the primary rival to OpenAI for institutional capital allocation in the AI sector.</div>
   </div>
- 
-  <!-- KEY TAKEAWAYS -->
-  <div class="section-gap">
-    <div class="section-pill pill-takeaways">Key Takeaways</div>
- 
-    <div class="takeaway">
-      <div class="takeaway-num">1</div>
-      <div class="takeaway-text">The Iran-US war is the single dominant macro variable of 2026. Oil above $100/bbl is not just an energy story — it is an inflation story, a rate story, and a fiscal story simultaneously. Every market from Nifty to Brent to US Treasuries is reacting to Hormuz. Watch the next 72 hours for any formal ceasefire announcement, which could drop Brent by $10–15/bbl instantly.</div>
-    </div>
-    <div class="takeaway">
-      <div class="takeaway-num">2</div>
-      <div class="takeaway-text">Bond yields are screaming a warning the equity market is choosing to partly ignore. The 30Y yield at 5.12% (18-year high) signals that markets are pricing in either persistent inflation, higher-for-longer Fed rates, or growing concern about US fiscal sustainability. The negative equity-bond correlation at 1990s levels means owning stocks and bonds together is no longer a hedge — both are falling on bad inflation data.</div>
-    </div>
-    <div class="takeaway">
-      <div class="takeaway-num">3</div>
-      <div class="takeaway-text">India is in a triple squeeze: rupee at record lows, crude at $107, and FIIs pulling out $23B in 2026. This combination compresses RBI's rate-cut window, inflates import costs, and delays corporate margin recovery. The Nifty is holding support but needs a resolution in either Iran or USD strength before a genuine uptrend can establish.</div>
-    </div>
-    <div class="takeaway">
-      <div class="takeaway-num">4</div>
-      <div class="takeaway-text">Nvidia's numbers were extraordinary — but the stock's muted post-earnings reaction tells you something important: when a company is this well-known and this well-priced, beating expectations is the floor, not the ceiling. The real market-mover will be whether Blackwell supply constraints ease and whether Rubin can sustain the growth curve through 2027.</div>
-    </div>
-    <div class="takeaway">
-      <div class="takeaway-num">5</div>
-      <div class="takeaway-text">Watch the G7 fiscal warning closely. Finance ministers flagging "rising public debt and bond market volatility" is code for: governments are running large deficits while borrowing costs are surging. Gold's continued support near $4,500+ despite rising real yields suggests the market is pricing this as a slow-burn threat — and central banks are buying accordingly (244T in Q1 alone).</div>
-    </div>
+
+  <div class="ai-card">
+    <div class="ai-tag">Market Share</div>
+    <div class="ai-head">Chinese AI Models Hit 60% of Developer Usage on OpenRouter</div>
+    <div class="ai-body">DeepSeek V3.2 at $0.28 per million tokens and Kimi K2.6 at $0.95 per million tokens are now benchmark-competitive with frontier US models at a fraction of the cost. From 1% market share in 2024 to 60% in 2026 is not an incremental trend — it is a structural realignment in where AI compute spending flows. US firms are facing a genuine pricing and adoption threat, not just a geopolitical one.</div>
   </div>
- 
+
+  <div class="grad-line"></div>
+
+  <div class="section-pill pill-key">Key Takeaways</div>
+
+  <div class="takeaway-block">
+    <div class="takeaway-num">1</div>
+    <div class="takeaway-text">The US–Iran conflict is now the single most important macro variable for global markets. WTI above $95 sustains inflation above the Fed's 2% target, which keeps December rate hike risk alive and suppresses equity multiple expansion. Until the Strait of Hormuz reopens fully and credibly, this risk does not go away — and Iran's latest uranium directive suggests a deal is not imminent.</div>
+  </div>
+
+  <div class="takeaway-block">
+    <div class="takeaway-num">2</div>
+    <div class="takeaway-text">Bond markets are sending a warning that equity markets are choosing to partially ignore. The 30Y briefly touched 5.19% this week — a near-19-year high. The 10Y at 4.6% is not yet breaking the bull market, but CNBC's own analysis flagged the specific yield level that could. Watch for any move above 4.75% on the 10Y as a stress trigger for rate-sensitive sectors.</div>
+  </div>
+
+  <div class="takeaway-block">
+    <div class="takeaway-num">3</div>
+    <div class="takeaway-text">The AI IPO wave is structurally significant for capital markets. OpenAI at $850B–$1T, Anthropic at $900B, and SpaceX at $1.75T entering public markets in the same six-month window would absorb substantial institutional and retail capital — redirecting flows from other sectors and creating benchmark weight implications once listed.</div>
+  </div>
+
+  <div class="takeaway-block">
+    <div class="takeaway-num">4</div>
+    <div class="takeaway-text">India's market is in a holding pattern with asymmetric risk. On the upside: a US–Iran deal would cut oil prices sharply, ease rupee pressure, and trigger a relief rally. On the downside: sustained elevated oil, continued FII selling in IT and large-caps, and a rupee at 96 plus adds imported inflation and limits RBI's policy flexibility. Domestic banks and autos are the relative safe zones.</div>
+  </div>
+
+  <div class="takeaway-block">
+    <div class="takeaway-num">5</div>
+    <div class="takeaway-text">The next 72 hours are high-stakes. Watch: (a) whether OpenAI's S-1 actually arrives at the SEC today, which would be a landmark event; (b) any signal from Trump or Iran's new leadership on uranium storage — this alone can move oil by $5–$10 in a session; and (c) Nvidia's earnings interpretation as they feed into the AI spend narrative that underpins the entire tech rally.</div>
+  </div>
+
+  <div class="sources-line">Sources: Bloomberg · Reuters · CNBC · Business Standard · Trading Economics · The Street · Build Fast with AI · Wikipedia (2026 Hormuz Crisis) · Axios · S&P Global</div>
+
+  <div class="disclaimer">This brief is AI-assisted and curated by <span>Yuvraj Sureka</span>. Data is reviewed before publishing but may contain errors or inaccuracies. Not financial advice. Please verify all figures independently before making any investment decisions.</div>
+
   <div class="author-card">
-    <div class="author-avatar">YS</div>
+    <div class="avatar">YS</div>
     <div>
-      <div style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Analysis By</div>
+      <div class="author-by">Analysis by</div>
       <div class="author-name">Yuvraj Sureka</div>
-      <div class="author-meta">Trading &nbsp;|&nbsp; Pursuing CFA &nbsp;|&nbsp; Investment Banking &nbsp;|&nbsp; Equity Research</div>
-      <div class="author-contact">linkedin.com/in/yuvrajsureka47 &nbsp;·&nbsp; yuvrajsureka47@gmail.com &nbsp;·&nbsp; +91 6001930875</div>
+      <div class="author-creds">Trading · Pursuing CFA · Investment Banking · Equity Research</div>
+      <div class="author-contact">linkedin.com/in/yuvrajsureka47 · yuvrajsureka47@gmail.com · +91 6001930875</div>
     </div>
   </div>
- 
-  <div class="sources">Sources: Bloomberg · Reuters · CNBC · Economic Times · Trading Economics · Yahoo Finance · Goodreturns · Investing.com</div>
-  <div class="disclaimer">This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
- 
+  <div class="tagline">Macro research for the next generation of fund managers.</div>
 </div>
-</body>
-</html>
- 
