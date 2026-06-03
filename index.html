@@ -3,405 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — June 1, 2026 | Yuvraj Sureka</title>
+<title>Daily Market Brief — June 3, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #070910; font-family: 'Inter','Segoe UI',sans-serif; min-height: 100vh; padding: 32px 16px; }
-  .widget { width: 100%; max-width: 860px; margin: 0 auto; background: #0d0f14; color: #e8eaf0; padding: 32px 28px; border-radius: 16px; box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
-
-  /* MASTHEAD */
-  .byline-row { font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .byline-row .name { font-weight: 800; color: #a78bfa; }
-  .brief-label { font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
-  .brief-date { font-size: 28px; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
-  .brief-mood { font-size: 14px; color: #9ca3af; font-style: italic; }
-  .gradient-line { height: 2px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent); margin: 24px 0; }
-
-  /* SECTION HEADERS */
-  .section-header { display: inline-block; background: #1e2330; border: 1px solid #2d3348; border-radius: 20px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-  .sh-macro { color: #60a5fa; }
-  .sh-markets { color: #34d399; }
-  .sh-ai { color: #a78bfa; }
-  .sh-takeaways { color: #f59e0b; }
-  .section-divider { width: 100%; height: 1px; background: #1e2330; margin-top: 6px; margin-bottom: 24px; }
-
-  /* SECTIONS */
-  .section { margin-bottom: 40px; }
-
-  /* REGION LABEL */
-  .region-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: #6b7280; text-transform: uppercase; margin-bottom: 12px; margin-top: 24px; }
-  .region-label:first-child { margin-top: 0; }
-
-  /* NEWS CARDS */
-  .news-card { background: #111520; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; border-left: 3px solid #2d3348; }
-  .news-card.geo { border-left: 3px solid #ef4444; background: #1a1015; }
-  .news-headline { font-size: 15px; font-weight: 700; color: #e8eaf0; margin-bottom: 6px; }
-  .news-why { font-size: 13px; color: #9ca3af; line-height: 1.65; }
-
-  /* MARKETS SNAPSHOT */
-  .markets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-  .metric-card { background: #111520; border-radius: 10px; padding: 14px 16px; border: 1px solid #1e2330; }
-  .metric-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .metric-name { font-size: 10px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; }
-  .pct-pill { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
-  .pct-up { background: #052e1a; color: #34d399; }
-  .pct-down { background: #2a0f0f; color: #f87171; }
-  .pct-neutral { background: #1e2330; color: #9ca3af; }
-  .metric-price { font-size: 20px; font-weight: 800; color: #ffffff; margin-top: 2px; }
-  .metric-reason { font-size: 11px; color: #6b7280; margin-top: 4px; line-height: 1.4; }
-
-  /* AI WATCH */
-  .ai-card { background: linear-gradient(135deg, #0f172a, #1a1f35); border-radius: 10px; padding: 16px 18px; border: 1px solid #2d3348; margin-bottom: 14px; }
-  .ai-tag { display: inline-block; background: #1e2a45; color: #60a5fa; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase; }
-  .ai-headline { font-size: 15px; font-weight: 700; color: #e8eaf0; margin: 8px 0 6px; }
-  .ai-body { font-size: 13px; color: #9ca3af; line-height: 1.65; }
-
-  /* KEY TAKEAWAYS */
-  .takeaway-row { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; }
-  .takeaway-num { font-size: 28px; font-weight: 900; color: #1e2330; width: 36px; flex-shrink: 0; line-height: 1; }
-  .takeaway-text { font-size: 14px; color: #e8eaf0; line-height: 1.6; }
-  .takeaway-sep { height: 1px; background: #1a1d27; }
-
-  /* AUTHOR STAMP */
-  .author-stamp { margin-top: 36px; padding: 24px 28px; background: linear-gradient(135deg, #10121a, #13111f); border-radius: 14px; border: 1px solid #2d2545; display: flex; align-items: center; gap: 20px; }
-  .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: 2px solid #a78bfa; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: #fff; }
-  .author-info { display: flex; flex-direction: column; }
-  .author-label { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; color: #6b7280; text-transform: uppercase; margin-bottom: 6px; }
-  .author-name { font-size: 24px; font-weight: 900; color: #ffffff; text-shadow: 0 0 24px rgba(167,139,250,0.5); }
-  .cred-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .cred-pill { background: #1a1f2e; border: 1px solid #2d3348; border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 600; }
-  .cred-trading { color: #f59e0b; }
-  .cred-cfa { color: #34d399; }
-  .cred-ib { color: #60a5fa; }
-  .cred-er { color: #a78bfa; border-color: #a78bfa; }
-  .contact-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 10px; color: #4b5563; font-weight: 500; }
-  .contact-row span { display: flex; align-items: center; gap: 4px; }
-  .author-sep { height: 1px; background: #1e2330; margin-top: 16px; }
-  .author-tagline { font-size: 11px; color: #4b5563; font-style: italic; text-align: center; margin-top: 10px; }
-
-  /* SOURCES */
-  .sources { background: #0a0c10; border-radius: 10px; padding: 12px 16px; margin-top: 32px; }
-  .sources-label { font-size: 10px; font-weight: 700; color: #4b5563; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
-  .sources-list { font-size: 11px; color: #6b7280; }
-
-  /* DISCLAIMER */
-  .disclaimer { background: #0d0e14; border: 1px solid #1e2330; border-radius: 10px; padding: 14px 18px; margin-top: 16px; }
-  .disclaimer-label { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; color: #4b5563; text-transform: uppercase; margin-bottom: 6px; }
-  .disclaimer-body { font-size: 11px; color: #4b5563; line-height: 1.6; }
-  .disclaimer-body .dname { color: #a78bfa; font-weight: 700; }
-
-  @media (max-width: 560px) {
-    .widget { padding: 20px 14px; }
-    .brief-date { font-size: 22px; }
-    .author-stamp { flex-direction: column; align-items: center; text-align: center; }
-    .contact-row { justify-content: center; }
-    .cred-row { justify-content: center; }
-    .markets-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
 </head>
-<body>
-<div class="widget">
+<body style="margin:0;padding:20px;background:#060810;font-family:'Inter','Segoe UI',sans-serif;">
 
-  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — June 1, 2026 curated by Yuvraj Sureka</h2>
+<div style="width:100%;max-width:860px;margin:0 auto;background:#0d0f14;color:#e8eaf0;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,0.4);box-sizing:border-box;">
+
+  <!-- Accessibility heading (visually hidden) -->
+  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — June 3, 2026 curated by Yuvraj Sureka</h2>
 
   <!-- MASTHEAD -->
-  <div class="byline-row">Curated by <span class="name">Yuvraj Sureka</span></div>
-  <div class="brief-label">Daily Market Brief</div>
-  <div class="brief-date">Monday, June 1, 2026</div>
-  <div class="brief-mood">Cautious risk-on. US at record highs. India under FII pressure. Oil in rapid retreat on Iran ceasefire hopes.</div>
-  <div class="gradient-line"></div>
+  <div style="margin-bottom:0;">
+    <div style="font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.08em;margin-bottom:6px;">
+      Curated by <span style="font-weight:800;color:#a78bfa;">Yuvraj Sureka</span>
+    </div>
+    <div style="font-size:11px;font-weight:700;color:#6b7280;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;">Daily Market Brief</div>
+    <div style="font-size:28px;font-weight:800;color:#ffffff;margin-bottom:8px;">Wednesday, June 3, 2026</div>
+    <div style="font-size:14px;color:#9ca3af;font-style:italic;">Risk-off tilt. Iran escalation rattles Gulf. Tech holds, India struggles.</div>
+  </div>
 
-  <!-- GLOBAL MACRO -->
-  <div class="section">
-    <div class="section-header sh-macro">Global Macro</div>
-    <div class="section-divider"></div>
+  <!-- Gradient divider -->
+  <div style="height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);margin:24px 0;"></div>
+
+  <!-- SECTION 1: GLOBAL MACRO -->
+  <div style="margin-bottom:40px;">
+    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#60a5fa;margin-bottom:16px;">Global Macro</div>
+    <div style="width:100%;height:1px;background:#1e2330;margin-bottom:20px;"></div>
 
     <!-- UNITED STATES -->
-    <div class="region-label">United States</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px;">United States</div>
 
-    <div class="news-card geo">
-      <div class="news-headline">US-Iran Agree In Principle to 60-Day Ceasefire Extension and Hormuz Shipping Deal</div>
-      <div class="news-why">Reports emerged Friday that Washington and Tehran have reached a preliminary understanding to extend their ceasefire by 60 days and potentially allow unrestricted passage through the Strait of Hormuz, with Iran committing to clear sea mines within 30 days. President Trump has not yet formally signed off, and Iranian state media flagged it as unfinalized. The uncertainty is critical: Polymarket currently prices the probability of the Strait fully reopening by end of June at only 38%, meaning the base case remains a closed chokepoint into summer. If the deal holds, it would be the single largest deflationary shock to global oil markets since OPEC+ production expansions in 2020.</div>
+    <!-- US Item 1 — Geopolitical alert -->
+    <div style="background:#1a1015;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #ef4444;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Iran Fires Missiles at Kuwait; US Strikes Qeshm Island Overnight</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">In the early hours of June 3 IST, Iran's IRGC fired at least 10 ballistic missiles toward Kuwait in retaliation for US strikes on Qeshm Island. Kuwait's air defenses intercepted the attacks and two missiles failed before reaching their targets. US CENTCOM struck an Iranian military ground control station on Qeshm Island, calling it a self-defense action against threats to commercial shipping in the Strait of Hormuz. This marks the latest in a cycle of strikes and counter-strikes that has kept the ceasefire on life support. Markets matter because the Strait of Hormuz handles roughly 20% of global oil trade — any credible threat of closure reprices energy instantly and rekindles fears of stagflation.</div>
     </div>
 
-    <div class="news-card">
-      <div class="news-headline">PCE Inflation Prints Below Expectations — But Annual Readings Remain Far Above Fed Target</div>
-      <div class="news-why">Thursday's Personal Consumption Expenditures (PCE) data — the Fed's preferred inflation gauge — showed monthly headline and core readings softer than forecast. However, annual headline PCE came in at 3.8% and core at 3.3%, well above the Fed's 2% target, largely driven by the energy shock from the Hormuz closure. Markets continue to price in zero rate cuts for 2026, with a 46% probability now assigned to a rate hike by December. This is the core tension in the market: equities are rising on peace deal hopes, but the Fed is functionally locked until inflation falls further.</div>
+    <!-- US Item 2 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">S&amp;P 500 Closes Above 7,600 for First Time as Chipmakers Lead</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">On Tuesday June 2, the S&amp;P 500 closed at 7,609.78 (+0.13%), its first ever close above 7,600. Marvell Technology surged 33% after Nvidia CEO Jensen Huang publicly endorsed its AI chip roadmap. HPE soared 19% on a massive earnings beat driven by AI server demand. Alphabet slid nearly 4% after announcing an $80 billion stock sale to fund its AI buildout, creating modest drag. The signal here is that the earnings cycle continues to reward AI infrastructure providers at a pace that is pulling the broader index to records even under geopolitical pressure.</div>
     </div>
 
-    <div class="news-card">
-      <div class="news-headline">S&P 500 Closes May at Record 7,580 — Ninth Consecutive Week of Gains Entering June</div>
-      <div class="news-why">The S&P 500 rose 5.15% in May and the Nasdaq surged over 8%, extending April's 10.42% gain. The AI earnings cycle (Dell up 40%, Snowflake up 40%, strong tech guidance) and Hormuz peace optimism drove the rally. But June enters with known headwinds: it is historically the worst month for stocks in midterm election years, CEO confidence has turned negative in Q2 2026, and the savings rate has declined. The market is effectively placing a binary bet on Iran resolution materializing in the next few weeks.</div>
+    <!-- US Item 3 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Fed Rate Hike Probability Rises to 60%+ for December 2026</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">The US 10-year Treasury yield climbed back to around 4.47% on Monday after retreating to three-week lows, as investors recalibrated around a longer energy-driven inflationary impulse. Markets have dramatically repriced from expecting cuts to now pricing over a 60% chance of a Fed rate hike by year-end. The highest PCE reading in nearly three years was reported last week. New Fed Chair Kevin Warsh's first press conference remains a critical event risk — any sign of hawkish independence or inflationary tolerance will move yields sharply.</div>
     </div>
 
     <!-- INDIA -->
-    <div class="region-label">India</div>
+    <div style="margin-top:24px;font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px;">India</div>
 
-    <div class="news-card geo">
-      <div class="news-headline">Nifty Drops 1.5% on FII Outflow of Rs 21,106 Cr — Sharpest Single-Day Selloff in Weeks</div>
-      <div class="news-why">On May 29, the Nifty 50 closed at 23,547 and Sensex fell 1,092 points, as a massive FII cash outflow of Rs 21,106 crore hit the market. DIIs absorbed Rs 16,764 crore, limiting the damage, but could not offset the scale of foreign selling. India VIX spiked 8% to 16.18. The trigger was a confluence: weak monsoon forecasts threatening rural consumption, unresolved Iran risk creating energy import cost uncertainty, and late-session profit booking. The Nifty is currently trading below the psychologically important 24,000 level — a break below 23,500 would signal deeper institutional risk-off positioning.</div>
+    <!-- India Item 1 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">RBI MPC Meeting Begins Today; Rate Hold Expected But Commentary Key</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">The RBI's Monetary Policy Committee commenced its three-day meeting today (June 3-5), with Governor Sanjay Malhotra announcing the decision on June 5. The current repo rate stands at 5.25% with a neutral stance. SBI Research and most economists expect a hold, as India's CPI eased to 3.48% in April. However, geopolitical risks including elevated crude, rupee depreciation (currently near Rs 95/$), and a forecast below-normal monsoon at 90% of long-period average create real upside inflation risks. The market is watching the tone of guidance more than the rate decision itself — any hint of a hike would hit rate-sensitive sectors hard.</div>
     </div>
 
-    <div class="news-card">
-      <div class="news-headline">MSCI Rebalancing to Drive Passive Flows — Mixed Impact Across Indian Equities</div>
-      <div class="news-why">MSCI's upcoming index rebalancing is expected to generate significant passive fund activity in Indian markets. Federal Bank, MCX, NALCO, and Indian Bank emerge as beneficiaries of inclusion-driven buying, while Hyundai Motor India, Jubilant FoodWorks, Kalyan Jewellers, and RVNL face selling pressure from exclusions. MSCI rebalancing events typically create non-fundamental price moves that can be exploited by systematic traders in the short window around the effective date. For longer-term investors, the moves are largely noise unless they change a stock's ownership structure materially.</div>
+    <!-- India Item 2 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Nifty 50 Opens Weak; FIIs Net Sold Rs 8,363 Cr on June 2</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">Indian markets opened with a gap-down on June 3 following weak global cues and continued foreign outflows. The Sensex fell approximately 0.47% to 73,919 and the Nifty 50 dropped 0.51% to 23,263 at the open, tracking last session's close of 74,267 and 23,382 respectively. FIIs net sold a heavy Rs 8,363 crore on June 2, while DIIs bought Rs 9,589 crore — a pattern of domestic funds cushioning foreign exits that has become a structural feature of the Indian market in 2026. The Nifty is now down approximately 12.9% on a YTD basis, the worst performer among the nine major global indices tracked.</div>
     </div>
 
-    <div class="news-card">
-      <div class="news-headline">India Market Cap at $4.88 Trillion — USD/INR Futures at 95.27</div>
-      <div class="news-why">The INR continues to trade near multi-year weak levels against the USD (USDINR futures at 95.27 on May 29). A weaker rupee raises the cost of India's oil import bill directly, feeding into trade deficit pressure at a time when Hormuz disruptions have already pushed global crude prices significantly above pre-war levels. If the ceasefire deal fails and oil re-prices higher, India faces compounding risks: currency weakness, inflation pass-through, and FII outflows reinforcing each other in a negative feedback loop.</div>
+    <!-- India Item 3 -->
+    <div style="background:#1a1015;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #ef4444;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Crude at $91–$95 and a Weakening Rupee Create a Stagflationary Squeeze</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">India imports roughly 85% of its crude oil. With WTI near $91 and Brent near $95 following the Hormuz tensions, India faces twin pressure: imported inflation pushing up fuel and input costs, and a rupee near Rs 95/$ that amplifies the effect. GDP growth is projected to slow to 6.6% in FY27 from an earlier estimate above 7%. Energy-intensive sectors such as cement, chemicals, and paints face direct margin pressure, while the RBI is left with little room to cut even as growth moderates. This is a classic stagflation-risk setup for an emerging market.</div>
     </div>
 
     <!-- EUROPE -->
-    <div class="region-label">Europe</div>
+    <div style="margin-top:24px;font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px;">Europe</div>
 
-    <div class="news-card">
-      <div class="news-headline">ECB Expected to Raise Rates 25bp in June — Markets Pricing 60bp of Tightening for 2026</div>
-      <div class="news-why">European rate markets are now pricing approximately 60 basis points of ECB tightening for 2026, with the first 25bp hike expected this month and a second in October. This is a sharp contrast to the Fed, which is on hold, and reflects the ECB's concern that energy cost pass-through from the Hormuz crisis has been more persistent in Europe than initially modeled. A rate hike in an environment of slowing growth creates classic stagflationary pressure — higher borrowing costs layered on top of an already-fragile industrial base. European manufacturing stocks are particularly exposed.</div>
+    <!-- Europe Item 1 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">ECB June Rate Hike Increasingly Priced as Inflation Remains Sticky</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">European benchmark 10-year yields spiked sharply before pulling back 15-25 basis points in May. The ECB is widely expected to raise rates at its June meeting, driven by persistent energy-linked inflation and a labour market that has not yet cracked. SoftBank announced a €75 billion ($87.5 billion) commitment to build 5 gigawatts of AI data center capacity in France at the Choose France summit, an event that underscores how AI infrastructure investment is reshaping European capital allocation. A rate hike, if delivered, would compress the earnings multiple on European equities at a time when valuations have been stretched by the AI build-out narrative.</div>
     </div>
 
-    <div class="news-card">
-      <div class="news-headline">FTSE 100 at 10,451 and DAX at 25,158 — European Indices Holding Near Highs</div>
-      <div class="news-why">Despite the ECB tightening path, European equity benchmarks held their levels on May 29 (FTSE +0.24%, DAX +0.26%), supported by the same Iran ceasefire optimism driving US markets. However, European markets face a structural problem: they are more energy-intensive than the US and more exposed to a prolonged Hormuz closure. If the deal falls through in early June, European indices will likely underperform US peers sharply, as oil prices would re-escalate and ECB hike expectations would simultaneously increase.</div>
+    <!-- Europe Item 2 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">FTSE 100 Near 10,391; DAX Outperforms Peers as Tech Drives European Gains</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">European equities advanced into June with the FTSE 100 trading around 10,391 and the DAX posting gains of roughly 0.92%. Technology stocks led the rally, mirroring the AI-driven momentum on Wall Street. The euro is increasingly functioning as a safe-haven currency, a structural shift observed across several stress events in 2025 and early 2026. This is important: if the euro strengthens alongside equity gains, it suggests a reassessment of European capital positioning rather than simply risk-on flows.</div>
     </div>
 
     <!-- CHINA -->
-    <div class="region-label">China</div>
+    <div style="margin-top:24px;font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px;">China</div>
 
-    <div class="news-card">
-      <div class="news-headline">China Manufacturing PMI Falls to 50.0 in May — Exactly at Contraction Borderline</div>
-      <div class="news-why">Official NBS Manufacturing PMI dropped to 50.0 in May from 50.3 in April, right at the threshold separating expansion from contraction. Production output (sub-index 51.2) continues to grow, but new domestic orders (49.9) are contracting, revealing a demand problem, not a supply problem. High-tech manufacturing (52.9) and equipment manufacturing (52.1) are outperforming, consistent with China's 15th Five-Year Plan priority of technological self-reliance. The headline PMI reading at exactly 50 will do nothing to reassure investors who are watching for early signs of a demand-led slowdown compounding the Hormuz-driven supply chain stress.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">China's Diplomatic Role in Iran Ceasefire — Strategic Positioning for Trade Route Control</div>
-      <div class="news-why">China played a key role in nudging Iran's Supreme Leader to approve the April 8 ceasefire, reflecting Beijing's dual interest in keeping global energy flowing while maintaining leverage over both sides. China has also exercised unusual demand restraint in crude imports during the crisis, helping prevent a full energy price spiral. This restraint is not altruistic; Beijing is building strategic inventory buffers. As the ADB has upgraded China's 2026 growth forecast to 4.6%, driven by high-tech exports, any normalization of Hormuz shipping benefits China disproportionately given its energy import dependency.</div>
+    <!-- China Item 1 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Shanghai Composite Rises 0.43%; Hang Seng Mixed Amid US-China Trade Tensions</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">China's Shanghai Composite traded around 4,075 with a modest gain of 0.43% as of the June 2 close. The Hang Seng was mixed. US-China inventory dynamics around crude are in focus: Beijing appears to be managing its strategic petroleum reserve carefully, with the net effect being a market that "bent without breaking" on oil supply anxiety. China's insulation from direct Hormuz impact — via Russian pipeline routes and longer-haul tanker alternatives — gives it a marginal strategic advantage during this period of Gulf tension, though global demand weakness remains the bigger risk to Chinese growth.</div>
     </div>
 
     <!-- APAC -->
-    <div class="region-label">APAC</div>
+    <div style="margin-top:24px;font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px;">APAC (ex China, ex India)</div>
 
-    <div class="news-card">
-      <div class="news-headline">Nikkei Rallies 2.53% on May 29 as BOJ Rate Hike Now Widely Expected in June</div>
-      <div class="news-why">Japan's Nikkei 225 rose 2.53% to close at 66,329 on May 29, driven by renewed global risk appetite. However, the structural story for Japan heading into June is the BOJ's widely anticipated rate hike at the June 16-17 meeting. A BOJ rate hike would be the clearest signal yet that Japan is exiting its ultra-loose monetary policy era, which would likely trigger significant yen appreciation. A stronger yen is negative for Japan's large export-oriented companies (autos, electronics) but positive for domestic consumption and reduces the energy import cost inflation Japan has been absorbing from the Hormuz crisis.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">Australia and Japan Diverge on Hormuz Impact — AUD/JPY a Key Cross to Watch</div>
-      <div class="news-why">The APAC region is splitting along energy lines: Australia (commodity exporter) benefits from elevated energy prices, while Japan (large energy importer) is being squeezed. AUD/JPY has emerged as one of the clearest expressions of this yield and energy divergence. A BOJ rate hike combined with a Hormuz reopening would compress this spread sharply, with AUD/JPY likely falling as yen strengthens and commodity prices ease. Traders are already positioning for this scenario through yen carry unwind trades.</div>
+    <!-- APAC Item 1 -->
+    <div style="background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348;">
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">BOJ Rate Hike in June Now a Consensus Call; Nikkei Near Record at 66,734</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">Japan's Nikkei 225 is near 66,734, up 31.8% year-to-date — the single best performing major index globally. The Bank of Japan is widely expected to raise rates in June as its Q1 2026 growth came in at 0.6% and price pressures are modulating. The structural problem the BOJ faces is one of credibility: the yield differential between Japan and global rates continues to incentivise yen selling, and intervention without a firm rate anchor is largely symbolic. A BOJ hike would narrow the differential and could finally begin reducing yen carry-trade unwinds, with consequences for global liquidity. South Korea's Kospi is also at all-time highs, driven by AI hardware demand.</div>
     </div>
   </div>
 
-  <!-- MARKETS SNAPSHOT -->
-  <div class="section">
-    <div class="section-header sh-markets">Markets Snapshot</div>
-    <div class="section-divider"></div>
-    <div class="markets-grid">
+  <!-- SECTION 2: MARKETS SNAPSHOT -->
+  <div style="margin-bottom:40px;">
+    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#34d399;margin-bottom:16px;">Markets Snapshot</div>
+    <div style="width:100%;height:1px;background:#1e2330;margin-bottom:20px;"></div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">S&P 500</span>
-          <span class="pct-pill pct-up">+0.22%</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;">
+
+      <!-- S&P 500 -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">S&amp;P 500</span>
+          <span style="font-size:11px;font-weight:700;background:#052e1a;color:#34d399;padding:2px 8px;border-radius:12px;">+0.13%</span>
         </div>
-        <div class="metric-price">7,580.06</div>
-        <div class="metric-reason">Ninth straight weekly gain. AI rally + Iran ceasefire optimism driving record close.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">7,609.78</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">First close above 7,600. Marvell +33%, HPE +19% on AI chip demand.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Nasdaq</span>
-          <span class="pct-pill pct-up">+0.20%</span>
+      <!-- Nasdaq Composite -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Nasdaq Composite</span>
+          <span style="font-size:11px;font-weight:700;background:#052e1a;color:#34d399;padding:2px 8px;border-radius:12px;">+0.03%</span>
         </div>
-        <div class="metric-price">26,972.62</div>
-        <div class="metric-reason">Tech leadership sustained. May gain of 8%+ driven by Dell, Snowflake, and AI capex cycle.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">27,093.90</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Flat gain as Alphabet's -4% on $80B stock sale capped tech upside.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Dow Jones</span>
-          <span class="pct-pill pct-up">+0.72%</span>
+      <!-- Dow Jones -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Dow Jones</span>
+          <span style="font-size:11px;font-weight:700;background:#052e1a;color:#34d399;padding:2px 8px;border-radius:12px;">+0.45%</span>
         </div>
-        <div class="metric-price">51,032</div>
-        <div class="metric-reason">IBM +12.9% and Salesforce +8.5% led gains. Dow record close for May.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">51,307.79</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">New all-time intraday high. Broad earnings strength supporting industrials.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Nifty 50</span>
-          <span class="pct-pill pct-down">-1.50%</span>
+      <!-- Nifty 50 -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Nifty 50</span>
+          <span style="font-size:11px;font-weight:700;background:#2a0f0f;color:#f87171;padding:2px 8px;border-radius:12px;">-0.51%</span>
         </div>
-        <div class="metric-price">23,548</div>
-        <div class="metric-reason">FII sold Rs 21,106 Cr. Weak monsoon outlook and geopolitical overhang dented sentiment.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~23,263</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Gap-down open June 3. FII selling Rs 8,363 Cr on June 2. Down ~12.9% YTD.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Sensex</span>
-          <span class="pct-pill pct-down">-1.44%</span>
+      <!-- Sensex -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Sensex</span>
+          <span style="font-size:11px;font-weight:700;background:#2a0f0f;color:#f87171;padding:2px 8px;border-radius:12px;">-0.47%</span>
         </div>
-        <div class="metric-price">74,776</div>
-        <div class="metric-reason">Broad-based selloff. IT was the only sectoral gainer amid heavy institutional outflows.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~73,920</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Weak open tracking mixed Asian cues and continued FII outflows.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Nikkei 225</span>
-          <span class="pct-pill pct-up">+2.53%</span>
+      <!-- US 10Y Yield -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">US 10Y Yield</span>
+          <span style="font-size:11px;font-weight:700;background:#2a0f0f;color:#f87171;padding:2px 8px;border-radius:12px;">Rising</span>
         </div>
-        <div class="metric-price">66,329</div>
-        <div class="metric-reason">Risk-on rally. BOJ June rate hike now consensus; yen carry positioning in focus.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~4.47%</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Recovered from 3-week lows as Iran tensions reignited energy-inflation fears. Rate hike odds now above 60% for Dec 2026.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">US 10Y Yield</span>
-          <span class="pct-pill pct-down">-2bp</span>
+      <!-- WTI Crude -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">WTI Crude</span>
+          <span style="font-size:11px;font-weight:700;background:#2a0f0f;color:#f87171;padding:2px 8px;border-radius:12px;">-1%</span>
         </div>
-        <div class="metric-price">4.45%</div>
-        <div class="metric-reason">Softer PCE data and Iran peace talk optimism pulled yields to 2-week low. Fed on hold.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~$91.00</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Fell ~1% on Jun 2 after a 5.5% surge on June 1. Iran-Hormuz uncertainty keeps prices volatile. Goldman projects $90 floor even if Hormuz opens.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">WTI Crude</span>
-          <span class="pct-pill pct-down">-2.00%</span>
+      <!-- Brent Crude -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Brent Crude</span>
+          <span style="font-size:11px;font-weight:700;background:#1e2330;color:#9ca3af;padding:2px 8px;border-radius:12px;">~Flat</span>
         </div>
-        <div class="metric-price">$87.20</div>
-        <div class="metric-reason">Down ~17% in May — biggest monthly drop since 2020 — on Hormuz ceasefire extension reports.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~$95.00</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Slipped toward $91-95 range after the Strait of Hormuz closure threat eased slightly. Iran-US MoU on Hormuz still possible per Trump.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Brent Crude</span>
-          <span class="pct-pill pct-down">-1.70%</span>
+      <!-- Gold -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Gold (XAU/USD)</span>
+          <span style="font-size:11px;font-weight:700;background:#052e1a;color:#34d399;padding:2px 8px;border-radius:12px;">+1.17%</span>
         </div>
-        <div class="metric-price">$91.12</div>
-        <div class="metric-reason">6-week low. Preliminary US-Iran deal to allow unrestricted Hormuz shipping depressing prices.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">$4,558</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Rising despite equities at records — classic dual safe-haven signal. Iran escalation + sticky inflation keeping gold bid. Record high was $5,602 in Jan 2026.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Gold</span>
-          <span class="pct-pill pct-up">+1.34%</span>
+      <!-- Bitcoin -->
+      <div style="background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;">Bitcoin (BTC)</span>
+          <span style="font-size:11px;font-weight:700;background:#2a0f0f;color:#f87171;padding:2px 8px;border-radius:12px;">-6%</span>
         </div>
-        <div class="metric-price">$4,593</div>
-        <div class="metric-reason">Safe-haven bid remains intact despite risk-on tone. Central bank buying sustaining elevated prices.</div>
-      </div>
-
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">Bitcoin</span>
-          <span class="pct-pill pct-down">-1.10%</span>
-        </div>
-        <div class="metric-price">$73,382</div>
-        <div class="metric-reason">ETF outflows of $223M hit on May 28. Bitcoin underperforming risk assets despite equity rally.</div>
-      </div>
-
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-name">USD/INR</span>
-          <span class="pct-pill pct-neutral">Futures</span>
-        </div>
-        <div class="metric-price">95.27</div>
-        <div class="metric-reason">Rupee near multi-year weak levels. FII outflows and oil import cost pressure on the currency.</div>
+        <div style="font-size:20px;font-weight:800;color:#ffffff;margin-top:6px;">~$67,468</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4;">Tumbled below $70K for first time since April. Bitcoin ETFs saw $1.42B in outflows. Geopolitical uncertainty drives rotation out of crypto into AI equities.</div>
       </div>
 
     </div>
   </div>
 
-  <!-- AI WATCH -->
-  <div class="section">
-    <div class="section-header sh-ai">AI Watch</div>
-    <div class="section-divider"></div>
+  <!-- SECTION 3: AI WATCH -->
+  <div style="margin-bottom:40px;">
+    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:16px;">AI Watch</div>
+    <div style="width:100%;height:1px;background:#1e2330;margin-bottom:20px;"></div>
 
-    <div class="ai-card">
-      <span class="ai-tag">Mega Funding Round</span>
-      <div class="ai-headline">Anthropic Raises $65 Billion at $965 Billion Valuation — Now the Most Valuable AI Startup on Earth</div>
-      <div class="ai-body">Anthropic's Series H round, co-led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, values the company at $965 billion — leapfrogging OpenAI's most recent $852 billion valuation. The round included Samsung, SK Hynix, Micron, and institutional heavyweights like Blackstone and Fidelity. Crucially, Anthropic also disclosed a $47 billion annualized revenue run-rate — up from $10 billion at the end of 2025 — driven almost entirely by Claude Code enterprise adoption. The company simultaneously released Claude Opus 4.8 and confirmed that Claude Mythos Preview (its frontier cybersecurity model, currently in limited deployment via Project Glasswing) is nearing wider release. The implication for markets: AI infrastructure capex is not slowing down. Semiconductor suppliers (TSMC, SK Hynix, Micron) are direct beneficiaries. The AI-to-revenue conversion thesis is now validated at scale.</div>
+    <!-- AI Item 1 -->
+    <div style="background:linear-gradient(135deg,#0f172a,#1a1f35);border-radius:10px;padding:16px 18px;border:1px solid #2d3348;margin-bottom:14px;">
+      <div style="background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;display:inline-block;">IPO Filing</div>
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;">Anthropic Confidentially Files S-1 with SEC at $965B Valuation</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">On June 1, Anthropic — maker of Claude — filed a confidential S-1 with the SEC, becoming the first major AI pure-play to formally initiate a public listing process, ahead of rival OpenAI. The company reported an annualised revenue run rate of $47 billion, up from $10 billion last year, and closed a $65 billion funding round at a $965 billion valuation in late May. SpaceX is already on a roadshow for its debut next week. All three — Anthropic, OpenAI, and SpaceX — are projected to be trillion-dollar debuts. The capital market implication is significant: a flood of AI-sector listings could reshape institutional allocation, draw liquidity from other sectors, and create a new benchmark for AI valuation multiples.</div>
     </div>
 
-    <div class="ai-card">
-      <span class="ai-tag">Enterprise Deployment</span>
-      <div class="ai-headline">Anthropic and OpenAI Both Launch Parallel Enterprise AI Joint Ventures</div>
-      <div class="ai-body">In a striking parallel move, Anthropic announced an enterprise AI deployment joint venture backed by Blackstone, Goldman Sachs, and Hellman &amp; Friedman (valued at $1.5 billion), hours before Bloomberg reported that OpenAI was fundraising for a similar venture called The Development Company. The simultaneous announcements represent the industrialization phase of AI — labs are no longer just building models, they are building the institutional infrastructure to deploy AI at enterprise scale across regulated industries. For financial markets, this signals that AI monetization is accelerating faster than most analyst models had priced in.</div>
+    <!-- AI Item 2 -->
+    <div style="background:linear-gradient(135deg,#0f172a,#1a1f35);border-radius:10px;padding:16px 18px;border:1px solid #2d3348;margin-bottom:14px;">
+      <div style="background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;display:inline-block;">Developer Conference</div>
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;">Microsoft Build 2026 (June 2–3): Project Polaris, Azure Agent Mesh, and Copilot Agent Mode Now Default</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">Microsoft's annual developer conference wrapping up today in San Francisco delivered foundational AI infrastructure announcements. Project Polaris — Microsoft's proprietary coding model — will replace GPT-4 in GitHub Copilot by August 2026, signalling a move toward model independence from OpenAI. The open-source Windows Agent Framework 1.0 and Azure Agent Mesh were announced, enabling federated AI agents across devices and clouds. Copilot Agent Mode is now the default across Word, Excel, and PowerPoint for enterprise users. The strategic consequence: Microsoft is positioning Azure AI Foundry as a model-agnostic platform where the underlying AI model is a configuration switch, not a commitment — a major competitive differentiator against Google Cloud and AWS.</div>
     </div>
 
-    <div class="ai-card">
-      <span class="ai-tag">Market Structure</span>
-      <div class="ai-headline">OpenAI Annualized Revenue Crosses $25 Billion — IPO Steps Being Taken for Late 2026</div>
-      <div class="ai-body">OpenAI's annualized revenue has surpassed $25 billion, with sources indicating the company is taking early steps toward a public listing potentially in late 2026. GPT-5.4 scored 83% on the GDPVal benchmark, placing it above human expert performance on economically valuable tasks, validating Morgan Stanley's thesis that the intelligence curve is steepening. The race between Anthropic and OpenAI for the largest AI IPO in history is becoming a defining Wall Street event of 2026. Both companies' IPOs would create enormous passive fund demand for AI-adjacent public equities, particularly NVIDIA, AMD, and hyperscalers.</div>
+    <!-- AI Item 3 -->
+    <div style="background:linear-gradient(135deg,#0f172a,#1a1f35);border-radius:10px;padding:16px 18px;border:1px solid #2d3348;margin-bottom:14px;">
+      <div style="background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.08em;display:inline-block;">Semiconductor</div>
+      <div style="font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;">Marvell Surges 33% After Jensen Huang Endorsement; AI Chip Cycle Intact</div>
+      <div style="font-size:13px;color:#9ca3af;line-height:1.65;">Nvidia CEO Jensen Huang's comments on Marvell's AI chip roadmap sent the stock to its best single-day performance ever. Microchip Technology also rallied 12% after revealing 65% revenue growth in its data center solutions unit. This is important macro context: the AI infrastructure capex cycle is not showing signs of slowing — it is broadening from Nvidia alone to a full semiconductor ecosystem. For equity markets, this means the AI trade is no longer dependent on one name, reducing concentration risk and potentially extending the duration of the technology bull market.</div>
     </div>
   </div>
 
-  <!-- KEY TAKEAWAYS -->
-  <div class="section">
-    <div class="section-header sh-takeaways">Key Takeaways</div>
-    <div class="section-divider"></div>
+  <!-- SECTION 4: KEY TAKEAWAYS -->
+  <div style="margin-bottom:40px;">
+    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:16px;">Key Takeaways</div>
+    <div style="width:100%;height:1px;background:#1e2330;margin-bottom:20px;"></div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">1</div>
-      <div class="takeaway-text">The entire global market narrative for June pivots on one binary: whether the US-Iran ceasefire extension is formalized and the Strait of Hormuz reopens. A successful deal is worth approximately $10 to $15 per barrel off oil prices, which directly lowers PCE inflation, potentially unlocking Fed rate cuts in Q1 2027. A deal failure sends oil back above $100, keeps the Fed locked, compresses equity multiples, and sends India's trade deficit and rupee into a negative feedback loop. Watch for Trump's formal sign-off in the next 48 to 72 hours.</div>
+    <!-- Takeaway 1 -->
+    <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+      <div style="font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1;">1</div>
+      <div style="font-size:14px;color:#e8eaf0;line-height:1.6;">The Strait of Hormuz remains the single most dangerous tail risk in global markets. With Iran firing missiles at Kuwait overnight and the US retaliating on Qeshm Island, the ceasefire is structurally fragile. A credible Hormuz closure would spike oil to $120+ and force the Fed to choose between inflation and growth — a choice with no good outcome for equities.</div>
     </div>
-    <div class="takeaway-sep"></div>
+    <div style="height:1px;background:#1a1d27;margin:16px 0;"></div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">2</div>
-      <div class="takeaway-text">India is the most exposed major emerging market to an Iran deal failure. The rupee at 95.27, FII outflows of Rs 21,106 crore in a single session, a weak monsoon forecast, and oil-driven import cost pressure all compound simultaneously. DIIs are absorbing the FII selling for now, but their capacity is finite. If the Nifty breaks 23,500 decisively, institutional risk-off could accelerate sharply into June. The MSCI rebalancing provides some support, but net the picture is structurally fragile.</div>
+    <!-- Takeaway 2 -->
+    <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+      <div style="font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1;">2</div>
+      <div style="font-size:14px;color:#e8eaf0;line-height:1.6;">US equities are pricing in a near-perfect AI earnings scenario. The S&amp;P 500 at 7,609 is up over 10% since the Iran war began in February — a remarkable decoupling from the geopolitical risk premium. This resilience is real but fragile: it is sustained by AI capex momentum. Any disappointment in Nvidia or the hyperscaler capex cycle would reprice the entire market rapidly.</div>
     </div>
-    <div class="takeaway-sep"></div>
+    <div style="height:1px;background:#1a1d27;margin:16px 0;"></div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">3</div>
-      <div class="takeaway-text">Anthropic's $65 billion raise at a $965 billion valuation and $47 billion revenue run-rate is not just an AI company event — it is a macro event. It validates the AI infrastructure spending cycle and confirms that semiconductor suppliers (SK Hynix, Micron, TSMC) have sustained demand regardless of the geopolitical backdrop. The Anthropic and OpenAI dual IPO story is the largest structured capital markets event building for late 2026, likely to draw significant institutional allocation away from traditional asset classes into AI-adjacent equity.</div>
+    <!-- Takeaway 3 -->
+    <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+      <div style="font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1;">3</div>
+      <div style="font-size:14px;color:#e8eaf0;line-height:1.6;">India is caught in a structural squeeze: FII outflows, a weakening rupee, elevated crude, and a below-normal monsoon forecast are converging. The Nifty's 12.9% YTD decline makes it the worst performer globally among major indices. The RBI MPC decision on June 5 is the next major domestic catalyst — rate commentary matters more than the decision itself.</div>
     </div>
-    <div class="takeaway-sep"></div>
+    <div style="height:1px;background:#1a1d27;margin:16px 0;"></div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">4</div>
-      <div class="takeaway-text">China's PMI at exactly 50.0 — the borderline between growth and contraction — masks a concerning internal divergence: production is expanding (51.2) but new domestic orders are contracting (49.9). This is a demand-deficit problem, not a capacity problem. Beijing's 15th Five-Year Plan is pushing high-tech manufacturing into growth, but without domestic demand recovery, China's economic outperformance remains export-dependent and thus highly sensitive to US-China trade dynamics and global shipping normalization.</div>
+    <!-- Takeaway 4 -->
+    <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+      <div style="font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1;">4</div>
+      <div style="font-size:14px;color:#e8eaf0;line-height:1.6;">Bitcoin is breaking down while gold is climbing — a notable divergence. Bitcoin ETFs have seen 10 consecutive days of net outflows, and geopolitical stress is not benefiting crypto the way gold is. This suggests Bitcoin's safe-haven narrative is weakening in conditions where the threat is real and kinetic (missiles, war) rather than financial (banking crisis, inflation). The rotation appears to be from crypto into AI equities and physical gold.</div>
     </div>
-    <div class="takeaway-sep"></div>
+    <div style="height:1px;background:#1a1d27;margin:16px 0;"></div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">5</div>
-      <div class="takeaway-text">The BOJ's June 16-17 meeting is the second-biggest macro event in APAC after the Hormuz resolution. A rate hike would trigger the most significant yen appreciation move in years, unwinding the massive carry trade (borrow in yen, invest in higher-yielding assets). This carry unwind has historically caused sharp, cross-asset dislocations — particularly for emerging market currencies and risk assets. Indian equities, already under FII pressure, would face additional headwinds if global liquidity conditions tighten through a BOJ policy normalization.</div>
+    <!-- Takeaway 5 -->
+    <div style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1;">5</div>
+      <div style="font-size:14px;color:#e8eaf0;line-height:1.6;">Watch in the next 24–72 hours: (a) RBI MPC June 5 decision and Governor Malhotra's tone on inflation and growth, (b) any US-Iran diplomatic signal around a Hormuz MoU that Trump referenced as possible "within a week", (c) US ADP employment and ISM Non-Manufacturing PMI data — key for Fed policy expectations, and (d) the continuation of Microsoft Build 2026 developer session announcements and their impact on Azure and GitHub Copilot positioning against Google and AWS.</div>
     </div>
   </div>
 
   <!-- AUTHOR STAMP -->
-  <div class="author-stamp">
-    <div class="author-avatar">YS</div>
-    <div class="author-info">
-      <div class="author-label">Analysis By</div>
-      <div class="author-name">Yuvraj Sureka</div>
-      <div class="cred-row">
-        <span class="cred-pill cred-trading">Trading</span>
-        <span class="cred-pill cred-cfa">Pursuing CFA</span>
-        <span class="cred-pill cred-ib">Investment Banking</span>
-        <span class="cred-pill cred-er">Equity Research</span>
+  <div style="margin-top:36px;padding:24px 28px;background:linear-gradient(135deg,#10121a,#13111f);border-radius:14px;border:1px solid #2d2545;">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <!-- Avatar -->
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:2px solid #a78bfa;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:22px;font-weight:900;color:#ffffff;">YS</span>
       </div>
-      <div class="contact-row">
-        <span><strong style="color:#0077b5;font-size:12px;">L</strong> linkedin.com/in/yuvrajsureka47</span>
-        <span>✉ yuvrajsureka47@gmail.com</span>
-        <span>☎ +91 6001930875</span>
+      <!-- Info -->
+      <div>
+        <div style="font-size:9px;font-weight:800;letter-spacing:0.18em;color:#6b7280;text-transform:uppercase;margin-bottom:6px;">Analysis By</div>
+        <div style="font-size:24px;font-weight:900;letter-spacing:0.02em;color:#ffffff;text-shadow:0 0 24px rgba(167,139,250,0.5);">Yuvraj Sureka</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+          <span style="background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600;color:#f59e0b;">Trading</span>
+          <span style="background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600;color:#34d399;">Pursuing CFA</span>
+          <span style="background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600;color:#60a5fa;">Investment Banking</span>
+          <span style="background:#1a1f2e;border:1px solid #a78bfa;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600;color:#a78bfa;">Equity Research</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;">
+          <span style="font-size:10px;color:#4b5563;font-weight:500;"><span style="font-size:14px;font-weight:700;color:#0077b5;">L</span> linkedin.com/in/yuvrajsureka47</span>
+          <span style="font-size:10px;color:#4b5563;font-weight:500;">✉ yuvrajsureka47@gmail.com</span>
+          <span style="font-size:10px;color:#4b5563;font-weight:500;">☎ +91 6001930875</span>
+        </div>
       </div>
     </div>
+    <div style="height:1px;background:#1e2330;margin-top:16px;margin-bottom:12px;"></div>
+    <div style="font-size:11px;color:#4b5563;font-style:italic;text-align:center;">Macro research for the next generation of fund managers.</div>
   </div>
-  <div class="author-sep"></div>
-  <div class="author-tagline">Macro research for the next generation of fund managers.</div>
 
   <!-- SOURCES -->
-  <div class="sources">
-    <div class="sources-label">Sources</div>
-    <div class="sources-list">Reuters · CNBC · Bloomberg · Financial Times · Trading Economics · NSE India · Trendlyne · NiftyTrader · IIFL Capital · TheStreet · Yahoo Finance · Phemex · Fortune · Advisor Perspectives · Xinhua · EIA · TechCrunch · Axios · Britannica · UK House of Commons Library · Investopedia · LiteFinance</div>
+  <div style="background:#0a0c10;border-radius:10px;padding:12px 16px;margin-top:32px;">
+    <span style="font-size:10px;text-transform:uppercase;color:#4b5563;font-weight:700;">Sources: </span>
+    <span style="font-size:11px;color:#6b7280;">CNBC · Reuters · ABC News · CNN · PBS NewsHour · Economic Times · Business Today · Outlook Money · TheStreet · Yahoo Finance · TradingEconomics · Washington Post · The Register · 5paisa · Trendlyne · Upstox</span>
   </div>
 
   <!-- DISCLAIMER -->
-  <div class="disclaimer">
-    <div class="disclaimer-label">Disclaimer</div>
-    <div class="disclaimer-body">This brief is generated with the assistance of AI and is curated by <span class="dname">Yuvraj Sureka</span>. While <span class="dname">Yuvraj Sureka</span> reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
+  <div style="background:#0d0e14;border:1px solid #1e2330;border-radius:10px;padding:14px 18px;margin-top:16px;">
+    <div style="font-size:9px;font-weight:800;letter-spacing:0.15em;color:#4b5563;text-transform:uppercase;margin-bottom:6px;">Disclaimer</div>
+    <div style="font-size:11px;color:#4b5563;line-height:1.6;">This brief is generated with the assistance of AI and is curated by <span style="color:#a78bfa;font-weight:700;">Yuvraj Sureka</span>. While <span style="color:#a78bfa;font-weight:700;">Yuvraj Sureka</span> reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
   </div>
 
 </div>
