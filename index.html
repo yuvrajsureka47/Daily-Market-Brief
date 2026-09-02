@@ -3,396 +3,321 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — September 1, 2026 | Yuvraj Sureka</title>
+<title>Daily Market Brief — September 2, 2026 | Yuvraj Sureka</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #0d0f14; font-family: 'Inter', 'Segoe UI', sans-serif; color: #e8eaf0; }
+  body { background: #0a0c10; font-family: 'Inter', 'Segoe UI', sans-serif; color: #e8eaf0; min-height: 100vh; padding: 24px 16px; }
   .container { width: 100%; max-width: 860px; margin: 0 auto; background: #0d0f14; border-radius: 16px; box-shadow: 0 4px 40px rgba(0,0,0,0.4); padding: 32px 28px; }
 
-  /* MASTHEAD */
-  .byline-small { font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .byline-small span { font-weight: 800; color: #a78bfa; }
-  .brief-label { font-size: 11px; letter-spacing: 0.15em; font-weight: 700; color: #6b7280; text-transform: uppercase; }
-  .date-heading { font-size: 28px; font-weight: 800; color: #ffffff; margin: 4px 0; }
-  .mood-line { font-size: 14px; color: #9ca3af; font-style: italic; margin-top: 4px; }
-  .gradient-divider { background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent); height: 2px; margin: 24px 0; border: none; }
+  /* Accessibility */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-  /* SECTION HEADERS */
-  .section-pill { display: inline-block; background: #1e2330; border: 1px solid #2d3348; border-radius: 20px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  /* Masthead */
+  .byline { font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .byline span { font-weight: 800; color: #a78bfa; }
+  .brief-label { font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+  .date-heading { font-size: 28px; font-weight: 800; color: #ffffff; margin-bottom: 8px; }
+  .mood-line { font-size: 14px; color: #9ca3af; font-style: italic; margin-bottom: 0; }
+  .divider { height: 2px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent); margin: 24px 0; }
+
+  /* Section pills */
+  .section-header { display: inline-block; background: #1e2330; border: 1px solid #2d3348; border-radius: 20px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
   .pill-macro { color: #60a5fa; }
   .pill-markets { color: #34d399; }
   .pill-ai { color: #a78bfa; }
-  .pill-takeaways { color: #f59e0b; }
-  .section-separator { border: none; border-top: 1px solid #1e2330; margin-top: 10px; margin-bottom: 20px; }
-  .section-block { margin-bottom: 40px; }
+  .pill-takeaways { color: #fbbf24; }
 
-  /* REGION LABELS */
-  .region-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: #6b7280; text-transform: uppercase; margin-bottom: 12px; margin-top: 24px; }
-  .region-label:first-of-type { margin-top: 0; }
+  /* Region label */
+  .region-label { font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin: 20px 0 10px 0; }
 
-  /* NEWS CARDS */
-  .news-card { background: #111520; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; border-left: 3px solid #2d3348; }
-  .news-card.geo-alert { border-left: 3px solid #ef4444; background: #1a1015; }
-  .news-card .headline { font-size: 15px; font-weight: 700; color: #e8eaf0; margin-bottom: 6px; }
-  .news-card .why { font-size: 13px; color: #9ca3af; line-height: 1.65; }
+  /* News cards */
+  .news-card { background: #131720; border: 1px solid #1e2534; border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; position: relative; }
+  .news-card.alert { border-left: 3px solid #f87171; background: #1a1015; }
+  .news-card h4 { font-size: 13px; font-weight: 700; color: #e8eaf0; margin-bottom: 6px; line-height: 1.4; }
+  .news-card .why { font-size: 12px; color: #9ca3af; line-height: 1.6; }
+  .news-card .tag { font-size: 10px; font-weight: 700; color: #f87171; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
 
-  /* MARKETS GRID */
-  .markets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-  .metric-card { background: #111520; border-radius: 10px; padding: 14px 16px; border: 1px solid #1e2330; }
-  .metric-top { display: flex; justify-content: space-between; align-items: center; }
-  .metric-name { font-size: 10px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; }
-  .pct-pill { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
-  .pct-pos { background: #052e1a; color: #34d399; }
-  .pct-neg { background: #2a0f0f; color: #f87171; }
-  .pct-neu { background: #1e2330; color: #9ca3af; }
-  .metric-price { font-size: 20px; font-weight: 800; color: #ffffff; margin-top: 6px; }
-  .metric-reason { font-size: 11px; color: #6b7280; margin-top: 4px; line-height: 1.4; }
+  /* Markets grid */
+  .markets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+  @media (max-width: 600px) { .markets-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 400px) { .markets-grid { grid-template-columns: 1fr; } }
+  .metric-card { background: #131720; border: 1px solid #1e2534; border-radius: 10px; padding: 14px 14px 12px; }
+  .metric-card .asset-name { font-size: 9px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .metric-card .price { font-size: 18px; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .metric-card .reason { font-size: 10px; color: #6b7280; line-height: 1.5; }
+  .up { color: #34d399; }
+  .down { color: #f87171; }
+  .neutral { color: #9ca3af; }
 
-  /* AI WATCH CARDS */
-  .ai-card { background: linear-gradient(135deg, #0f172a, #1a1f35); border-radius: 10px; padding: 16px 18px; border: 1px solid #2d3348; margin-bottom: 14px; }
-  .ai-tag { display: inline-block; background: #1e2a45; color: #60a5fa; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; }
-  .ai-headline { font-size: 15px; font-weight: 700; color: #e8eaf0; margin: 8px 0 6px; }
-  .ai-body { font-size: 13px; color: #9ca3af; line-height: 1.65; }
+  /* AI cards */
+  .ai-card { background: #110f1a; border: 1px solid #2d2350; border-left: 3px solid #a78bfa; border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
+  .ai-card .ai-tag { display: inline-block; background: #1e1a2e; border-radius: 20px; padding: 3px 10px; font-size: 9px; font-weight: 700; color: #a78bfa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .ai-card h4 { font-size: 13px; font-weight: 700; color: #e8eaf0; margin-bottom: 6px; line-height: 1.4; }
+  .ai-card .body { font-size: 12px; color: #9ca3af; line-height: 1.6; }
 
-  /* KEY TAKEAWAYS */
-  .takeaway-row { display: flex; gap: 16px; align-items: flex-start; padding: 12px 0; }
-  .takeaway-num { font-size: 28px; font-weight: 900; color: #1e2330; width: 36px; flex-shrink: 0; line-height: 1; }
-  .takeaway-text { font-size: 14px; color: #e8eaf0; line-height: 1.6; }
-  .takeaway-sep { border: none; border-top: 1px solid #1a1d27; margin: 4px 0; }
+  /* Takeaways */
+  .takeaway-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #1e2534; }
+  .takeaway-item:last-child { border-bottom: none; }
+  .takeaway-num { font-size: 30px; font-weight: 800; color: #1e2534; min-width: 36px; line-height: 1; }
+  .takeaway-text { font-size: 12px; color: #c9d0dc; line-height: 1.7; }
+  .takeaway-text strong { color: #e8eaf0; }
 
-  /* AUTHOR STAMP */
-  .author-stamp { margin-top: 36px; padding: 24px 28px; background: linear-gradient(135deg, #10121a, #13111f); border-radius: 14px; border: 1px solid #2d2545; display: flex; align-items: center; gap: 20px; }
-  .avatar-circle { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: 2px solid #a78bfa; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: #ffffff; }
-  .author-info { display: flex; flex-direction: column; }
-  .author-label { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; color: #6b7280; text-transform: uppercase; margin-bottom: 6px; }
-  .author-name { font-size: 24px; font-weight: 900; letter-spacing: 0.02em; color: #ffffff; text-shadow: 0 0 24px rgba(167,139,250,0.5); }
-  .creds-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .cred-pill { background: #1a1f2e; border: 1px solid #2d3348; border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 600; }
-  .cred-trading { color: #f59e0b; }
-  .cred-cfa { color: #34d399; }
-  .cred-ib { color: #60a5fa; }
-  .cred-er { color: #a78bfa; border-color: #a78bfa; }
-  .contact-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 10px; color: #4b5563; font-weight: 500; }
-  .stamp-divider { border: none; border-top: 1px solid #1e2330; margin-top: 16px; }
-  .stamp-tagline { font-size: 11px; color: #4b5563; font-style: italic; text-align: center; margin-top: 10px; }
+  /* Author card */
+  .author-card { background: #131720; border: 1px solid #1e2534; border-radius: 12px; padding: 20px 22px; margin-top: 28px; display: flex; gap: 18px; align-items: center; }
+  .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #3b82f6); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: white; flex-shrink: 0; }
+  .author-info .label { font-size: 9px; font-weight: 700; color: #6b7280; letter-spacing: 0.1em; text-transform: uppercase; }
+  .author-info .name { font-size: 18px; font-weight: 800; color: #ffffff; margin: 2px 0; }
+  .author-info .creds { font-size: 10px; color: #a78bfa; margin-bottom: 3px; }
+  .author-info .contact { font-size: 10px; color: #6b7280; }
 
-  /* SOURCES FOOTER */
-  .sources-block { background: #0a0c10; border-radius: 10px; padding: 12px 16px; margin-top: 32px; }
-  .sources-label { font-size: 10px; text-transform: uppercase; color: #4b5563; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }
-  .sources-list { font-size: 11px; color: #6b7280; }
+  /* Disclaimer */
+  .disclaimer { margin-top: 20px; padding: 14px 16px; background: #0d0f14; border: 1px solid #1e2534; border-radius: 8px; font-size: 10px; color: #4b5563; line-height: 1.6; }
+  .disclaimer span { color: #a78bfa; font-weight: 700; }
+  .sources { font-size: 10px; color: #4b5563; margin-top: 12px; }
 
-  /* DISCLAIMER */
-  .disclaimer-block { background: #0d0e14; border: 1px solid #1e2330; border-radius: 10px; padding: 14px 18px; margin-top: 16px; }
-  .disclaimer-label { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; color: #4b5563; text-transform: uppercase; margin-bottom: 6px; }
-  .disclaimer-body { font-size: 11px; color: #4b5563; line-height: 1.6; }
-  .disclaimer-body span { color: #a78bfa; font-weight: 700; }
-
-  /* MOBILE */
-  @media (max-width: 560px) {
-    .author-stamp { flex-direction: column; align-items: center; text-align: center; }
-    .contact-row { justify-content: center; }
-    .creds-row { justify-content: center; }
-    .container { padding: 20px 14px; }
-    .date-heading { font-size: 22px; }
-  }
+  /* Section wrap spacing */
+  .section-block { margin-bottom: 32px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — September 1, 2026 curated by Yuvraj Sureka</h2>
+  <h2 class="sr-only">Daily Market Brief — September 2, 2026 curated by Yuvraj Sureka</h2>
 
-  <!-- MASTHEAD -->
-  <div class="byline-small">Curated by <span>Yuvraj Sureka</span></div>
+  <!-- Masthead -->
+  <div class="byline">Curated by <span>Yuvraj Sureka</span></div>
   <div class="brief-label">Daily Market Brief</div>
-  <div class="date-heading">Tuesday, September 1, 2026</div>
-  <div class="mood-line">Risk-off into month open. Oil surges. Fed hike odds climb. India cautious at open.</div>
-  <hr class="gradient-divider">
+  <div class="date-heading">Wednesday, September 2, 2026</div>
+  <div class="mood-line">Risk-off. Oil tops $90. Yields at 20-month highs. Central banks back in focus.</div>
+  <div class="divider"></div>
 
   <!-- SECTION 1: GLOBAL MACRO -->
   <div class="section-block">
-    <span class="section-pill pill-macro">Global Macro</span>
-    <hr class="section-separator">
+    <div class="section-header pill-macro">Global Macro</div>
 
     <!-- UNITED STATES -->
     <div class="region-label">United States</div>
 
-    <div class="news-card">
-      <div class="headline">Fed Chair Warsh Fires Jackson Hole Warning Shot on Inflation</div>
-      <div class="why">At Jackson Hole on August 28, Warsh stated inflation has not meaningfully slowed and called interest rates the Fed's "predominant tool." Markets repriced immediately. The probability of a 25 bps rate hike at the September 16 FOMC meeting has jumped to approximately 57%, up from 40% the prior week. The 10-year Treasury yield moved to 4.75% by August 31. This is the most consequential policy signal since Warsh took charge, and it sets the tone for every risk asset heading into September. If Friday's NFP print (August, due September 4) comes in hot, a hike becomes near-certain.</div>
-    </div>
-
-    <div class="news-card geo-alert">
-      <div class="headline">US Equities Slip as Oil Spikes on Iran Stalemate</div>
-      <div class="why">US stocks ended Monday, August 31 under pressure. The S&amp;P 500 traded around 7,689 (down 0.28%) and the Dow shed 0.60%, driven by a 3% surge in WTI crude to $85.96 per barrel. The Iran conflict remains the decisive energy wildcard: Tehran publicly refused to reopen the Strait of Hormuz without major US concessions, while Washington asserts control of the waterway. This oil-inflation-Fed triangle is the single most dangerous macro loop active in markets right now. Energy costs feeding into CPI directly influence whether Warsh hikes.</div>
+    <div class="news-card alert">
+      <div class="tag">Geopolitical Risk</div>
+      <h4>US Strikes Iran's Larak Island — Tehran Retaliates on Jordan and UAE</h4>
+      <div class="why">US Central Command confirmed renewed strikes on Iranian positions in the Strait of Hormuz for the first time in roughly a month. Iran responded with missile and drone attacks on US facilities in Jordan and the UAE. This reignition of direct combat breaks a fragile ceasefire and pushes oil through $90/barrel. Markets now price in a supply disruption that could be structural, not temporary. Energy stocks are the lone beneficiary while every rate-sensitive sector is under pressure.</div>
     </div>
 
     <div class="news-card">
-      <div class="headline">August NFP Due Friday: Labor Market Is the Final Policy Decider</div>
-      <div class="why">July's payrolls printed at minus 23,000, a shock result. Consensus for August is a modest recovery to around 55,000 additions. Unemployment is expected to hold at 4.1%, with wage growth decelerating to 3.0% YoY. A soft print extends the growth-versus-inflation dilemma for the Fed. A stronger print combined with sticky wages gives Warsh political cover for the first hike of his tenure. Bond markets, the dollar, and gold will all reprice sharply on Friday morning.</div>
+      <h4>Fed Chair Warsh's Jackson Hole Hawkishness Forces a Market Reprice</h4>
+      <div class="why">Speaking at Jackson Hole last Friday, Warsh said the Fed "will have work to do" without clear progress on inflation toward 2%. He did not commit to a September hike but opened the door firmly enough that CME FedWatch is now pricing a 65–68% probability of a 25bp hike on September 16. The 10-year Treasury yield hit 4.80% — its highest since January 2025. This matters because higher yields compress equity multiples, raise borrowing costs for corporates, and signal that the rate-cut cycle many expected in 2026 is now fully reversed.</div>
+    </div>
+
+    <div class="news-card">
+      <h4>JOLTS and ISM Manufacturing Land Today — The Last Major Data Before the FOMC</h4>
+      <div class="why">July JOLTS job openings (expected: 7.3M) and August ISM Manufacturing PMI released Tuesday showed expanding activity and resilient labor demand. The quits rate is the one number traders are watching as a proxy for labor market tightness. A sticky quits rate keeps the September hike on the table; a softening reading could dial it back. Friday's Nonfarm Payrolls report remains the single most important datapoint before the September 16 FOMC decision.</div>
     </div>
 
     <!-- INDIA -->
     <div class="region-label">India</div>
 
     <div class="news-card">
-      <div class="headline">Nifty Opens September Under Pressure; MSCI Rebalancing Adds Volatility</div>
-      <div class="why">Indian markets closed August 31 in the red, with Nifty 50 down 0.39% to 24,080 and Sensex off 0.40% to 76,957. The final hour saw sharp swings driven by MSCI index rebalancing flows. Gift Nifty was only marginally positive at the time of press, suggesting a muted or slightly cautious September 1 open. The 24,000 level is the critical near-term support floor; a breach could trigger another leg of selling toward 23,800. Elevated Brent crude above $90 (visible in Indian import costs) is a structural risk to inflation and the current account.</div>
+      <h4>Sensex and Nifty Close Mixed as Crude Surge Hits Sentiment</h4>
+      <div class="why">The Sensex ended September 1 at 76,944 (down 0.02%) and the Nifty 50 slipped marginally as Indian markets remained caught between domestic resilience and global macro headwinds. Maruti Suzuki fell over 4% after reporting a 7%+ YoY decline in August exports, while HDFC Bank remains in focus after CEO Jagdishan declined a third term — the stock has lost around 28.5% in 2026. India's dependence on oil imports makes any further crude spike an inflationary and fiscal risk that could delay any RBI easing. On September 2, IT names (ITC, HCL Tech, Infosys, Bharti Airtel) are providing partial cushion.</div>
     </div>
 
     <div class="news-card">
-      <div class="headline">Elevated Crude Is Straining India's Macro Arithmetic</div>
-      <div class="why">Brent at $90+ translates directly into higher petrol and diesel prices in India, pressuring households and widening the trade deficit. The RBI is watching crude closely as it calibrates its own rate path. With the Fed potentially hiking in September, the RBI faces a dual pressure: defend the rupee (which softened to around 95.16 per USD) while keeping domestic growth conditions intact. Any RBI guidance this month will be closely read for signals on currency intervention.</div>
+      <h4>India VIX Ticks Higher — Caution Prevails Entering September</h4>
+      <div class="why">India VIX rose 1.08% on September 2 as investor anxiety elevated across sessions. Broader sentiment remains cautious with FII institutional flows not yet decisively directional. The RBI is likely to have intervened in the FX market to support the rupee near the 95/dollar level. Key support for Nifty is the 23,500–23,800 zone; a break below would signal capitulation driven by global risk-off rather than domestic fundamentals.</div>
     </div>
 
     <!-- EUROPE -->
     <div class="region-label">Europe</div>
 
     <div class="news-card">
-      <div class="headline">ECB September Hike Fully Priced; German Inflation Accelerating</div>
-      <div class="why">Markets are nearly fully pricing a 25 bps ECB rate hike at the September meeting. German HICP inflation for August is expected at 3.0% YoY, up from 2.8% in July. European GDP expanded 0.4% QoQ in Q2, providing growth cover for another tightening move. This is the second ECB hike of the year and signals that the Eurozone, unlike the US, is clearly in tightening mode. EUR/JPY was trading around 185.20 with the cross under mild pressure as yen rate hike bets also rise simultaneously.</div>
+      <h4>Eurozone Inflation Hits 3.3% in August — ECB September Hike Now Base Case</h4>
+      <div class="why">Eurozone CPI printed at 3.3% annually in August, a multi-year high that caught markets off guard and has now made a September ECB hike almost certain. With the Fed also leaning toward a hike and the ECB converging in the same direction, the global rate cycle is no longer divergent — it is synchronised tightening. Policy divergence, which had been the dominant currency trade of 2026, is fading. The dollar is softening but euro strength is limited by the economic drag of $90+ oil, which hits Europe harder given its structural import dependency.</div>
     </div>
 
-    <div class="news-card">
-      <div class="headline">UK Retail Price Increases Add to European Inflation Complexity</div>
-      <div class="why">UK retailers are pushing through another round of price increases, complicating the Bank of England's task of cooling inflation without triggering a hard landing. European markets traded mixed on Monday (FTSE and CAC 40 gained, DAX and STOXX 50 slipped), reflecting the uneven inflationary picture across the continent. With the ECB and BoE both leaning hawkish, European bond yields face continued upward pressure through September.</div>
+    <div class="news-card alert">
+      <div class="tag">Geopolitical Risk</div>
+      <h4>Strait of Hormuz Mining Confirmed — European Energy Security at Risk</h4>
+      <div class="why">US Secretary of State Marco Rubio confirmed Iran has mined "large segments" of the Strait of Hormuz. European nations that depend on Gulf crude now face supply chain uncertainty heading into winter. Asian importers including Japan, China and South Korea have already turned to suppliers as far as Argentina to offset losses. A prolonged Hormuz disruption at $90/bbl Brent would push European inflation higher, intensifying the ECB's dilemma between fighting inflation and avoiding a growth shock.</div>
     </div>
 
     <!-- CHINA -->
     <div class="region-label">China</div>
 
     <div class="news-card">
-      <div class="headline">China Manufacturing PMI: Official at 49.8 but Private Survey Surprises at 51.5</div>
-      <div class="why">A split picture emerges. The official NBS Manufacturing PMI for August came in at 49.8, a second consecutive month of contraction, as weak domestic demand and typhoon disruptions weighed on activity. However, the private-sector Caixin/S&amp;P Global PMI (released September 1) jumped to 51.5, beating forecasts, with output, new orders, and export orders all accelerating. The divergence reflects that larger state enterprises remain sluggish while agile export-oriented firms are picking up AI infrastructure and tech-related orders. GDP growth slowed to 4.3% in Q2, below Beijing's 4.5 to 5% target band.</div>
-    </div>
-
-    <div class="news-card geo-alert">
-      <div class="headline">Property Sector Crisis Continues to Suppress Consumer Sentiment</div>
-      <div class="why">Despite stimulus pledges including an 800 billion yuan policy-backed financing facility for local government projects, analysts remain skeptical that substantial demand-side intervention will arrive soon. Retail sales and industrial production both decelerated in July. The structural drag from real estate is suppressing consumer confidence at exactly the moment Beijing needs households to spend. For global markets, a weaker Chinese consumer means fewer commodity imports and less support for energy prices from the demand side, partially offsetting the Hormuz supply shock.</div>
+      <h4>China's Mainland Equities Drift Lower; Domestic Demand Data Disapppoints</h4>
+      <div class="why">The CSI 300 slipped 0.19% on September 1 and Shanghai Composite fell 0.56%. July activity data showed a broad economic slowdown — consumption contracted, capex shrank for a third of the past four quarters. Semiconductor and robotics names pulled back globally, though Unitree Robotics' stock debut provided a rare positive. The divergence between weak mainland data and stronger Hong Kong names (led by healthcare) reflects a split between domestic demand exposure and export/tech earnings. A Xi-Trump meeting scheduled this month is the single macro event that could shift the narrative meaningfully.</div>
     </div>
 
     <!-- APAC -->
     <div class="region-label">APAC</div>
 
     <div class="news-card">
-      <div class="headline">Bank of Japan Rate Hike Probability Climbs to 84% for September Meeting</div>
-      <div class="why">Market pricing for a BoJ rate hike on September 17 to 18 has surged to around 84%, according to Commerzbank. The BoJ has not yet offered explicit guidance, but Deputy Governor Himino declined to push back against expectations in a recent speech, which markets read as tacit confirmation. A BoJ hike alongside the ECB in the same month would mark a historic pivot for global monetary policy, pressuring carry trades that borrow in yen. Yen strengthening could trigger volatility in emerging market currencies including the rupee.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="headline">Black Sea Grain Corridor Talks: Turkey Pushes for Agreement Amid Scepticism</div>
-      <div class="why">Turkey is again attempting to broker a grain corridor agreement between Russia and Ukraine. While the news briefly moved wheat futures, market participants are sceptical given how long the previous corridor took to negotiate. US wheat export inspections were reasonable at 431,000 tonnes but remain 28% below last year's cumulative pace. Corn continues to outperform on strong fundamental demand, with December futures at fresh contract highs and funds holding an estimated 377,000 contracts net long. For India specifically, global food price trends feed directly into CPI and political sensitivity around food inflation.</div>
+      <h4>Nikkei Falls 0.6% — Japan 10-Year Yield Hits 30-Year High at 3%</h4>
+      <div class="why">Japan's Nikkei 225 fell 0.6% on September 1 to below 66,000 as tech and AI-linked chip stocks led losses — Advantest down 2.9%, Tokyo Electron down 4.6%. More critically, Japan's 10-year bond yield surged to 3% for the first time since 1996, reflecting expectations the Bank of Japan could raise rates in September to address yen weakness and import-driven inflation. A BOJ hike alongside the Fed and ECB would make September one of the most synchronised global tightening months in recent history. On September 2, Asian markets are set to extend declines as US crude holds above $90.</div>
     </div>
   </div>
+
+  <div class="divider"></div>
 
   <!-- SECTION 2: MARKETS SNAPSHOT -->
   <div class="section-block">
-    <span class="section-pill pill-markets">Markets Snapshot</span>
-    <hr class="section-separator">
+    <div class="section-header pill-markets">Markets Snapshot</div>
+    <p style="font-size:11px; color:#6b7280; margin-bottom:16px;">Data as of September 1, 2026 close (US markets). Asian September 2 data reflects early session.</p>
+
     <div class="markets-grid">
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">S&amp;P 500</div>
-          <div class="pct-pill pct-neg">-0.28%</div>
-        </div>
-        <div class="metric-price">7,689.80</div>
-        <div class="metric-reason">Oil-driven risk-off. Warsh hawkish tone weighing on rate-sensitive sectors. Markets close in approximately 7 minutes as of last data capture.</div>
+        <div class="asset-name">S&P 500 <span class="down">-0.71%</span></div>
+        <div class="price">7,631</div>
+        <div class="reason">Oil surge and rate hike fears drove broad sell-off. Energy the lone sector in green.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Nasdaq</div>
-          <div class="pct-pill pct-neg">-0.08%</div>
-        </div>
-        <div class="metric-price">26,380</div>
-        <div class="metric-reason">Semiconductor drag from Marvell (-8% wk) and Applied Materials (-5% wk) despite Nvidia's post-earnings 9% jump.</div>
+        <div class="asset-name">Nasdaq <span class="down">-1.03%</span></div>
+        <div class="price">26,100</div>
+        <div class="reason">Chip stocks hardest hit. Alphabet -2.2%, Nvidia -2.0% on yield pressure and risk rotation.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Dow Jones</div>
-          <div class="pct-pill pct-neg">-0.60%</div>
-        </div>
-        <div class="metric-price">53,236</div>
-        <div class="metric-reason">Oil-linked industrials and energy cost pressures dragging on cyclical names.</div>
+        <div class="asset-name">Dow Jones <span class="down">-0.79%</span></div>
+        <div class="price">52,767</div>
+        <div class="reason">Goldman Sachs and Alphabet dragged the index. Goldman sensitive to rate outlook.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Nifty 50</div>
-          <div class="pct-pill pct-neg">-0.39%</div>
-        </div>
-        <div class="metric-price">24,080</div>
-        <div class="metric-reason">Closed Aug 31. MSCI rebalancing volatility, elevated crude, and weak global cues. 24,000 is key support.</div>
+        <div class="asset-name">Nifty 50 <span class="down">Mixed</span></div>
+        <div class="price">~23,600</div>
+        <div class="reason">Mixed close Sep 2. IT and Airtel provided support; banking and autos weighed.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Sensex</div>
-          <div class="pct-pill pct-neg">-0.40%</div>
-        </div>
-        <div class="metric-price">76,957</div>
-        <div class="metric-reason">In line with Nifty weakness. MSCI rebalancing and global risk-off headwinds dragged the index into the close.</div>
+        <div class="asset-name">Sensex <span class="neutral">-0.02%</span></div>
+        <div class="price">76,944</div>
+        <div class="reason">Marginal loss on Sep 1. Maruti -4.7% on export data; ITC +4.2% cushioned fall.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">US 10Y Yield</div>
-          <div class="pct-pill pct-neg">+0.04pp</div>
-        </div>
-        <div class="metric-price">4.75%</div>
-        <div class="metric-reason">Rising on Warsh's Jackson Hole hawkish signal. 57% probability of September hike now priced. Upward pressure on equities' discount rate.</div>
+        <div class="asset-name">Nikkei 225 <span class="down">-0.6%</span></div>
+        <div class="price">~65,800</div>
+        <div class="reason">Sep 2 futures lower. BOJ hike fears added to oil shock. 30Y high on JGB yield.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Brent Crude</div>
-          <div class="pct-pill pct-neg">+3.07%</div>
-        </div>
-        <div class="metric-price">$85.96</div>
-        <div class="metric-reason">Iran-Hormuz stalemate drives risk premium. Brent settled near $89 last Friday; today's WTI at $85.96 reflects month-start position adjustments.</div>
+        <div class="asset-name">US 10Y Yield <span class="up">+5bps</span></div>
+        <div class="price">4.80%</div>
+        <div class="reason">20-month high. Warsh hawkishness + oil inflation fears. 30Y hit 5.28%.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Gold</div>
-          <div class="pct-pill pct-neg">-0.85%</div>
-        </div>
-        <div class="metric-price">$4,491</div>
-        <div class="metric-reason">Pulling back after a 9.6% gain in August. Warsh's hawkish tone lifts real yields, slightly reducing gold's safe-haven appeal near term.</div>
+        <div class="asset-name">WTI Crude <span class="up">+5%+</span></div>
+        <div class="price">$90.80</div>
+        <div class="reason">US-Iran direct strikes resumed. Hormuz mining confirmed. Supply risk premium surging.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Bitcoin</div>
-          <div class="pct-pill pct-pos">+0.09%</div>
-        </div>
-        <div class="metric-price">$78,927</div>
-        <div class="metric-reason">Nearly flat on the day. Lagging gold significantly this cycle. Fed hike probability dampening risk appetite for speculative crypto positioning.</div>
+        <div class="asset-name">Brent Crude <span class="up">+5%</span></div>
+        <div class="price">~$93–95</div>
+        <div class="reason">Sep 2 Asian session seeing continued gains. EIA forecast average $85/bbl Q3 now outdated.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">USD/INR</div>
-          <div class="pct-pill pct-neg">Weak</div>
-        </div>
-        <div class="metric-price">₹95.16</div>
-        <div class="metric-reason">Rupee under mild pressure as dollar strengthens on Fed hike bets and oil import demand remains elevated.</div>
+        <div class="asset-name">Gold <span class="down">-1.86%</span></div>
+        <div class="price">$4,359</div>
+        <div class="reason">Rate hike pricing outweighs safe-haven demand. Warsh's hawkish tone hurt bullion.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">VIX</div>
-          <div class="pct-pill pct-neg">+3.88%</div>
-        </div>
-        <div class="metric-price">14.99</div>
-        <div class="metric-reason">Elevated from recent base. Caution rising ahead of NFP Friday and September FOMC. Not yet at stress levels, but trending up.</div>
+        <div class="asset-name">Bitcoin <span class="down">-1.58%</span></div>
+        <div class="price">$77,389</div>
+        <div class="reason">Risk-off sentiment, rising real yields weigh on crypto. Down from $78.5K open Sep 1.</div>
       </div>
 
       <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">WTI Crude</div>
-          <div class="pct-pill pct-neg">+3.07%</div>
-        </div>
-        <div class="metric-price">$85.96</div>
-        <div class="metric-reason">Surging on Iran-Hormuz uncertainty. Goldman Sachs estimates Gulf oil exports recovering to 15 to 16 mbpd vs pre-conflict 22 to 24 mbpd.</div>
+        <div class="asset-name">VIX <span class="up">+9.52%</span></div>
+        <div class="price">16.34</div>
+        <div class="reason">Fear gauge spiking. Still not at crisis levels but direction signals elevated concern.</div>
       </div>
 
     </div>
   </div>
+
+  <div class="divider"></div>
 
   <!-- SECTION 3: AI WATCH -->
   <div class="section-block">
-    <span class="section-pill pill-ai">AI Watch</span>
-    <hr class="section-separator">
+    <div class="section-header pill-ai">AI Watch</div>
 
     <div class="ai-card">
-      <span class="ai-tag">Infrastructure Deal / Funding Round</span>
-      <div class="ai-headline">Nvidia in Talks to Back Perplexity AI at $30 Billion Valuation</div>
-      <div class="ai-body">Nvidia is in active discussions to invest in Perplexity AI as part of a new equity round that would value the AI search and agent startup at over $30 billion, up from a $20 billion valuation last year. Perplexity's annualized revenue has tripled in 2026 to $750 million, driven largely by Perplexity Computer, its agentic platform for automating professional workflows. This deal fits a now well-documented pattern: Nvidia invests in AI companies that use the capital to buy Nvidia chips, a circular financing dynamic that Bernstein analyst Stacy Rasgon has repeatedly flagged. Strategically, a deal here would deepen Nvidia's AI-stack integration from semiconductor to application layer, reinforcing its long-term revenue visibility. For markets, this signals that AI infrastructure capex cycles remain intact despite higher rates.</div>
+      <div class="ai-tag">Infrastructure Deal</div>
+      <h4>EuroHPC Signs €387.8M LUMI-AI Supercomputer Contract — AMD Wins the Hardware</h4>
+      <div class="body">Signed August 31, 2026. The European High Performance Computing Joint Undertaking has awarded a €387.8 million (~$450M) contract to Bull (Atos-owned, now renationalised by France) to build LUMI-AI at CSC's Kajaani, Finland data center. The system will be powered by AMD Instinct MI430X GPUs and 6th-gen EPYC 256-core CPUs, targeting 10x the AI capacity of the current LUMI supercomputer. Deployment scheduled second half of 2027. This is strategically significant: it signals Europe doubling down on AI sovereign infrastructure, AMD cementing its position as the credible alternative to Nvidia in hyperscale AI builds, and the EU AI Factories initiative moving from rhetoric to funded contracts. For AMD shareholders, this validates the MI430X pipeline against Nvidia's dominance narrative.</div>
     </div>
 
     <div class="ai-card">
-      <span class="ai-tag">Enterprise AI / Regulation</span>
-      <div class="ai-headline">EU AI Act Disclosure Requirements Now Live; Agent Deployments Accelerate Globally</div>
-      <div class="ai-body">As of August 2, Europe activated its first continent-wide mandatory AI transparency rules, requiring AI systems to identify themselves to human interlocutors. This is the first hard enforcement wave of the EU AI Act and sets a compliance baseline for every AI-facing product sold in Europe. Meanwhile, AI agents are already automating back-office functions (ticket resolution, invoice reconciliation, code generation) at scale across enterprises from Singapore to Brazil. For investors, the regulatory clarity, while burdensome for some, actually accelerates institutional AI adoption by removing the legal ambiguity that had slowed procurement decisions at large European corporates.</div>
+      <div class="ai-tag">Policy / Regulatory</div>
+      <h4>Fed Chair Warsh Calls AI a "Hinge Point in History" — But Warns Near-Term Inflationary</h4>
+      <div class="body">At Jackson Hole, Warsh devoted significant attention to AI's macroeconomic impact. He acknowledged AI data center investment is currently inflationary — driving up construction costs and memory chip prices — while remaining optimistic about AI's long-run productivity benefits. He stated the Fed is "attentively" monitoring AI's economic impacts via a dedicated task force. This matters because it signals monetary policymakers are now formally tracking AI capex as a demand-side inflation driver. The implication: AI infrastructure spending, if it continues at pace, could itself be a factor keeping rates higher for longer. This is a new and important feedback loop for equity and bond markets to price.</div>
     </div>
 
     <div class="ai-card">
-      <span class="ai-tag">Model Capability / Scientific AI</span>
-      <div class="ai-headline">AI in Drug Discovery Goes from Optional to Standard in 2026</div>
-      <div class="ai-body">Stanford's 2026 AI Index documents a sharp acceleration in AI adoption across pharmaceutical research and clinical documentation. Researchers now routinely use AI to forecast drug toxicity, binding behavior, and developability before a single day of lab work begins. This represents a structural shift in R&amp;D productivity curves and is already appearing in biotech pipeline timelines. For equity research, this is a durable earnings catalyst for companies supplying AI compute into life sciences and for AI-native drug discovery platforms. It also alters the competitive moat analysis for traditional pharma R&amp;D heavy models.</div>
+      <div class="ai-tag">Market Signal</div>
+      <h4>Chip Stocks Lead Nasdaq Lower — AI Infrastructure Trade Shows Sensitivity to Rate Expectations</h4>
+      <div class="body">On September 1, Nvidia fell 2.03%, Alphabet (Google DeepMind parent) dropped 2.21%, Caterpillar -1.74% — while energy and healthcare held up. This is important because it shows the AI trade is not immune to macro forces. The AI infrastructure thematic, which drove the Nasdaq's August gains, is particularly rate-sensitive because the valuation of high-growth, high-capex AI firms depends heavily on discount rates. As the 10-year yield climbs toward 5%, the pressure on AI multiples intensifies. The next test is Broadcom's earnings (reported Wednesday) — if the AI story holds at the revenue level, it may re-anchor the trade even in a higher-rate environment.</div>
     </div>
   </div>
+
+  <div class="divider"></div>
 
   <!-- SECTION 4: KEY TAKEAWAYS -->
   <div class="section-block">
-    <span class="section-pill pill-takeaways">Key Takeaways</span>
-    <hr class="section-separator">
+    <div class="section-header pill-takeaways">Key Takeaways</div>
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">1</div>
-      <div class="takeaway-text">The Fed-Oil-Inflation triangle is the dominant systemic risk this month. Warsh's hawkish Jackson Hole speech, crude surging on Hormuz uncertainty, and sticky core PCE are three forces reinforcing each other. If Friday's NFP print shows wage acceleration, a September hike becomes near-certain, and every long-duration asset (tech, gold, emerging markets) reprices downward simultaneously.</div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">01</div>
+      <div class="takeaway-text"><strong>The oil shock is the single most important macro variable right now.</strong> WTI topping $90 with Hormuz mining confirmed is not a temporary spike — it is a structural supply constraint. Every $10 increase in oil adds roughly 0.3–0.5pp to US CPI. At this trajectory, inflation could re-accelerate into Q4, removing the Fed's option to pause even if the labor market softens. Watch Friday's NFP; it is no longer just about jobs.</div>
     </div>
-    <hr class="takeaway-sep">
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">2</div>
-      <div class="takeaway-text">The China PMI divergence is a signal worth watching carefully. Official NBS at 49.8 (contraction) versus private Caixin at 51.5 (expansion) tells you that export-oriented and tech-adjacent Chinese manufacturers are recovering, while domestic demand and state-sector firms remain sluggish. This is not a broad recovery; it is a sector-level divergence that matters for commodity importers and Asian supply chain equities.</div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">02</div>
+      <div class="takeaway-text"><strong>Synchronised global tightening is back.</strong> Fed, ECB, and BOJ are all leaning toward rate hikes in September simultaneously. This combination has not occurred in this cycle. Historically, synchronised tightening compresses risk premiums, strengthens the dollar structurally, and creates sharp reversals in carry trades. EM currencies — including the rupee — face headwinds regardless of domestic policy.</div>
     </div>
-    <hr class="takeaway-sep">
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">3</div>
-      <div class="takeaway-text">A triple central bank hike cycle is taking shape in September: the Fed at 57% probability, the ECB near fully priced, and the BoJ at 84%. Three simultaneous rate increases from the world's largest central banks in one month would be an extraordinary liquidity shock. Watch carry trade unwind risk, especially AUD/JPY, INR/JPY, and EM currency exposure.</div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">03</div>
+      <div class="takeaway-text"><strong>Gold's failure to rally on genuine geopolitical risk is a tell.</strong> With US-Iran exchanging strikes and Hormuz under threat, gold should theoretically be surging. Instead it fell 1.86%. The reason: rate hike expectations are overpowering safe-haven demand. This is the same dynamic seen in early 2022 when rate fears beat Ukraine geopolitics. Gold will only reassert itself if the Fed pivots or real yields peak — neither is imminent.</div>
     </div>
-    <hr class="takeaway-sep">
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">4</div>
-      <div class="takeaway-text">Gold's 9.6% gain in August signals genuine safe-haven and inflation hedge demand despite rising real yields. The fact that gold outperformed Bitcoin this cycle (Bitcoin is flat-to-down versus gold's record run) is a telling institutional preference indicator. Gold is being treated as the more reliable hedge; Bitcoin remains in speculative territory without a macro catalyst to reclaim its former correlation with inflation expectations.</div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">04</div>
+      <div class="takeaway-text"><strong>India sits in a structurally awkward position.</strong> It is an oil importer facing a supply shock, has a banking sector in governance transition (HDFC Bank), and is tracking global yield moves with limited room for RBI easing. The rupee is being defended at 95/dollar. Any sustained oil move toward $100 would force either fiscal pressure on subsidies or pass-through to CPI, which the RBI cannot easily accommodate given global tightening. FII flows remain cautious — Q3 volatility is the base case.</div>
     </div>
-    <hr class="takeaway-sep">
 
-    <div class="takeaway-row">
-      <div class="takeaway-num">5</div>
-      <div class="takeaway-text">What to watch in the next 72 hours: Friday's August NFP (September 4) is the single most market-moving event of the week. Before that, watch for any US-Iran back-channel communication that could move oil 3 to 5% in either direction. India's Nifty 24,000 support level and the Caixin services PMI from China are the other key data points. Any combination of soft NFP plus oil de-escalation could trigger a sharp risk-on reversal.</div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">05</div>
+      <div class="takeaway-text"><strong>What to watch in the next 72 hours.</strong> Friday's US NFP (consensus: ~50,000 jobs; unemployment at 4.1%) is the pivotal datapoint before the September 16 FOMC. A print above 100,000 with a stable quits rate locks in the hike and pressures equities further. A weak print below 50K is the only credible catalyst to reverse the current risk-off move. Also watch: Broadcom earnings (Wednesday), Strait of Hormuz diplomatic developments, and any ECB communication ahead of its September meeting.</div>
     </div>
   </div>
 
-  <!-- AUTHOR STAMP -->
-  <div class="author-stamp">
-    <div class="avatar-circle">YS</div>
+  <!-- Author Card -->
+  <div class="author-card">
+    <div class="author-avatar">YS</div>
     <div class="author-info">
-      <div class="author-label">Analysis By</div>
-      <div class="author-name">Yuvraj Sureka</div>
-      <div class="creds-row">
-        <span class="cred-pill cred-trading">Trading</span>
-        <span class="cred-pill cred-cfa">Pursuing CFA</span>
-        <span class="cred-pill cred-ib">Investment Banking</span>
-        <span class="cred-pill cred-er">Equity Research</span>
-      </div>
-      <div class="contact-row">
-        <span><strong style="color:#0077b5">L</strong>&nbsp;linkedin.com/in/yuvrajsureka47</span>
-        <span>✉&nbsp;yuvrajsureka47@gmail.com</span>
-        <span>☎&nbsp;+91 6001930875</span>
-      </div>
-      <hr class="stamp-divider">
-      <div class="stamp-tagline">Macro research for the next generation of fund managers.</div>
+      <div class="label">Analysis By</div>
+      <div class="name">Yuvraj Sureka</div>
+      <div class="creds">Trading &nbsp;|&nbsp; Pursuing CFA &nbsp;|&nbsp; Investment Banking &nbsp;|&nbsp; Equity Research</div>
+      <div class="contact">linkedin.com/in/yuvrajsureka47 &nbsp;|&nbsp; yuvrajsureka47@gmail.com &nbsp;|&nbsp; +91 6001930875</div>
     </div>
   </div>
 
-  <!-- SOURCES -->
-  <div class="sources-block">
-    <div class="sources-label">Sources</div>
-    <div class="sources-list">Bloomberg · Reuters · CNBC · Financial Times · Yahoo Finance · Trading Economics · South China Morning Post · Al Jazeera · OilPrice.com · Goodreturns · 5paisa · MacroMicro · Benzinga · The Information</div>
+  <!-- Sources -->
+  <div class="sources" style="margin-top:16px;">
+    Sources: Bloomberg &middot; Reuters &middot; CNBC &middot; Financial Times &middot; Trading Economics &middot; EuroHPC JU &middot; CME FedWatch &middot; Yahoo Finance &middot; MacroMicro &middot; Charles Schwab Market Update &middot; HPCwire
   </div>
 
-  <!-- DISCLAIMER -->
-  <div class="disclaimer-block">
-    <div class="disclaimer-label">Disclaimer</div>
-    <div class="disclaimer-body">This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.
   </div>
 
 </div>
