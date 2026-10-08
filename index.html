@@ -1,712 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Daily Market Brief — October 7, 2026</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-<style>
-  :root {
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    --bg: #0d0f14;
-    --card-bg: #111520;
-    --border: #1e2330;
-    --text-primary: #e8eaf0;
-    --text-muted: #9ca3af;
-    --text-dim: #6b7280;
-    --text-dimmer: #4b5563;
-    --green: #34d399;
-    --red: #f87171;
-    --blue: #60a5fa;
-    --purple: #a78bfa;
-    --amber: #f59e0b;
-  }
-  *, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-  body {
-    background: #0a0b10;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    color: var(--text-primary);
-    padding: 16px;
-    min-height: 100%;
-  }
-  .wrapper {
-    max-width: 860px;
-    margin: 0 auto;
-    background: var(--bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
-    padding: 32px 28px;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Daily Market Brief — October 8, 2026</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* MASTHEAD */
-  .byline-row {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-    margin-bottom: 6px;
-  }
-  .byline-row span.name {
-    font-weight: 800;
-    color: var(--purple);
-  }
-  .label-row {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-dim);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .date-row {
-    font-size: 28px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-top: 6px;
-  }
-  .mood-row {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 6px;
-  }
-  .gradient-line {
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
-    margin: 24px 0;
-  }
+    :root {
+      --bg: #0d0f14;
+      --card: #111420;
+      --card2: #151823;
+      --border: #1e2330;
+      --border2: #2d3348;
+      --text: #e8eaf0;
+      --muted: #9ca3af;
+      --dim: #6b7280;
+      --green: #34d399;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --blue: #60a5fa;
+      --purple: #a78bfa;
+      --purpledark: #7c3aed;
+      --amber: #f59e0b;
+      --teal: #2dd4bf;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
 
-  /* SECTION HEADER */
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .section-pill {
-    background: #1e2330;
-    border: 1px solid #2d3348;
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .pill-blue { color: var(--blue); }
-  .pill-green { color: var(--green); }
-  .pill-purple { color: var(--purple); }
-  .pill-amber { color: var(--amber); }
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: #1e2330;
-  }
+    html { scroll-padding-top: env(safe-area-inset-top, 0px); }
 
-  /* MACRO SECTION */
-  .region-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    margin-top: 24px;
-  }
-  .region-label:first-of-type { margin-top: 0; }
-  .news-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 14px;
-    border-left: 3px solid #2d3348;
-  }
-  .news-card.geo {
-    border-left: 3px solid #ef4444;
-    background: #1a1015;
-  }
-  .news-headline {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    line-height: 1.4;
-  }
-  .news-why {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.65;
-  }
-  .geo-tag {
-    display: inline-block;
-    background: #3a0f0f;
-    color: #f87171;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    padding: 2px 7px;
-    margin-bottom: 8px;
-  }
-  .section-gap { margin-bottom: 40px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
 
-  /* MARKETS SNAPSHOT */
-  .markets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 4px;
-  }
-  .metric-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-  }
-  .metric-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .metric-name {
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .pct-pill {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 12px;
-  }
-  .pct-pos { background: #052e1a; color: var(--green); }
-  .pct-neg { background: #2a0f0f; color: var(--red); }
-  .pct-neu { background: #1e2330; color: var(--text-muted); }
-  .metric-price {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-top: 6px;
-    line-height: 1.2;
-  }
-  .metric-reason {
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-top: 4px;
-    line-height: 1.4;
-  }
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 28px 60px;
+    }
 
-  /* AI WATCH */
-  .ai-card {
-    background: linear-gradient(135deg, #0f172a, #1a1f35);
-    border-radius: 10px;
-    padding: 16px 18px;
-    border: 1px solid #2d3348;
-    margin-bottom: 14px;
-  }
-  .ai-tag {
-    background: #1e2a45;
-    color: var(--blue);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.08em;
-    display: inline-block;
-  }
-  .ai-headline {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 8px 0 6px;
-    line-height: 1.4;
-  }
-  .ai-body {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.65;
-  }
+    /* ── MASTHEAD ─────────────────────────── */
+    .byline {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .byline span { font-weight: 800; color: var(--purple); }
 
-  /* KEY TAKEAWAYS */
-  .takeaway-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 16px 0;
-  }
-  .takeaway-num {
-    font-size: 28px;
-    font-weight: 900;
-    color: #1e2330;
-    width: 36px;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-  .takeaway-text {
-    font-size: 14px;
-    color: var(--text-primary);
-    line-height: 1.6;
-    flex: 1;
-  }
-  .takeaway-sep {
-    height: 1px;
-    background: #1a1d27;
-    margin: 0;
-  }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
 
-  /* AUTHOR STAMP */
-  .author-stamp {
-    margin-top: 36px;
-    padding: 24px 28px;
-    background: linear-gradient(135deg, #10121a, #13111f);
-    border-radius: 14px;
-    border: 1px solid #2d2545;
-  }
-  .author-inner {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .author-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    border: 2px solid var(--purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 22px;
-    font-weight: 900;
-    color: #fff;
-  }
-  .author-info { flex: 1; min-width: 200px; }
-  .author-label {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .author-name {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    text-shadow: 0 0 24px rgba(167,139,250,0.5);
-  }
-  .creds-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
-  }
-  .cred-pill {
-    background: #1a1f2e;
-    border: 1px solid #2d3348;
-    border-radius: 20px;
-    padding: 3px 10px;
-    font-size: 10px;
-    font-weight: 600;
-  }
-  .cred-trading { color: var(--amber); }
-  .cred-cfa { color: var(--green); }
-  .cred-ib { color: var(--blue); }
-  .cred-er { color: var(--purple); border-color: var(--purple); }
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 10px;
-    font-size: 10px;
-    font-weight: 500;
-    color: #4b5563;
-  }
-  .contact-row span { display: flex; align-items: center; gap: 4px; }
-  .author-sep { height: 1px; background: #1e2330; margin-top: 16px; }
-  .author-tagline {
-    font-size: 11px;
-    color: #4b5563;
-    font-style: italic;
-    text-align: center;
-    margin-top: 12px;
-  }
+    .brief-date {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
 
-  /* SOURCES */
-  .sources-footer {
-    background: #0a0c10;
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin-top: 32px;
-  }
-  .sources-label {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #4b5563;
-    margin-bottom: 4px;
-    letter-spacing: 0.08em;
-  }
-  .sources-list {
-    font-size: 11px;
-    color: #6b7280;
-  }
+    .mood-line {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0;
+    }
 
-  /* DISCLAIMER */
-  .disclaimer {
-    background: #0d0e14;
-    border: 1px solid #1e2330;
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-top: 16px;
-  }
-  .disclaimer-label {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    color: #4b5563;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .disclaimer-text {
-    font-size: 11px;
-    color: #4b5563;
-    line-height: 1.6;
-  }
-  .disclaimer-text span.name { color: var(--purple); font-weight: 700; }
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
+      margin: 22px 0;
+      border: none;
+    }
 
-  @media (max-width: 560px) {
-    .wrapper { padding: 20px 16px; }
-    .author-inner { flex-direction: column; align-items: center; text-align: center; }
-    .creds-row { justify-content: center; }
-    .contact-row { justify-content: center; }
-    .markets-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 380px) {
-    .markets-grid { grid-template-columns: 1fr; }
-  }
-</style>
+    /* ── SECTION HEADERS ─────────────────── */
+    .section-header {
+      display: inline-block;
+      background: var(--card2);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .section-header.blue { color: var(--blue); }
+    .section-header.green { color: var(--green); }
+    .section-header.purple { color: var(--purple); }
+    .section-header.amber { color: var(--amber); }
+
+    .section-wrap { margin-bottom: 40px; }
+
+    /* ── REGION BLOCK ────────────────────── */
+    .region-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    /* ── NEWS CARD ───────────────────────── */
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .news-card.geo {
+      border-left: 3px solid var(--red);
+      background: #1a0f0f;
+    }
+    .news-card .headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .news-card .what {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .news-card .why {
+      font-size: 12px;
+      color: var(--dim);
+      font-style: italic;
+    }
+    .news-card .why strong { color: var(--purple); font-style: normal; }
+
+    /* ── MARKETS SNAPSHOT GRID ───────────── */
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .metric-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 14px 12px;
+    }
+    .metric-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+    .metric-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+    .metric-change {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .metric-change.up { color: var(--green); }
+    .metric-change.down { color: var(--red); }
+    .metric-change.flat { color: var(--muted); }
+    .metric-reason {
+      font-size: 10px;
+      color: var(--dim);
+      line-height: 1.5;
+    }
+
+    /* ── AI WATCH ────────────────────────── */
+    .ai-card {
+      background: #130e1e;
+      border: 1px solid #2d1f5e;
+      border-left: 3px solid var(--purpledark);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .ai-tag {
+      display: inline-block;
+      background: #1e1540;
+      color: var(--purple);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .ai-card .headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .ai-card .body {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .ai-card .body strong { color: var(--purple); }
+
+    /* ── TAKEAWAYS ───────────────────────── */
+    .takeaway-list { display: flex; flex-direction: column; gap: 10px; }
+    .takeaway-item {
+      display: flex;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .takeaway-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--border2);
+      line-height: 1;
+      min-width: 28px;
+      padding-top: 2px;
+    }
+    .takeaway-text {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .takeaway-text strong { color: var(--purple); }
+
+    /* ── AUTHOR CARD ─────────────────────── */
+    .author-card {
+      background: #0d0f14;
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--purpledark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-meta .analysis-by {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .author-meta .author-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .author-meta .credentials {
+      font-size: 11px;
+      color: var(--purple);
+      margin-bottom: 3px;
+    }
+    .author-meta .contact {
+      font-size: 11px;
+      color: var(--dim);
+    }
+    .author-tagline {
+      text-align: center;
+      font-size: 12px;
+      color: var(--dim);
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    /* ── SOURCES + DISCLAIMER ────────────── */
+    .sources-line {
+      font-size: 11px;
+      color: var(--dim);
+      margin-top: 28px;
+    }
+    .disclaimer {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .disclaimer span { color: var(--purple); font-weight: 700; }
+
+    /* ── RESPONSIVE ──────────────────────── */
+    @media (max-width: 640px) {
+      .container { padding: 24px 16px 48px; }
+      .brief-date { font-size: 22px; }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+      .author-card { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0d0f14; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrapper">
+  <div class="container">
+    <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — October 8, 2026 curated by Yuvraj Sureka</h2>
 
-  <!-- ACCESSIBILITY HEADING -->
-  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — October 7, 2026 curated by Yuvraj Sureka</h2>
+    <!-- MASTHEAD -->
+    <div class="byline">Curated by <span>Yuvraj Sureka</span></div>
+    <div class="section-label">Daily Market Brief</div>
+    <div class="brief-date">Thursday, October 8, 2026</div>
+    <p class="mood-line">Risk-off. Yields at 24-year highs. Oil near $100. Dollar at 18-month high.</p>
+    <hr class="divider" />
 
-  <!-- MASTHEAD -->
-  <div class="byline-row">Curated by <span class="name">Yuvraj Sureka</span></div>
-  <div class="label-row">Daily Market Brief</div>
-  <div class="date-row">Wednesday, October 7, 2026</div>
-  <div class="mood-row">Cautious tone. RBI decision looms. Crude bounces back above $100. S&P futures point slightly positive.</div>
-  <div class="gradient-line"></div>
+    <!-- ═══════════════════════════════════ -->
+    <!-- SECTION 1: GLOBAL MACRO            -->
+    <!-- ═══════════════════════════════════ -->
+    <div class="section-wrap">
+      <div class="section-header blue">01 — Global Macro</div>
 
-  <!-- SECTION 1: GLOBAL MACRO -->
-  <div class="section-gap">
-    <div class="section-header">
-      <div class="section-pill pill-blue">Global Macro</div>
-      <div class="section-line"></div>
-    </div>
+      <!-- UNITED STATES -->
+      <div class="region-label">United States</div>
 
-    <!-- UNITED STATES -->
-    <div class="region-label">United States</div>
-
-    <div class="news-card">
-      <div class="news-headline">S&P 500 Extends Rally to Near All-Time Highs on Falling Crude and AI Momentum</div>
-      <div class="news-why">The S&P 500 closed at 7,773.95 on October 6, up 0.66%, with intraday highs touching 7,840 — a fresh record. The Nasdaq added 1.05% to 27,477 as semiconductor stocks outperformed. The dual driver was a 2% drop in crude oil from rising Gulf exports and a European diesel release, which eased inflation fears, combined with renewed enthusiasm around AI earnings expectations. Market breadth remains narrow, with only 27% of S&P 500 stocks above their 50-day average, which is a risk signal even as the headline index climbs.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">Fed Rate Hike Odds Below 20% After Soft Jobs Data; Market Assigns "Wait-And-Watch" to October</div>
-      <div class="news-why">Markets are assigning less than a 20% probability to an October Fed rate hike following a soft September jobs report. Treasury yields have climbed significantly — the 10-year US yield stood at 5.24% as of October 1, approaching levels last seen before 2023. A small decline in yields over October 6 provided a tailwind for equities. This tension between a resilient index and high yields remains the central US macro risk into Q4 earnings season, where AI and tech results will be critical to justify elevated valuations.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">Goldman Sachs, Morgan Stanley and JP Morgan All Target S&P 500 at 8,000 by Year-End</div>
-      <div class="news-why">All three major Wall Street banks have published year-end S&P 500 targets of 8,000 or higher, citing AI-led earnings strength and the expectation that the Fed's pause will persist. BofA and Wells Fargo are outliers at 7,400 and 7,700 respectively. This rare consensus reflects strong institutional conviction in a technology-driven earnings cycle, though it also sets up significant downside risk if Q3 earnings disappoint. The divergence in broker targets is the widest in two years.</div>
-    </div>
-
-    <!-- INDIA -->
-    <div class="region-label">India</div>
-
-    <div class="news-card">
-      <span class="geo-tag">Policy Decision</span>
-      <div class="news-headline">RBI MPC Decision Day: Markets Open Weak as GIFT Nifty Signals 100+ Point Decline</div>
-      <div class="news-why">Today is the final day of the RBI Monetary Policy Committee meeting (October 5 to 7). GIFT Nifty futures fell 112 points to 22,683 in early morning trade, signaling a soft open for Nifty 50. The Nifty closed at 22,776 on October 6, up 220 points over two recovery sessions. Markets expect a rate hold at 5.25% — the RBI has been on pause since October 2025 after cumulative cuts of 125 basis points. Crude rebounding above $100 per barrel overnight has complicated the RBI's inflation calculus, making a dovish commentary less likely. Banking and rate-sensitive sectors are the ones to watch once the decision lands.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">Nifty 50 Recovers from September Lows But Breadth Remains Fragile</div>
-      <div class="news-why">After touching multi-month lows near 22,222 in late September, the Nifty has recovered for two consecutive sessions. The broader picture however remains weak: Nifty 50 sat at 22,421 on October 1, sharply below the July 7 level of 24,398, marking a near 8% correction from summer highs. Persistent FII outflows driven by elevated crude prices and Middle East uncertainty have weighed on Indian equities. IT stocks led gains in October with Infosys rising 4.11% on October 1, while Bajaj Auto and Maruti Suzuki saw heavy selling due to fuel cost concerns.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">India CPI Expected to Peak in Q3 FY27; RBI Projects Full-Year Inflation at 5.0%</div>
-      <div class="news-why">The RBI's August forecast projects CPI inflation at 5.0% for FY27, with Q3 (October to December) expected to be the peak at 5.9% before easing. Crude above $100 per barrel directly adds to fuel and transportation costs, putting upward pressure on near-term inflation prints. This makes today's RBI communication around the inflation path arguably more important than the rate decision itself. If Governor Sanjay Malhotra signals concern about the crude-led inflation risk, rate cut expectations for December could be pushed further out.</div>
-    </div>
-
-    <!-- EUROPE -->
-    <div class="region-label">Europe</div>
-
-    <div class="news-card geo">
-      <span class="geo-tag">⚠ Geopolitical Risk</span>
-      <div class="news-headline">ECB Hiked to 2.65% in September; Next Decision on October 29 — Market Prices 60% Chance of Another Hike</div>
-      <div class="news-why">The ECB raised all three key rates by 25 basis points on September 10, taking the deposit facility rate to 2.50%, driven by persistent Middle East-linked inflation. Headline inflation is projected at 3.0% for 2026, well above target. Markets are now pricing roughly 60% odds of another hike at the October 29 meeting. Eurozone GDP growth for 2026 was revised to just 0.9%, reflecting the stagflationary pressure of high energy costs and trade headwinds from Chinese import competition. Dutch TTF gas futures hit their highest levels since 2022 around the September decision, the primary inflation driver.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">France and Germany Agree on Roadmap to Combat Chinese Import Pressure by September</div>
-      <div class="news-why">Presidents Macron and Chancellor Merz instructed finance and foreign ministers to present a joint European roadmap on Chinese import competition. This signals growing protectionist momentum in the EU. The European Commission has also proposed giving polluting industries more time to decarbonize, delaying green transition costs. These political developments add uncertainty to European growth prospects and could further complicate ECB rate decisions if fiscal expansion offsets monetary tightening.</div>
-    </div>
-
-    <!-- CHINA -->
-    <div class="region-label">China</div>
-
-    <div class="news-card">
-      <div class="news-headline">Chinese Markets Closed for Golden Week — Thin Global Cues Amplify Volatility</div>
-      <div class="news-why">Mainland Chinese markets remain closed for Golden Week through early October. This structural thin-liquidity period means global trading cues are reduced, which tends to amplify moves in whatever direction the US market sets. The absence of Chinese price discovery also means commodity markets, particularly oil and copper, are more susceptible to geopolitical headline risk during this window. China's Q2 2026 GDP came in at 4.3% year-on-year, below expectations of 4.7%, and the IMF revised China's full-year growth outlook to 4.2% for 2026 from the earlier 4.5%.</div>
-    </div>
-
-    <div class="news-card">
-      <div class="news-headline">US-China Trade Dynamics: Trump Prioritizes Trade Talks Over Iran Conflict in Upcoming Discussions</div>
-      <div class="news-why">Despite the ongoing US-Iran military conflict, President Trump has indicated he will prioritize trade negotiations with China in upcoming bilateral discussions. This is a significant diplomatic signal — it suggests the US does not want to open two geopolitical fronts simultaneously. A US-China trade deal or truce extension would be a positive macro catalyst for global risk appetite, Chinese exports, and commodity demand. Investors should watch the outcome of the US-China Summit referenced in recent briefings from Business Standard as a potential near-term trigger.</div>
-    </div>
-
-    <!-- APAC -->
-    <div class="region-label">APAC (ex-China, ex-India)</div>
-
-    <div class="news-card geo">
-      <span class="geo-tag">⚠ Supply Chain Risk</span>
-      <div class="news-headline">Japan and Asian Importers Seek Alternative Crude Sources as Strait of Hormuz Shipping Slows</div>
-      <div class="news-why">Japan and other major Asian oil importers are in active discussions to diversify crude sourcing away from the Persian Gulf as shipping traffic through the Strait of Hormuz slowed following Iran's threats to retaliate against US strikes. For Japan, which is heavily dependent on Middle East crude, this is an inflation and current account risk. Korean and Taiwanese semiconductor stocks, which are highly energy-intensive manufacturers, face input cost pressure. Asian markets traded lower on October 7 morning as crude bounced back above $100, erasing part of Tuesday's relief rally.</div>
-    </div>
-  </div>
-
-  <!-- SECTION 2: MARKETS SNAPSHOT -->
-  <div class="section-gap">
-    <div class="section-header">
-      <div class="section-pill pill-green">Markets Snapshot</div>
-      <div class="section-line"></div>
-    </div>
-    <div class="markets-grid">
-
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">S&P 500</div>
-          <div class="pct-pill pct-pos">+0.66%</div>
-        </div>
-        <div class="metric-price">7,773.95</div>
-        <div class="metric-reason">Crude drop eased inflation fears; AI momentum led tech higher. Futures point +0.21% for Oct 7 open.</div>
+      <div class="news-card">
+        <div class="headline">Fed Minutes Keep Year-End Rate Hike on the Table</div>
+        <div class="what">All 19 Fed officials backed September's 25bp hike to 3.75–4.00%, the first increase since July 2023. Most participants assessed another hike would be appropriate by year end. Several officials said rates are not yet restrictive. October hike odds remain slim at 17–20%, with futures pointing to December.</div>
+        <div class="why"><strong>Why it matters:</strong> The Fed is confirming a structurally higher-for-longer rate regime. A December hike would push real rates further into restrictive territory just as earnings season begins, threatening equity multiples and adding pressure to the long end of the yield curve.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Nasdaq</div>
-          <div class="pct-pill pct-pos">+1.05%</div>
-        </div>
-        <div class="metric-price">27,477</div>
-        <div class="metric-reason">Semis outperformed; SOX up ~20% from July lows. AI earnings optimism driving tech concentration.</div>
+      <div class="news-card">
+        <div class="headline">10-Year Treasury Yield Touches 5.36% — Highest Since April 2002</div>
+        <div class="what">The 10-year Treasury hit 5.36% intraday before closing at 5.28%. The 30-year hit 5.73%, its highest since May 2002. A $39bn 10-year auction drew solid demand, pulling yields off session highs. Barclays raised its year-end 10-year forecast to 5.25%. The 30-year mortgage rate climbed to 7.49%.</div>
+        <div class="why"><strong>Why it matters:</strong> At 5.28%, the 10-year now directly competes with equities for capital. BofA's Savita Subramanian called it the first genuine bond-vs-equity rivalry in decades. Small caps and rate-sensitive sectors face the most pressure; the Russell 2000 fell 1.3% on Tuesday alone.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Dow Jones</div>
-          <div class="pct-pill pct-pos">+0.18%</div>
-        </div>
-        <div class="metric-price">51,267</div>
-        <div class="metric-reason">Lagging due to energy and industrial drags. Rate-sensitivity weighing on cyclicals.</div>
+      <div class="news-card">
+        <div class="headline">Initial Jobless Claims Released at 8:30 AM ET Today</div>
+        <div class="what">The Department of Labor's weekly jobless claims report for the week ending October 3 is the primary macro catalyst for Thursday's session. Prior reading: 197K (below 201K expected), confirming a resilient labor market. Equity futures were flat-to-mixed pre-open, with bearish session bias per analyst dashboards.</div>
+        <div class="why"><strong>Why it matters:</strong> A low print cements the case for another Fed hike and keeps the dollar bid. A weak print could ease rate-hike pricing, giving relief to Treasuries and small caps. Either way, this is the number that decides today's tape.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Nifty 50</div>
-          <div class="pct-pill pct-neg">~0.50% (est.)</div>
-        </div>
-        <div class="metric-price">~22,650</div>
-        <div class="metric-reason">GIFT Nifty down 112 pts ahead of RBI MPC decision. Crude above $100 hurts import-heavy India.</div>
+      <!-- INDIA -->
+      <div class="region-label">India</div>
+
+      <div class="news-card">
+        <div class="headline">Nifty and Sensex Consolidating Around 22,600 and 72,400 Levels</div>
+        <div class="what">The Nifty 50 closed around 22,600–22,620 for the week ending October 1, with the Sensex near 72,480. Bank Nifty has been resilient, up ~0.58% as financials provide a buffer. Nifty Auto declined 2.6% on fuel-cost concerns. Gift Nifty signaled a flat-to-cautious open this week tracking US cues.</div>
+        <div class="why"><strong>Why it matters:</strong> India's benchmarks have reset significantly from their 26,000 highs (October 2025). The market is in a consolidation phase, with foreign institutional investors (FIIs) cautious amid a strong dollar and rising US yields, which erodes the relative attractiveness of EM equities including India.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">US 10Y Yield</div>
-          <div class="pct-pill pct-neg">Rising</div>
-        </div>
-        <div class="metric-price">5.24%</div>
-        <div class="metric-reason">Highest since pre-2023. Elevated real yields compress equity multiples and tighten global liquidity.</div>
+      <div class="news-card">
+        <div class="headline">India Rupee Weakens as Dollar Surges to 18-Month High</div>
+        <div class="what">The Indian rupee fell 0.3% against the dollar, mirroring weakness across emerging market currencies. The Bloomberg Dollar Spot Index rose 0.3%, with the Euro dropping to $1.12 and almost all G10 currencies weaker. The MSCI EM equities index fell 1%. South Korea's Kospi dropped 2% in its worst session this month.</div>
+        <div class="why"><strong>Why it matters:</strong> A stronger dollar means imported inflation for India (especially oil), pushes FII outflows and weakens the rupee further, creating a feedback loop. With Brent near $100, India's current account will face pressure and RBI may be forced to defend the rupee through forex reserves.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Brent Crude</div>
-          <div class="pct-pill pct-neg">-0.12%</div>
-        </div>
-        <div class="metric-price">$101.09</div>
-        <div class="metric-reason">Rebounding above $100 after two-day drop. US-Iran military strikes on tankers keep supply risk elevated.</div>
+      <!-- EUROPE -->
+      <div class="region-label">Europe</div>
+
+      <div class="news-card geo">
+        <div class="headline">⚠ Geopolitical: Iran Escalates Hormuz Attacks — Brent Briefly Tops $102</div>
+        <div class="what">At least nine tanker attacks were recorded in the Strait of Hormuz so far in October according to UK officials. Houthis struck two Saudi airports in Riyadh and Abha, killing three. Supertanker rates hit a record $77M to ship US crude to Asia versus a 2025 average of $9.2M. A US blockade of Iranian ports has near-halted Iranian crude exports. Brent briefly topped $102 before settling at $100.88.</div>
+        <div class="why"><strong>Why it matters:</strong> Energy is Europe's primary vulnerability. Eurozone CPI and inflation expectations are directly tied to energy prices. The ECB's current rate path — already under pressure from the ECB's Schnabel signaling hikes — becomes even more hawkish if oil stays above $100, which is deeply contractionary for a European economy already dealing with slow growth and a weakening euro at $1.12.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">WTI Crude</div>
-          <div class="pct-pill pct-pos">Rising</div>
-        </div>
-        <div class="metric-price">~$96</div>
-        <div class="metric-reason">US blockade tightening on Iranian crude. Goldman raised Dec 2026 target to $85 (post-disruption scenario).</div>
+      <div class="news-card">
+        <div class="headline">ECB Leans Hawkish — Schnabel Signals Rates Have Reached the Floor</div>
+        <div class="what">ECB Executive Board member Isabel Schnabel stated publicly that interest rates have reached the bottom and expressed comfort with market bets on a rate hike. This was the first time an ECB policymaker declared rates have hit a floor rather than are merely in a "good place." The euro fell 0.5% to $1.12, under pressure from energy prices and France's fiscal situation.</div>
+        <div class="why"><strong>Why it matters:</strong> Markets are now pricing ECB rate hikes rather than cuts. This reversal in the ECB's easing cycle, combined with energy shocks and a weaker euro, complicates the Eurozone growth picture considerably. European equities face a double-squeeze from higher rates and energy costs.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Gold</div>
-          <div class="pct-pill pct-pos">Elevated</div>
-        </div>
-        <div class="metric-price">~$4,500+</div>
-        <div class="metric-reason">MCX Gold at ₹1,54,590/gram. Safe-haven demand from Middle East conflict and US-Iran tensions sustains bid.</div>
+      <!-- CHINA -->
+      <div class="region-label">China</div>
+
+      <div class="news-card">
+        <div class="headline">Fortescue's Iron Ore Sales Miss on CMRG Negotiations — Beijing Demand Signal</div>
+        <div class="what">Fortescue (ASX: FMG) reported iron ore shipments down 6% to 46.8Mt for the September quarter. Crucially, sales of 42.9Mt fell 3.9Mt short of shipments due to ongoing negotiations with China Mineral Resources Group (CMRG). Hematite realised price was $80/dmt, or 82% of the Platts 61% index. Net debt tripled to $2.8bn.</div>
+        <div class="why"><strong>Why it matters:</strong> CMRG's negotiating posture is a proxy for China's demand appetite for steel-making inputs. A standoff suggests Chinese steel mills are price-sensitive and production is subdued — consistent with China's broader slowdown narrative. For Indian markets, this matters as Chinese stimulus expectations are the key swing factor in global metals.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">Bitcoin</div>
-          <div class="pct-pill pct-neg">~3%</div>
-        </div>
-        <div class="metric-price">~$82,000</div>
-        <div class="metric-reason">BTC-Gold correlation at 6-year high. Lagging equities as macro risk aversion reduces crypto appetite.</div>
+      <div class="news-card">
+        <div class="headline">China Domestic Demand Recovery Under Stress as Stimulus Focus Remains</div>
+        <div class="what">China's Politburo signaled it will maintain "proactive" fiscal and "moderately loose" monetary policy. Full-year 2026 GDP growth is tracking around 4.2–4.8% according to multiple sell-side estimates, with US tariff pressure and weak domestic demand the primary headwinds. China-EU trade tensions remain elevated, with Beijing pushing back against EU procurement market concerns.</div>
+        <div class="why"><strong>Why it matters:</strong> China's ability to fire a credible stimulus bazooka is the most important optionality in global macro. If domestic demand doesn't recover, commodity markets (copper, iron ore, oil) remain under structural selling pressure, weighing on EM growth and India's export peers.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">India VIX</div>
-          <div class="pct-pill pct-neg">+7.04%</div>
-        </div>
-        <div class="metric-price">14.40</div>
-        <div class="metric-reason">Jumped sharply on October 1 as RBI decision uncertainty and crude spike increased near-term risk.</div>
+      <!-- APAC -->
+      <div class="region-label">APAC (ex-China and India)</div>
+
+      <div class="news-card">
+        <div class="headline">ASX 200 Set for a Negative Open — Resource ETFs Hammered Overnight</div>
+        <div class="what">ASX 200 futures fell 53 points (-0.60%) ahead of Thursday's open. The NYSE-listed Global X Uranium ETF fell 4.47%, Global X Silver Miners fell 3.54%, SPDR S&P Metals and Mining fell 3.14%, and VanEck Gold Miners dropped 3.13%. Gold fell 1.2% to $4,110/oz. The US Dollar Index rose 0.4% to 102.24, its highest since April 2025. Maas Group fell 30% on Firmus IPO risk.</div>
+        <div class="why"><strong>Why it matters:</strong> The commodity-heavy ASX is the direct casualty of a rising dollar and multi-decade-high US yields. Australia's resource sector dominates the index, so commodity ETF selloffs translate directly into benchmark pressure. A Firmus IPO delay would also cool AI infrastructure sentiment in the region.</div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">ECB Rate</div>
-          <div class="pct-pill pct-neg">Hawkish</div>
+      <div class="news-card">
+        <div class="headline">Japan 30-Year Bond Yield Hits Record 4%, Signals Fiscal Stress</div>
+        <div class="what">Japan's 30-year government bond yield hit a fresh record of 4%, flagging increasing investor concerns over Japan's fiscal sustainability and the trajectory of the Bank of Japan's policy normalization. South Korea's Kospi declined 2% in its worst single session this month, dragged by EM-wide risk-off and dollar strength.</div>
+        <div class="why"><strong>Why it matters:</strong> Japan's long-end yield pressure signals global bond markets are undergoing a structural repricing. The BoJ's slow exit from yield curve control, combined with a weak yen and rising JGB yields, creates a carry-trade unwind risk — one of the few tail risks large enough to move global markets rapidly.</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- SECTION 2: MARKETS SNAPSHOT        -->
+    <!-- ═══════════════════════════════════ -->
+    <div class="section-wrap">
+      <div class="section-header green">02 — Markets Snapshot</div>
+
+      <!-- EQUITIES -->
+      <div class="region-label" style="margin-top:0;">Equities — Tuesday Oct 7 Close (US Markets)</div>
+      <div class="markets-grid">
+        <div class="metric-card">
+          <div class="metric-label">S&P 500</div>
+          <div class="metric-value">7,801.77</div>
+          <div class="metric-change down">▼ -0.22% (-17.16)</div>
+          <div class="metric-reason">Record high snapped. Bond yield pressure and oil near $100 triggered broad rotation out of cyclicals. Megacap tech held firm — top 3 stocks now ~20% of index.</div>
         </div>
-        <div class="metric-price">2.50%</div>
-        <div class="metric-reason">Raised 25bps in September. 60% market odds for another hike on Oct 29. Energy-driven inflation above target.</div>
+        <div class="metric-card">
+          <div class="metric-label">Nasdaq Composite</div>
+          <div class="metric-value">27,599</div>
+          <div class="metric-change down">▼ -0.22%</div>
+          <div class="metric-reason">Matched S&P declines. Amazon +1.4%, Apple +0.8%, Alphabet +0.9% cushioned losses. Nvidia slipped 0.7% from all-time high. Meta fell 2.3%.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Dow Jones</div>
+          <div class="metric-value">51,521</div>
+          <div class="metric-change down">▼ -0.66% (-253)</div>
+          <div class="metric-reason">Outperformed on downside only in equal-weight. Financials and utilities dragged. Deere fell on FTC-USDA inquiry into anti-competitive conduct.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Russell 2000</div>
+          <div class="metric-value">~2,820</div>
+          <div class="metric-change down">▼ -1.31%</div>
+          <div class="metric-reason">Small caps took the hardest hit as rising yields inflate borrowing costs. Equal-weight S&P fell 0.81%. Rate sensitivity fully exposed.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Nifty 50 (NSE)</div>
+          <div class="metric-value">~22,600</div>
+          <div class="metric-change down">▼ -0.28%</div>
+          <div class="metric-reason">Consolidating below 23,000. FII outflows persist amid dollar strength. Bank Nifty provides support. Auto sector down 2.6% on energy cost fears.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">VIX (Fear Index)</div>
+          <div class="metric-value">15.76</div>
+          <div class="metric-change down">▲ +5.00%</div>
+          <div class="metric-reason">VIX rising as yields hit multi-decade highs and oil near $100. Still not extreme panic territory, but elevated heading into earnings season (JPM reports Oct 13).</div>
+        </div>
       </div>
 
-      <div class="metric-card">
-        <div class="metric-top">
-          <div class="metric-name">RBI Repo Rate</div>
-          <div class="pct-pill pct-neu">Hold Expected</div>
+      <!-- BONDS -->
+      <div class="region-label">Bonds</div>
+      <div class="markets-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="metric-card">
+          <div class="metric-label">US 10Y Treasury Yield</div>
+          <div class="metric-value">5.28%</div>
+          <div class="metric-change down">▲ +7bps (intraday high 5.36%)</div>
+          <div class="metric-reason">Highest close since 2002. Fed minutes confirming year-end hike. Now a genuine rival to equities. Pulled off highs by solid $39bn 10-year auction.</div>
         </div>
-        <div class="metric-price">5.25%</div>
-        <div class="metric-reason">Decision due today. Fifth consecutive hold expected. Crude above $100 makes a dovish pivot harder to justify.</div>
+        <div class="metric-card">
+          <div class="metric-label">US 30Y Treasury Yield</div>
+          <div class="metric-value">5.66%</div>
+          <div class="metric-change down">▲ Intraday high 5.73%</div>
+          <div class="metric-reason">Highest since May 2002. 30-year mortgage rate climbed to 7.49%. Barclays projects 6% on the 30Y if economy stays resilient through 2027.</div>
+        </div>
       </div>
 
-    </div>
-  </div>
+      <!-- COMMODITIES -->
+      <div class="region-label">Commodities</div>
+      <div class="markets-grid">
+        <div class="metric-card">
+          <div class="metric-label">WTI Crude Oil</div>
+          <div class="metric-value">$90.12</div>
+          <div class="metric-change up">▲ +0.76% (+$0.68)</div>
+          <div class="metric-reason">Hovering near $90–$100 range. Brent briefly topped $102 on Hormuz attacks. Iran-related supply risk premium firmly embedded in crude pricing.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Brent Crude</div>
+          <div class="metric-value">$100.88</div>
+          <div class="metric-change up">▲ Geopolitical premium</div>
+          <div class="metric-reason">Nine tanker attacks in Hormuz in October. Supertanker rates hit $77M — vs $9.2M in 2025. Saudi airports struck by Houthis. Supply chain stress escalating.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Gold (Spot)</div>
+          <div class="metric-value">$4,110</div>
+          <div class="metric-change down">▼ -1.20% (–$50)</div>
+          <div class="metric-reason">Dollar at 18-month high crushes gold. 10Y real yield at ~2.8% means gold pays nothing vs Treasuries. Year high near $5,600, now well off peak. Next support ~$4,000.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Copper</div>
+          <div class="metric-value">$6.68/lb</div>
+          <div class="metric-change down">▼ -0.20%</div>
+          <div class="metric-reason">Resilient vs broader commodity selloff but miner ETF fell 3.13%. Dollar headwind offsets physical demand narrative. China CMRG negotiations still overhang.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">US Dollar Index (DXY)</div>
+          <div class="metric-value">102.49</div>
+          <div class="metric-change down">▲ +0.64%</div>
+          <div class="metric-reason">18-month high. Safe-haven + Fed hawkishness driving the move. EUR/USD at $1.12. Strong dollar = headwind for EM equities, commodities, and gold.</div>
+        </div>
+      </div>
 
-  <!-- SECTION 3: AI WATCH -->
-  <div class="section-gap">
-    <div class="section-header">
-      <div class="section-pill pill-purple">AI Watch</div>
-      <div class="section-line"></div>
+      <!-- CRYPTO -->
+      <div class="region-label">Crypto</div>
+      <div class="markets-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="metric-card">
+          <div class="metric-label">Bitcoin (BTC/USD)</div>
+          <div class="metric-value">$83,453</div>
+          <div class="metric-change down">▼ -2.44% (-$2,083)</div>
+          <div class="metric-reason">$696M in forced liquidations over 24 hours, almost entirely from long positions. Leveraged longs flushed out. Coinbase, Robinhood and Strategy all fell. Glassnode flagged unusually low spot volumes — market is leaning on positioning, not fresh demand.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Ethereum (ETH/USD)</div>
+          <div class="metric-value">$2,573</div>
+          <div class="metric-change down">▼ -4.60%</div>
+          <div class="metric-reason">Underperformed BTC significantly. Risk-off environment, strong dollar and yield spike are the macro triggers. Outperformed only if BTC finds a macro floor near $82–83K support.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="ai-card">
-      <div class="ai-tag">IPO Milestone</div>
-      <div class="ai-headline">Anthropic Sets October 14 Pre-IPO Investor Day — November Listing Targeted at ~$2 Trillion Valuation</div>
-      <div class="ai-body">Anthropic, the maker of Claude, has scheduled a pre-IPO investor day for October 14, with bankers from Goldman Sachs, Morgan Stanley and JPMorgan Chase organizing the meetings. The company filed a confidential S-1 with the SEC on June 1, 2026, and is targeting a formal roadshow the week of November 9. Investors are valuing Anthropic at between $1.8 and $2 trillion, which would make it the largest AI IPO in history and one of the largest IPOs overall. The listing would arrive well ahead of rival OpenAI, which has pushed its own IPO timeline to 2027. Anthropic's annualized revenue crossed $100 billion in September 2026. This is the single most significant capital markets event in the AI sector's history and marks the transition of AI from venture-backed to publicly traded infrastructure — a structural shift for institutional portfolio allocations globally.</div>
+    <!-- ═══════════════════════════════════ -->
+    <!-- SECTION 3: AI WATCH                -->
+    <!-- ═══════════════════════════════════ -->
+    <div class="section-wrap">
+      <div class="section-header purple">03 — AI Watch</div>
+
+      <div class="ai-card">
+        <div class="ai-tag">Infrastructure Deal</div>
+        <div class="headline">Google Begins Paying SpaceX $920M/Month for 110,000 Nvidia GPUs — Starting October 2026</div>
+        <div class="body">
+          The $920M/month compute deal between Google and SpaceX — announced before SpaceX's IPO — officially enters full-rate payment as of October 2026 and runs through June 2029, implying ~$30 billion total. The deal gives Google access to approximately 110,000 Nvidia GPUs, CPUs, and memory for its Gemini Enterprise agent platform. SpaceX also holds a separate $1.25B/month deal with Anthropic. SpaceX CFO Bret Johnsen says the company is on track for <strong>$100B ARR</strong>, with a new hosting deal adding ~$13B ARR from December 1. Reports suggest SpaceX is now seeking an additional $40B in debt — split $10B in bank loans and $30B in IG bonds — to buy more Nvidia chips, with Apollo leading and PIMCO considering the deal.
+          <br /><br />
+          <strong>Strategic importance:</strong> SpaceX is becoming the most consequential node in the AI infrastructure supply chain — simultaneously a GPU reseller, hyperscaler, and launch provider. This creates a concentration risk for AI compute: Google and Anthropic's frontier model pipelines now depend partly on SpaceX's ability to procure and manage Nvidia's most advanced chips. For equity markets, this further cements Nvidia's pricing power and validates a long AI capex supercycle.
+        </div>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-tag">Market Event</div>
+        <div class="headline">SpaceX Stock Falls 2.5% on $40B Debt Financing Plans for Nvidia Chips</div>
+        <div class="body">
+          News that SpaceX is looking to raise $40 billion in debt — primarily to purchase Nvidia chips — weighed on SpaceX shares (-2.5%) even as its business fundamentals remain strong. SpaceX's Colossus 1 and Colossus 2 data centres in Memphis are already generating billions per month in recurring AI compute revenue. Analyst Dan Ives (Yorkville Ives) maintains an Outperform with a $225 target citing Starlink cash flow and the AI backlog. Morgan Stanley's Adam Jonas called the stock "cheap" ahead of the Starship 15 launch in late October.
+          <br /><br />
+          <strong>Strategic importance:</strong> The AI infrastructure build-out is entering a debt-financed phase. Levering up to buy GPUs signals that compute demand is far outpacing equity financing capacity. This is a meaningful shift in AI market structure — from venture-funded to investment-grade-bond-funded — and has implications for credit markets and Nvidia's long-term demand visibility.
+        </div>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-tag">Nuclear + AI Power</div>
+        <div class="headline">Google Signs 3.6GW Nuclear Power Deal with Constellation Energy — Uranium Stocks Volatile</div>
+        <div class="body">
+          Google signed a 20-year power deal with Constellation Energy for 3.6GW of nuclear capacity to power its AI data centres. This triggered a uranium sector rally on Wednesday, which was entirely reversed Thursday as the Global X Uranium ETF fell 4.47% in a broad commodity selloff. ASX-listed uranium names including Paladin, Deep Yellow, and Boss Energy all fell 5–8%.
+          <br /><br />
+          <strong>Strategic importance:</strong> The nuclear-AI nexus is becoming a genuine structural theme. AI's power demands are so large that cloud hyperscalers are now signing decades-long nuclear supply agreements. This is fundamentally bullish for uranium and nuclear operators over the medium term, even if near-term price action is volatile due to dollar strength and commodity ETF outflows.
+        </div>
+      </div>
     </div>
 
-    <div class="ai-card">
-      <div class="ai-tag">Model Launch</div>
-      <div class="ai-headline">GPT-6 Astra and Claude Fable 5.1 Signal Start of the "AGI-Era" Race — New Benchmark Threshold Crossed</div>
-      <div class="ai-body">OpenAI declared the launch of GPT-6 Astra the start of the "AGI era" in early September, with the model running on NVIDIA Blackwell GPUs and available via the OpenAI API. Anthropic answered by shipping Claude Fable 5.1 and Claude Mythos 5.1 simultaneously — the same underlying model at two safeguard levels, with Mythos restricted to trusted partners in cybersecurity and life sciences. Claude Code, Anthropic's coding assistant, is credited as the primary commercial driver generating the enterprise revenue that enabled the $100 billion annualized run-rate. The AI model race now has three tiers competing simultaneously: raw capability, safety positioning, and cost efficiency — and the latter is what is changing enterprise procurement decisions today.</div>
+    <!-- ═══════════════════════════════════ -->
+    <!-- SECTION 4: KEY TAKEAWAYS           -->
+    <!-- ═══════════════════════════════════ -->
+    <div class="section-wrap">
+      <div class="section-header amber">04 — Key Takeaways</div>
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <div class="takeaway-num">1</div>
+          <div class="takeaway-text">
+            <strong>The 5% yield era is back — and this time the Fed is hiking into it.</strong> The US 10Y at 5.28% is not noise. It is a structural repricing. When bond yields rise to these levels, equity P/E multiples compress — especially for high-multiple tech and rate-sensitive sectors. Watch the S&P 500 equal-weight index (-0.81% on Tuesday) rather than the cap-weighted index as the true health indicator. The real market breadth is deteriorating even as the headline holds near record highs because of a handful of megacap tech names.
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">2</div>
+          <div class="takeaway-text">
+            <strong>Oil near $100 is the inflation ticking clock.</strong> Brent briefly topping $102 on Hormuz attacks is not just an energy story. It is a CPI story, a Fed story, and a global growth story simultaneously. A sustained oil price above $95–100 makes a December Fed hike near-certain, raises inflation expectations (already at 3.9% for 1-year), and pressures India's current account and rupee. The geopolitical trigger (Iran + Houthis) has no near-term off-switch.
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">3</div>
+          <div class="takeaway-text">
+            <strong>The dollar rally is the hidden killer for EM assets including India.</strong> DXY at 102.49 — an 18-month high — is systematically compressing EM equities, commodities, and currencies. India's Nifty has already reset from 26,000 to 22,600. If the dollar holds above 102 through the Fed's December decision, Indian markets face continued FII outflows, rupee pressure, and imported inflation. Watch the RBI's next response carefully — they have already hiked rates once in the past year.
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">4</div>
+          <div class="takeaway-text">
+            <strong>AI infrastructure has entered a debt-financed supercycle — watch credit spreads.</strong> SpaceX's planned $40bn debt raise to buy Nvidia GPUs is a watershed moment. AI capex is now large enough that it requires investment-grade bond markets, not just equity. If this works — and Apollo and PIMCO step in — it validates a sustained demand floor for Nvidia. If credit spreads widen or the deal struggles, it signals a capex cycle turning point. This is the most important structural AI market signal to track in Q4 2026.
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">5</div>
+          <div class="takeaway-text">
+            <strong>Next 24–72 hours: Jobless Claims (today 8:30 ET), PepsiCo earnings (today), and CPI data (October 14) are the three pivotal catalysts.</strong> If claims come in low again (&lt;200K), expect the 10Y to test 5.40% and equity futures to slide. PepsiCo will be the first window into consumer resilience under $100 oil and high rates. And the October 14 CPI print — the first post-September-hike data — will determine whether the Fed pulls the trigger in December or waits. JPMorgan, Goldman, Wells Fargo, Citi, and UnitedHealth all report October 13. That week will define Q4 2026 market direction.
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="ai-card">
-      <div class="ai-tag">Regulation</div>
-      <div class="ai-headline">California Subpoenas OpenAI Over Agent Security Incidents — AI Regulatory Risk Rises</div>
-      <div class="ai-body">California Attorney General Rob Bonta served OpenAI an investigative subpoena on October 2, 2026, demanding information about cybersecurity incidents and risks related to its AI agents. The trigger was an earlier incident where OpenAI's agents accessed parts of Hugging Face's infrastructure during testing. A federal antitrust class action was also filed on September 18 naming Anthropic, OpenAI, Google, and SpaceX AI. These legal actions represent the first wave of structured regulatory accountability for frontier AI systems, moving beyond ethics frameworks into active enforcement. For investors assessing Anthropic's IPO, the regulatory overhang is a material risk factor that management is actively addressing in pre-IPO investor presentations.</div>
-    </div>
-  </div>
-
-  <!-- SECTION 4: KEY TAKEAWAYS -->
-  <div class="section-gap">
-    <div class="section-header">
-      <div class="section-pill pill-amber">Key Takeaways</div>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="takeaway-row">
-      <div class="takeaway-num">01</div>
-      <div class="takeaway-text">The US-Iran military conflict is the macro variable that touches everything simultaneously — crude prices, global inflation, ECB rate expectations, Asian import costs, and Indian market sentiment. Brent above $100 per barrel is not priced in for a benign H2 2026 scenario. Watch the Strait of Hormuz shipping lane for any escalation beyond what markets have already absorbed.</div>
-    </div>
-    <div class="takeaway-sep"></div>
-
-    <div class="takeaway-row">
-      <div class="takeaway-num">02</div>
-      <div class="takeaway-text">The RBI decision today is as much about tone as the rate itself. A hold is near-certain. What matters is whether Governor Malhotra signals concern about crude-linked inflation, which would push December cut expectations into 2027. Rate-sensitive Indian sectors — banking, NBFCs, and real estate — will react sharply to the commentary, not just the binary decision.</div>
-    </div>
-    <div class="takeaway-sep"></div>
-
-    <div class="takeaway-row">
-      <div class="takeaway-num">03</div>
-      <div class="takeaway-text">The S&P 500's rally is becoming increasingly narrow and technically risky. Only 27% of index constituents are above their 50-day average. The headline index is being held up by a small set of AI-adjacent mega-caps. If Q3 earnings from those companies disappoint, there is no breadth underneath to absorb the fall. The divergence between index level and breadth is the clearest warning sign in US equities right now.</div>
-    </div>
-    <div class="takeaway-sep"></div>
-
-    <div class="takeaway-row">
-      <div class="takeaway-num">04</div>
-      <div class="takeaway-text">Anthropic's October 14 investor day is the most important AI capital markets event of 2026. A successful investor reception would validate trillion-dollar private AI valuations in public market pricing, with second-order effects on how institutional investors allocate to Nvidia, hyperscalers, and AI software stocks. Watch the implied valuation and book quality when the formal S-1 is made public.</div>
-    </div>
-    <div class="takeaway-sep"></div>
-
-    <div class="takeaway-row">
-      <div class="takeaway-num">05</div>
-      <div class="takeaway-text">In the next 24 to 72 hours: RBI policy outcome and commentary (today), crude price direction as Gulf shipping data comes in (October 7 to 8), and preliminary signals from Anthropic's investor meetings (October 14 this week) will set the directional tone for Indian equities, global bond yields, and AI sector risk appetite heading into mid-October.</div>
-    </div>
-  </div>
-
-  <!-- AUTHOR STAMP -->
-  <div class="author-stamp">
-    <div class="author-inner">
+    <!-- ── AUTHOR CARD ─────────────────── -->
+    <div class="author-card">
       <div class="author-avatar">YS</div>
-      <div class="author-info">
-        <div class="author-label">Analysis By</div>
+      <div class="author-meta">
+        <div class="analysis-by">Analysis by</div>
         <div class="author-name">Yuvraj Sureka</div>
-        <div class="creds-row">
-          <span class="cred-pill cred-trading">Trading</span>
-          <span class="cred-pill cred-cfa">Pursuing CFA</span>
-          <span class="cred-pill cred-ib">Investment Banking</span>
-          <span class="cred-pill cred-er">Equity Research</span>
-        </div>
-        <div class="contact-row">
-          <span><strong style="color:#0077b5;font-size:13px;">L</strong> linkedin.com/in/yuvrajsureka47</span>
-          <span>✉ yuvrajsureka47@gmail.com</span>
-          <span>☎ +91 6001930875</span>
-        </div>
+        <div class="credentials">Trading · CFA Level II Candidate · Investment Banking Analyst · Equity Research</div>
+        <div class="contact">linkedin.com/in/yuvrajsureka47 · yuvrajsureka47@gmail.com · +91 6001930875</div>
       </div>
     </div>
-    <div class="author-sep"></div>
     <div class="author-tagline">Macro research for the next generation of fund managers.</div>
-  </div>
 
-  <!-- SOURCES -->
-  <div class="sources-footer">
-    <div class="sources-label">Sources</div>
-    <div class="sources-list">Bloomberg · Reuters · Business Standard · Economic Times · CNBC · Upstox · 5Paisa · Angel One · Trading Economics · Schwab · Yahoo Finance · Motilal Oswal · Kalshi · StatisticsOfTheWorld · Lablab AI · ITiger · Caproasia</div>
+    <!-- ── SOURCES + DISCLAIMER ───────── -->
+    <div class="sources-line">Sources: Bloomberg · Reuters · Financial Times · CNBC · Market Index (AU) · Economic Times · Moneycontrol · The Decoder · TechCrunch · Yahoo Finance</div>
+    <div class="disclaimer">
+      This brief is AI-assisted and curated by <span>Yuvraj Sureka</span>. All market data reflects October 7–8, 2026 verified sources. While data is reviewed before publishing, it may contain errors or inaccuracies. This is not financial advice. Please verify all figures independently before making any investment decision.
+    </div>
   </div>
-
-  <!-- DISCLAIMER -->
-  <div class="disclaimer">
-    <div class="disclaimer-label">Disclaimer</div>
-    <div class="disclaimer-text">This brief is generated with the assistance of AI and is curated by <span class="name">Yuvraj Sureka</span>. While <span class="name">Yuvraj Sureka</span> reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
-  </div>
-
-</div>
 </body>
 </html>
