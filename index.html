@@ -1,663 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Market Brief — October 21, 2026 | Yuvraj Sureka</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daily Market Brief — October 26, 2026 | Yuvraj Sureka</title>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #131720;
+    --surface2: #1a2030;
+    --border: #232b3a;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --soft: #9ca3af;
+    --up: #34d399;
+    --down: #f87171;
+    --neutral: #9ca3af;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --pill-bg: #1e2330;
+    --pill-border: #2d3348;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 28px;
+  }
 
-    body {
-      background: #080a0f;
-      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-      color: #e8eaf0;
-      min-height: 100vh;
-      padding: 24px 16px 48px;
-    }
+  /* MASTHEAD */
+  .byline-small {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .byline-small span.name {
+    font-weight: 800;
+    color: var(--purple);
+  }
+  .brief-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .brief-date {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  .mood-line {
+    font-size: 14px;
+    color: var(--soft);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+  .gradient-divider {
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
+    margin: 24px 0;
+  }
 
-    .container {
-      width: 100%;
-      max-width: 880px;
-      margin: 0 auto;
-      background: #0d0f14;
-      border-radius: 16px;
-      box-shadow: 0 4px 48px rgba(0,0,0,0.55);
-      padding: 36px 32px 40px;
-    }
+  /* SECTION HEADERS */
+  .section-header {
+    display: inline-flex;
+    align-items: center;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .section-header.macro { color: #60a5fa; }
+  .section-header.markets { color: #34d399; }
+  .section-header.ai { color: #a78bfa; }
+  .section-header.takeaways { color: #fbbf24; }
+  .section-header .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .dot-blue { background: #60a5fa; }
+  .dot-green { background: #34d399; }
+  .dot-purple { background: #a78bfa; }
+  .dot-amber { background: #fbbf24; }
 
-    /* ── MASTHEAD ── */
-    .byline {
-      font-size: 11px;
-      font-weight: 600;
-      color: #6b7280;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
-    .byline span { font-weight: 800; color: #a78bfa; }
+  /* REGION LABEL */
+  .region-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 10px;
+  }
 
-    .brief-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #6b7280;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+  /* NEWS CARDS */
+  .news-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .news-card.geo-alert {
+    border-left: 3px solid #f87171;
+    background: #1a1418;
+  }
+  .news-headline {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .news-why {
+    font-size: 12px;
+    color: var(--soft);
+    line-height: 1.6;
+  }
+  .news-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #f87171;
+    background: rgba(248,113,113,0.12);
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-bottom: 7px;
+    letter-spacing: 0.05em;
+  }
 
-    .date-line {
-      font-size: 30px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.1;
-    }
+  /* MARKETS GRID */
+  .markets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+  }
+  .metric-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .metric-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .metric-change {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .metric-reason {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+  .flat { color: var(--neutral); }
 
-    .mood-line {
-      font-size: 14px;
-      color: #9ca3af;
-      font-style: italic;
-      margin-bottom: 24px;
-    }
+  /* AI WATCH */
+  .ai-card {
+    background: #14101f;
+    border: 1px solid #2e2048;
+    border-left: 3px solid var(--purple);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .ai-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--purple);
+    background: rgba(167,139,250,0.1);
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
 
-    .divider-grad {
-      height: 2px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
-      margin-bottom: 32px;
-      border-radius: 2px;
-    }
+  /* KEY TAKEAWAYS */
+  .takeaway-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .takeaway-item:last-child { border-bottom: none; }
+  .takeaway-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #232b3a;
+    line-height: 1;
+    min-width: 36px;
+    padding-top: 2px;
+  }
+  .takeaway-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .takeaway-text strong {
+    color: #fff;
+  }
 
-    /* ── SECTION HEADERS ── */
-    .section-header {
-      display: inline-block;
-      background: #1e2330;
-      border: 1px solid #2d3348;
-      border-radius: 20px;
-      padding: 6px 16px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .sh-macro { color: #60a5fa; }
-    .sh-markets { color: #34d399; }
-    .sh-ai { color: #c084fc; }
-    .sh-takeaways { color: #fbbf24; }
+  /* AUTHOR CARD */
+  .author-card {
+    background: #0a0c12;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 32px;
+  }
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 18px; font-weight: 800; color: #fff; }
+  .author-creds { font-size: 11px; color: var(--purple); margin-top: 3px; }
+  .author-contact { font-size: 10px; color: var(--muted); margin-top: 4px; }
+  .author-tagline {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    margin-top: 12px;
+  }
+  .author-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 2px;
+  }
 
-    .section-wrap { margin-bottom: 40px; }
+  /* SOURCES */
+  .sources-line {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .disclaimer {
+    font-size: 10px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-top: 8px;
+    text-align: center;
+  }
+  .disclaimer span.dname { color: var(--purple); font-weight: 700; }
 
-    /* ── REGION LABEL ── */
-    .region-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: #6b7280;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin: 20px 0 10px;
-    }
+  /* SECTION SPACING */
+  .section { margin-bottom: 36px; }
 
-    /* ── NEWS CARDS ── */
-    .news-card {
-      background: #141720;
-      border: 1px solid #1f2435;
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin-bottom: 10px;
-    }
-    .news-card.geo {
-      border-left: 4px solid #ef4444;
-      background: #160d0d;
-    }
-    .news-card .headline {
-      font-size: 13px;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 4px;
-      line-height: 1.45;
-    }
-    .news-card .context {
-      font-size: 12px;
-      color: #9ca3af;
-      line-height: 1.6;
-    }
-    .news-card .why-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      color: #60a5fa;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 6px;
-    }
+  /* UPCOMING EVENTS STRIP */
+  .events-strip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 36px;
+  }
+  .events-strip-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .events-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .event-pill {
+    background: #1a2030;
+    border: 1px solid #2d3a55;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--soft);
+  }
+  .event-pill span { color: #60a5fa; font-weight: 700; }
 
-    /* ── MARKETS SNAPSHOT ── */
-    .markets-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    @media (max-width: 640px) {
-      .markets-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 400px) {
-      .markets-grid { grid-template-columns: 1fr; }
-    }
-
-    .metric-card {
-      background: #141720;
-      border: 1px solid #1f2435;
-      border-radius: 10px;
-      padding: 14px 14px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .metric-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .metric-name {
-      font-size: 10px;
-      font-weight: 700;
-      color: #6b7280;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .metric-pct.up { color: #34d399; font-size: 11px; font-weight: 700; }
-    .metric-pct.down { color: #f87171; font-size: 11px; font-weight: 700; }
-    .metric-pct.flat { color: #9ca3af; font-size: 11px; font-weight: 700; }
-    .metric-price {
-      font-size: 20px;
-      font-weight: 800;
-      color: #f1f5f9;
-      line-height: 1.1;
-    }
-    .metric-reason {
-      font-size: 10px;
-      color: #4b5563;
-      line-height: 1.5;
-      margin-top: 2px;
-    }
-
-    /* ── AI WATCH ── */
-    .ai-card {
-      background: #110d1c;
-      border: 1px solid #2e1e4d;
-      border-left: 4px solid #7c3aed;
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin-bottom: 10px;
-    }
-    .ai-tag {
-      display: inline-block;
-      background: #1e1230;
-      color: #a78bfa;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 2px 8px;
-      margin-bottom: 6px;
-    }
-    .ai-headline {
-      font-size: 13px;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 5px;
-      line-height: 1.45;
-    }
-    .ai-body {
-      font-size: 12px;
-      color: #9ca3af;
-      line-height: 1.6;
-    }
-
-    /* ── KEY TAKEAWAYS ── */
-    .takeaway-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 16px 0;
-      border-bottom: 1px solid #1a1e2a;
-    }
-    .takeaway-item:last-child { border-bottom: none; }
-    .takeaway-num {
-      font-size: 32px;
-      font-weight: 800;
-      color: #1e2330;
-      line-height: 1;
-      min-width: 36px;
-      text-align: right;
-    }
-    .takeaway-text {
-      font-size: 13px;
-      color: #d1d5db;
-      line-height: 1.65;
-      padding-top: 4px;
-    }
-    .takeaway-text strong { color: #f1f5f9; }
-
-    /* ── AUTHOR CARD ── */
-    .author-card {
-      background: #0a0c12;
-      border: 1px solid #1e2330;
-      border-radius: 12px;
-      padding: 24px 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .author-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #7c3aed, #3b82f6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .author-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: #4b5563;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .author-name {
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.1;
-      margin-bottom: 3px;
-    }
-    .author-creds {
-      font-size: 11px;
-      color: #a78bfa;
-      margin-bottom: 3px;
-    }
-    .author-contact {
-      font-size: 10px;
-      color: #4b5563;
-    }
-
-    .tagline {
-      text-align: center;
-      font-size: 11px;
-      color: #374151;
-      font-style: italic;
-      margin-top: 12px;
-    }
-
-    /* ── DISCLAIMER ── */
-    .disclaimer {
-      margin-top: 28px;
-      padding: 16px;
-      border: 1px solid #1a1e2a;
-      border-radius: 8px;
-      background: #0a0c12;
-    }
-    .disclaimer p {
-      font-size: 10px;
-      color: #374151;
-      line-height: 1.7;
-      text-align: center;
-    }
-    .disclaimer span { color: #7c3aed; font-weight: 700; }
-
-    .sources-line {
-      font-size: 10px;
-      color: #374151;
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    .pos { color: #34d399; }
-    .neg { color: #f87171; }
-    .neu { color: #9ca3af; }
-  </style>
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .brief-date { font-size: 22px; }
+    .markets-grid { grid-template-columns: repeat(2, 1fr); }
+    .author-card { flex-direction: column; text-align: center; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
+<h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — October 26, 2026 curated by Yuvraj Sureka</h2>
 
-    <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — October 21, 2026 curated by Yuvraj Sureka</h2>
+<div class="container">
 
-    <!-- MASTHEAD -->
-    <div class="byline">Curated by <span>Yuvraj Sureka</span></div>
-    <div class="brief-label">Daily Market Brief</div>
-    <div class="date-line">Wednesday, October 21, 2026</div>
-    <div class="mood-line">Earnings season accelerates. AI ROI under scrutiny. Oil near triple digits. India's biggest-ever IPO opens today.</div>
-    <div class="divider-grad"></div>
+  <!-- MASTHEAD -->
+  <div class="byline-small">Curated by <span class="name">Yuvraj Sureka</span></div>
+  <div class="brief-label">Daily Market Brief</div>
+  <div class="brief-date">Monday, October 26, 2026</div>
+  <div class="mood-line">Risk-off tone. Oil elevated. Markets brace for FOMC-week. Earnings season in overdrive.</div>
+  <div class="gradient-divider"></div>
 
-    <!-- ══════════════════════════════════════════
-         SECTION 1: GLOBAL MACRO
-    ══════════════════════════════════════════ -->
-    <div class="section-wrap">
-      <div class="section-header sh-macro">🌐 Global Macro</div>
-
-      <!-- UNITED STATES -->
-      <div class="region-label">🇺🇸 United States</div>
-
-      <div class="news-card">
-        <div class="headline">Mega-cap earnings blitz: Meta and Tesla report tonight after SpaceX beat yesterday</div>
-        <div class="context">SpaceX crushed Q3 estimates — EPS of $0.35 vs. $0.10 consensus — on revenue of $14.58 billion, up 161% year-over-year, driven by Starlink and data centre capacity rented to AI firms including Anthropic and Google. Meta (revenue est. $63.3B) and Tesla (revenue est. $27.9B) report after today's close. The stakes are high: the market wants proof that $130–145B of Meta capex earns a real return, and Tesla's declining EPS (est. $0.45, down 10% YoY) puts automotive margins squarely in focus.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">These three names represent the broadest test yet of whether AI capital expenditure translates into revenue. The direction of chip stocks, cloud sentiment, and the broader Nasdaq into year-end rides on these calls.</div>
-      </div>
-
-      <div class="news-card">
-        <div class="headline">Inflation breadth wider than energy alone — services and core goods both accelerate</div>
-        <div class="context">September CPI supercore — core services ex-housing — rose 0.42% month-on-month and 3.13% year-on-year, suggesting a price floor closer to 3% than the Fed's 2% target. Core goods prices also accelerated, making this a supply-and-demand inflation problem, not a pure energy story. The US 10-year yield holds at 5.09–5.10%, keeping financial conditions tight ahead of the Oct 28 Fed decision.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">A higher-for-longer rate environment suppresses growth multiples for tech, tightens credit for overleveraged AI infrastructure firms like CoreWeave, and delays any pivot narrative the equity market might price in.</div>
-      </div>
-
-      <div class="news-card">
-        <div class="headline">South Korean AI IPO flops 30% at debut, triggering Asian chip selloff</div>
-        <div class="context">Korean AI firm Elice fell over 30% on its Seoul debut, dragging the benchmark index down 3.7% to its lowest close since April 7. SK Hynix, SanDisk, and Marvell Technology fell 2.5%–4% in US pre-market. Chip stocks entered correction territory (down 10% from highs) after an eight-session losing streak, though Monday's partial rebound has not reversed the trend.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">Seoul's reaction function acts as a real-time stress test for AI infrastructure valuations globally. A failed AI IPO signals that institutional capital is beginning to demand cash flow proof, not just narrative.</div>
-      </div>
-
-      <!-- INDIA -->
-      <div class="region-label">🇮🇳 India</div>
-
-      <div class="news-card">
-        <div class="headline">Jio Platforms IPO opens today — India's largest-ever listing at up to $3.8 billion</div>
-        <div class="context">Reliance Industries' digital arm Jio Platforms opens for subscription today (Oct 21–23), priced at Rs 1,065–1,119 per share (top-end raises ~$3.2–3.8B), surpassing Hyundai Motor India's 2024 record of $2.9B. The fresh issue proceeds largely repay Rs 27,500 crore of Jio Infocomm debt. Anchor bidding was completed on Monday; both FII and DII feedback has been described as strong. Jio handles 60% of India's mobile data traffic with 530 million subscribers, with AI and cloud operations as the growth thesis.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">A record Indian IPO opening on a down-market day is a stress test for domestic liquidity. If oversubscribed, it signals DII firepower remains intact. It also draws capital away from secondary markets in the short window, partially explaining Monday's 1.11% Nifty decline.</div>
-      </div>
-
-      <div class="news-card">
-        <div class="headline">Nifty 50 fell 1.11% on Monday, GIFT Nifty pointing to gap-up open today</div>
-        <div class="context">Nifty 50 closed at 22,888.95 on Monday (Oct 19), losing 257 points as heavyweights sold off amid high oil prices. Sensex shed 876 points (-1.17%) to 73,853, marking a 12.46% year-to-date decline. However, GIFT Nifty was up over 100 points at 23,012 this morning (Oct 21), tracking Asian market gains and suggesting a recovery open for Wednesday's session.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">India's equity market is navigating a difficult macro environment — Brent near $110/bbl compresses margins for energy-importing sectors, while Jio IPO sucks near-term liquidity from the secondary market. The recovery in GIFT Nifty is fragile and data-dependent.</div>
-      </div>
-
-      <div class="news-card">
-        <div class="headline">Elevated crude oil prices weighing on India's current account and inflation outlook</div>
-        <div class="context">Brent crude approaching $110/barrel per Business Standard live updates creates twin pressure on India: import bill widens, rupee faces depreciation risk, and domestic fuel inflation builds. The RBI's space to cut rates narrows as energy-driven CPI feeds through. Indian energy and refining stocks remain a watch item given Reliance Industries' dual exposure as refiner-retailer.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">India imports ~85% of its crude requirement. At $110 Brent, the fiscal math of fuel subsidies and current account deficit management becomes significantly more complex heading into Q4.</div>
-      </div>
-
-      <!-- EUROPE -->
-      <div class="region-label">🇪🇺 Europe</div>
-
-      <div class="news-card">
-        <div class="headline">ECB's Lane speaks in Shanghai today — October hold expected, December hike still live</div>
-        <div class="context">ECB Chief Economist Philip Lane joins a closed-door panel in Shanghai at 04:15 GMT. The ECB raised rates twice this year (June and September) to 2.50%. September Eurozone CPI came in at 3.8% — the highest since September 2023 — with energy inflation at 18.8% year-on-year. Markets expect a hold on October 29, but the December meeting remains live for a third hike, with energy and wage data as the key inputs. The October 20 GDP revision from Eurostat also informs the decision calculus.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">Lane's speech, even if structural in theme, will be parsed for any signal that energy inflation is spreading into services and wage dynamics. A hint at December tightening would pressure European bond spreads and weigh on peripheral sovereigns like France.</div>
-      </div>
-
-      <div class="news-card geo">
-        <div class="headline">France sovereign credit rating decision due Friday — bond market under pressure</div>
-        <div class="context">Moody's France sovereign credit rating decision is scheduled for Friday (Oct 23). BlackRock's latest weekly commentary identified French bond turmoil as a lesson in selectivity, noting that higher sovereign yields do not always reflect compensated risk. French OAT spreads over German Bunds have widened amid fiscal concerns and energy cost headwinds to the industrial sector.</div>
-        <span class="why-tag">Why it matters (Geopolitical Risk):</span>
-        <div class="context">A downgrade or negative outlook from Moody's would amplify French sovereign spreads, tighten credit conditions across French banks, and test ECB's credibility in managing both inflation and financial stability simultaneously.</div>
-      </div>
-
-      <!-- CHINA -->
-      <div class="region-label">🇨🇳 China</div>
-
-      <div class="news-card">
-        <div class="headline">China's growth momentum fades in H2 2026 despite solid H1 start</div>
-        <div class="context">After a strong start to 2026, China's economy surprised to the downside in the June quarter. Weak domestic demand persists, the property market downturn continues, and adverse weather events compounded soft survey data. Industrial output and exports remain the primary support for GDP, though the US Supreme Court ruling in February — striking down many Trump-era tariffs as unlawful — has reduced one major headwind. China targets 4.5%–5% GDP growth for 2026, the first year of its 15th Five-Year Plan.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">China's loss of momentum in Q2–Q3 2026 means it cannot act as a global demand buffer the way it did in earlier cycles. Weak Chinese commodity demand provides a partial offset to Middle East supply risk in oil markets — but slowing Chinese industrial output also signals reduced demand for semiconductors and industrial machinery, relevant for Korea and Taiwan.</div>
-      </div>
-
-      <div class="news-card">
-        <div class="headline">Chinese equities underperform, semiconductor and AI-related shares weigh on benchmarks</div>
-        <div class="context">Chinese mainland markets have underperformed Hong Kong over the past week, with selling in semiconductor and AI-related stocks driving declines. Foreign investor selling has added to volatility, extending a broader retreat from Asian financial assets as global borrowing costs rise and uncertainty around the US rate path continues.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">China's AI sector had been one of the few areas attracting risk capital. Sustained institutional selling signals that the global AI valuation correction is now crossing into Chinese technology equities — potentially pressuring the few remaining momentum plays in the region.</div>
-      </div>
-
-      <!-- APAC -->
-      <div class="region-label">🌏 APAC (ex-China, ex-India)</div>
-
-      <div class="news-card">
-        <div class="headline">NextDC shares (Australia) tank 40% after delays to Melbourne data centre</div>
-        <div class="context">Australia-listed data centre operator NextDC fell 40% after returning from a trading halt, following disclosure of significant delays to a major Melbourne data centre project. The ABC Markets Live blog flagged this as intensifying concerns about whether AI infrastructure investment in Australia can generate sufficient returns on the timeline promised to investors.</div>
-        <span class="why-tag">Why it matters:</span>
-        <div class="context">A 40% single-day decline in a data centre operator mirrors CoreWeave's pressure in the US. The pattern is becoming global — AI infrastructure stocks that cannot demonstrate concrete revenue timelines are being sold hard. This is a direct read-across to the AI capex debate surrounding Meta and SpaceX tonight.</div>
-      </div>
-
+  <!-- UPCOMING EVENTS STRIP -->
+  <div class="events-strip">
+    <div class="events-strip-label">This Week — Key Events to Watch</div>
+    <div class="events-list">
+      <div class="event-pill"><span>Tue Oct 27</span> — FOMC Meeting Begins</div>
+      <div class="event-pill"><span>Wed Oct 28</span> — Fed Rate Decision + Alphabet Q3 Earnings</div>
+      <div class="event-pill"><span>Wed Oct 28</span> — Bank of Canada Rate Decision</div>
+      <div class="event-pill"><span>Thu Oct 29</span> — ECB Rate Decision + US PCE Data + US Q3 GDP</div>
+      <div class="event-pill"><span>Fri Oct 30</span> — Bank of Japan Rate Decision + Germany GDP</div>
     </div>
-
-    <!-- ══════════════════════════════════════════
-         SECTION 2: MARKETS SNAPSHOT
-    ══════════════════════════════════════════ -->
-    <div class="section-wrap">
-      <div class="section-header sh-markets">📊 Markets Snapshot</div>
-
-      <!-- EQUITIES -->
-      <div class="region-label" style="margin-top:0">Equities (Oct 20 close / Oct 21 premarket)</div>
-      <div class="markets-grid">
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">S&P 500</div>
-            <div class="metric-pct up">+0.41%</div>
-          </div>
-          <div class="metric-price">7,690.73</div>
-          <div class="metric-reason">Tech rebound led by chips; breadth remains narrow. Closed below 50-day MA of 7,706 — technically weak.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Nasdaq</div>
-            <div class="metric-pct up">+1.11%</div>
-          </div>
-          <div class="metric-price">26,430.89</div>
-          <div class="metric-reason">Chip stocks broke 8-session losing streak. SpaceX beat drove after-hours sentiment. Durability uncertain.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">DJIA</div>
-            <div class="metric-pct down">-0.07%</div>
-          </div>
-          <div class="metric-price">51,966.03</div>
-          <div class="metric-reason">GE Aerospace slid 3% despite beat. GM plunged 7% on lowered full-year guidance, muting Dow gains.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Nifty 50</div>
-            <div class="metric-pct down">-1.11%</div>
-          </div>
-          <div class="metric-price">22,888.95</div>
-          <div class="metric-reason">Oct 19 close. Broad-based selling on elevated oil. GIFT Nifty +100 pts suggests gap-up Wednesday open.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Sensex</div>
-            <div class="metric-pct down">-1.17%</div>
-          </div>
-          <div class="metric-price">73,852.90</div>
-          <div class="metric-reason">Oct 19 close. Investors lost ₹5.5L Cr in single day. Jio IPO opening and oil prices dominate sentiment.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">VIX</div>
-            <div class="metric-pct down">-6.70%</div>
-          </div>
-          <div class="metric-price">18.64</div>
-          <div class="metric-reason">Volatility eased on Monday recovery, but still elevated vs. summer lows. Earnings week keeps uncertainty high.</div>
-        </div>
-
-      </div>
-
-      <!-- BONDS -->
-      <div class="region-label">Bonds</div>
-      <div class="markets-grid">
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">US 10Y Yield</div>
-            <div class="metric-pct down">-0.03%</div>
-          </div>
-          <div class="metric-price">5.09%</div>
-          <div class="metric-reason">Slight pullback after housing starts fell 5.2% MoM. Still extremely restrictive — suppresses valuation multiples, especially for high-duration AI equities.</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">USD Index</div>
-            <div class="metric-pct down">-0.25%</div>
-          </div>
-          <div class="metric-price">101.72</div>
-          <div class="metric-reason">Dollar softened slightly. Any further DXY weakness supports emerging market capital flows, including India.</div>
-        </div>
-      </div>
-
-      <!-- COMMODITIES -->
-      <div class="region-label">Commodities</div>
-      <div class="markets-grid">
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">WTI Crude</div>
-            <div class="metric-pct up">+0.96%</div>
-          </div>
-          <div class="metric-price">$99.48</div>
-          <div class="metric-reason">Near $100/bbl on renewed Middle East tensions and attacks on Gulf shipping. Futures curve now prices above $87/bbl even 7 months out.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Brent Crude</div>
-            <div class="metric-pct down">-0.12%</div>
-          </div>
-          <div class="metric-price">~$101.09</div>
-          <div class="metric-reason">Brent near $110/bbl per India live data. November 2026 contract at $101.09 ICE. Geopolitical risk premium structurally elevated.</div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Gold</div>
-            <div class="metric-pct down">-0.40%</div>
-          </div>
-          <div class="metric-price">$4,142.60</div>
-          <div class="metric-reason">Slight dip but holding near all-time highs. Central bank demand and safe-haven bid intact. Outperforming Bitcoin YTD in 2026.</div>
-        </div>
-
-      </div>
-
-      <!-- CRYPTO -->
-      <div class="region-label">Crypto</div>
-      <div class="markets-grid">
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Bitcoin</div>
-            <div class="metric-pct down">-0.29%</div>
-          </div>
-          <div class="metric-price">$81,590</div>
-          <div class="metric-reason">Spot ETFs shed nearly $1B over the weekend. Michael Saylor attributes weakness to surging bond yields and AI infrastructure sucking up capital that would otherwise flow into crypto.</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-top">
-            <div class="metric-name">Ethereum</div>
-            <div class="metric-pct up">+0.40%</div>
-          </div>
-          <div class="metric-price">$2,391.93</div>
-          <div class="metric-reason">JPMorgan expanding JPM Coin deposit token to the Ethereum network is a positive catalyst. Institutional adoption narrative alive despite broader crypto pressure.</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         SECTION 3: AI WATCH
-    ══════════════════════════════════════════ -->
-    <div class="section-wrap">
-      <div class="section-header sh-ai">🤖 AI Watch</div>
-
-      <div class="ai-card">
-        <div class="ai-tag">Earnings / Infrastructure</div>
-        <div class="ai-headline">SpaceX beats Q3 estimates with 161% revenue growth — AI compute business emerging as primary engine</div>
-        <div class="ai-body">SpaceX reported EPS of $0.35 (vs. $0.10 estimate) on revenue of $14.58 billion, up 161% year-on-year. The company ended Q3 with 1.7 gigawatts of nameplate compute capacity. Crucially, SpaceX's AI business is structured as a data centre rental model — renting capacity to Anthropic, Google, and Reflection AI — making it closer to a cloud hyperscaler than an AI lab. Q3 capex was $19.6 billion, with Q4 guidance at $35–40 billion. Shares rose 8% in after-hours to $159.70. A large lock-up release follows earnings, however, giving early investors a window to sell.</div>
-      </div>
-
-      <div class="ai-card">
-        <div class="ai-tag">Regulation</div>
-        <div class="ai-headline">EU AI Act transparency obligations (Article 50) now in force — compliance burden shifts to enterprises</div>
-        <div class="ai-body">As confirmed in Stephenson Harwood's October 2026 Neural Network, Article 50 obligations under the EU AI Act are now fully in force. Providers and deployers of AI systems must comply with transparency requirements. Separately, the UK Government published its AI Risk Management Toolkit, and Parliament is considering regulation of AI-generated digital replicas. China's Supreme People's Court released guidance on AI tort liability, establishing a framework for assessing when an AI product is "unreasonably dangerous." These regulatory moves create compliance costs for enterprises deploying AI in regulated industries across three major jurisdictions simultaneously.</div>
-      </div>
-
-      <div class="ai-card">
-        <div class="ai-tag">Market Signal</div>
-        <div class="ai-headline">AI infrastructure valuation reset goes global — NextDC (-40%), CoreWeave (-4%), Korean Elice (-30%) all fall in 24 hours</div>
-        <div class="ai-body">Three AI infrastructure names on three continents saw severe single-day selloffs within a 24-hour window. The common thread: investors are no longer rewarding future capacity additions without near-term revenue proof. Saylor's attribution of Bitcoin weakness to AI capital absorption is notable — the $1 trillion corporate AI buildout is functionally competing with other asset classes for institutional allocation. Tonight's Meta and Tesla calls will be the most watched data points in the AI capex debate so far this cycle.</div>
-      </div>
-
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         SECTION 4: KEY TAKEAWAYS
-    ══════════════════════════════════════════ -->
-    <div class="section-wrap">
-      <div class="section-header sh-takeaways">💡 Key Takeaways</div>
-
-      <div class="takeaway-item">
-        <div class="takeaway-num">01</div>
-        <div class="takeaway-text"><strong>The AI capex credibility crisis is the macro story of this earnings season.</strong> SpaceX's beat is encouraging for bulls, but the market is now demanding proof from Meta ($130–145B capex) and Tesla before it re-rates the AI trade higher. A mixed result tonight — beat on revenue, miss on guidance or FCF — could extend the Nasdaq's correction beyond chip stocks into the broader hyperscaler complex.</div>
-      </div>
-
-      <div class="takeaway-item">
-        <div class="takeaway-num">02</div>
-        <div class="takeaway-text"><strong>Oil above $100/bbl is a central bank trap.</strong> WTI near $100 and Brent near $110 forces the Fed and ECB to stay restrictive even as growth data softens. The US supercore at 3.13% YoY and Eurozone energy inflation at 18.8% YoY mean neither central bank has room to pivot. Watch the Oct 28 Fed and Oct 29 ECB decisions — both are likely holds, but the tone on December will set the trajectory for rates through year-end.</div>
-      </div>
-
-      <div class="takeaway-item">
-        <div class="takeaway-num">03</div>
-        <div class="takeaway-text"><strong>Jio Platforms IPO opening today is a DII liquidity test for India.</strong> India's primary market has raised over Rs 1.1 lakh crore across 96 IPOs in 2026. Jio at Rs 30,000+ crore is a sizable capital call. If oversubscribed heavily, it validates domestic institutional firepower and foreign interest. If subscription is muted, it signals the secondary market selloff has transferred into primary market caution — with implications for the 250+ companies in the IPO pipeline.</div>
-      </div>
-
-      <div class="takeaway-item">
-        <div class="takeaway-num">04</div>
-        <div class="takeaway-text"><strong>Gold outperforming Bitcoin in 2026 is a regime signal, not noise.</strong> Gold at $4,142 near all-time highs while Bitcoin sits at $81,590 — well below its $126,000 peak — reflects a flight to genuine store-of-value assets amid elevated bond yields and geopolitical risk. When gold grabs alpha at this pace, it historically precedes a broader risk-asset repricing. Watch the BTC/Gold ratio: currently ~19x, well below cycle highs.</div>
-      </div>
-
-      <div class="takeaway-item">
-        <div class="takeaway-num">05</div>
-        <div class="takeaway-text"><strong>Next 24–72 hours: three events to watch.</strong> (1) Meta and Tesla earnings after US close today — specifically Meta FCF and Tesla margin trajectory. (2) Jio Platforms subscription data as it rolls in — a proxy for India's appetite for digital and AI-adjacent equity. (3) Moody's France sovereign rating decision on Friday — a potential catalyst for European bond spread widening and ECB policy complexity heading into the Oct 29 meeting.</div>
-      </div>
-
-    </div>
-
-    <!-- AUTHOR CARD -->
-    <div class="author-card">
-      <div class="author-avatar">YS</div>
-      <div>
-        <div class="author-label">Analysis By</div>
-        <div class="author-name">Yuvraj Sureka</div>
-        <div class="author-creds">Trading &nbsp;|&nbsp; CFA Level II Candidate &nbsp;|&nbsp; Investment Banking &nbsp;|&nbsp; Equity Research</div>
-        <div class="author-contact">linkedin.com/in/yuvrajsureka47 &nbsp;·&nbsp; yuvrajsureka47@gmail.com &nbsp;·&nbsp; +91 6001930875</div>
-      </div>
-    </div>
-
-    <div class="tagline">Macro research for the next generation of fund managers.</div>
-
-    <!-- DISCLAIMER -->
-    <div class="disclaimer">
-      <p>Sources: Bloomberg · Reuters · Financial Times · Economic Times · Business Standard · CNBC · Charles Schwab · Investing.com · ABC Markets Live · Stephenson Harwood Neural Network</p>
-      <p class="sources-line" style="margin-top:8px;">This brief is AI-assisted and curated by <span>Yuvraj Sureka</span>. Data is reviewed before publishing but may contain errors or inaccuracies. Not financial advice. Please verify all figures independently before making any investment decision.</p>
-    </div>
-
   </div>
+
+  <!-- SECTION 1: GLOBAL MACRO -->
+  <div class="section">
+    <div class="section-header macro"><span class="dot dot-blue"></span>Global Macro</div>
+
+    <!-- UNITED STATES -->
+    <div class="region-label">United States</div>
+
+    <div class="news-card">
+      <div class="news-headline">FOMC Week Begins With Markets on Edge — Fed Expected to Hold at 3.75–4.00%</div>
+      <div class="news-why">The Federal Reserve begins its two-day policy meeting tomorrow with a rate hold widely expected. Market attention is firmly on guidance language — specifically whether the Fed signals a December cut given that October composite PMI eased to 57.6 and core PCE for September is due Thursday. With the 10-year yield still hovering near 5%, any hawkish tone could extend the equity selloff that pushed the S&P 500 down 0.52% on Friday to 7,623.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">S&P 500 Posts Second Consecutive Weekly Loss as Tech Mega-Caps Weigh</div>
+      <div class="news-why">The S&P 500 fell 0.5% last week while the Nasdaq dropped 0.7%. Meta fell 6% after earnings despite a revenue beat of $64.6 billion, as markets focused on its 2026 capex guidance of $135–$145 billion. Tesla fell 3% on mixed Q3 numbers. However, 337 of 500 S&P components actually rose on Thursday — the Dow and the equal-weight index outperformed significantly — highlighting a rotation away from mega-caps and into rate-sensitive sectors as bond yields stabilized from their September peak of 5.36%.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">Dow Falls 1.2% Friday Amid Crude-Driven Inflation Concerns; Key Support Levels Watched</div>
+      <div class="news-why">The Dow closed at 52,215 on Friday, down 1.2%, as Brent crude above $116 per barrel renewed inflation fears. With the US 10-year yield at 4.99%, the market is pricing in a difficult environment for rate-sensitive stocks. Alphabet and Microsoft report Q3 earnings on Wednesday — their AI capital expenditure guidance for 2027 is the number that could define the week's market direction.</div>
+    </div>
+
+    <!-- INDIA -->
+    <div class="region-label">India</div>
+
+    <div class="news-card">
+      <div class="news-headline">Nifty Falls for Fourth Consecutive Session, Settles at 22,600 — Crude and FII Outflows Dominate</div>
+      <div class="news-why">The Nifty 50 declined 87.65 points (0.39%) to close at 22,600 on Friday, touching an intraday low of 22,372. The market has now erased roughly 80% of its previous six-session advance from 22,180 to 23,175. Foreign portfolio investors have sold over Rs 44,166 crore in October alone, and CY2026 outflows have crossed Rs 3 lakh crore. The primary driver is elevated Brent crude above $116, which expands India's import bill and pressures the rupee. Key support now sits at 22,372.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">Bank Nifty Drops 638 Points (1.16%) — PSU Banks and Private Lenders Sell Off</div>
+      <div class="news-why">Bank Nifty closed at 54,287, down 638 points. Selling was concentrated in public sector banks and select private lenders as rising US yields and domestic inflation concerns dampened rate-cut expectations. With the RBA rate hike probability above 60% and global bond yields elevated, institutional appetite for rate-sensitive Indian financials remains constrained. Markets open Monday with Gift Nifty signaling a modestly positive open at 22,618 (+0.23%).</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">DII Buying Continues to Cushion FII-Driven Selling Pressure in 2026</div>
+      <div class="news-why">Despite FII selling of Rs 2.7 lakh crore in 2026, domestic institutional investors have absorbed over Rs 4.16 lakh crore, preventing deeper index corrections. SIP inflows remain structurally strong, underpinning the floor in Indian equities. However, this cushion has limits — a sustained crude oil shock could compress earnings for oil-import-dependent sectors and force a reassessment of forward earnings estimates across metals, infrastructure, and auto sectors.</div>
+    </div>
+
+    <!-- EUROPE -->
+    <div class="region-label">Europe</div>
+
+    <div class="news-card">
+      <div class="news-headline">ECB Rate Decision Due Thursday — Markets Price ~60% Chance of a Hike to 2.75%</div>
+      <div class="news-why">The ECB's Governing Council meets October 28-29, with the decision published Thursday at 14:15 CET. Euro area inflation remains above target at 3.2% year-on-year. Two ECB sources told Reuters that a move was possible as early as October. A hike to 2.75% would push policy into mildly restrictive territory. This decision matters for global bond markets because a hawkish ECB alongside a held Fed would tighten global financial conditions simultaneously — negative for risk assets and emerging market flows.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">Euro Stoxx 50 Closes at 6,068 on Friday Amid Hawkish Rate Signals and Oil Pressure</div>
+      <div class="news-why">European equities fell 0.3% on Friday. Brent crude above $116 raises energy costs for European manufacturers who import the majority of their oil, while elevated yields compress valuation multiples. The DAX fell 0.8%. October composite PMI for the euro area eased to 51.9, signaling weak but positive expansion. Germany's Q3 GDP reading on Friday will clarify whether Europe's largest economy is in or near recession.</div>
+    </div>
+
+    <!-- CHINA -->
+    <div class="region-label">China</div>
+
+    <div class="news-card">
+      <div class="news-headline">China Q3 GDP Grows 4.6% — Beats Estimates, Full-Year 4.5–5% Target Now Achievable</div>
+      <div class="news-why">China's Q3 GDP came in at 4.6% year-on-year, above expectations, recovering from the 4.3% slowdown in Q2. For the first nine months of 2026, cumulative GDP growth stands at 4.6%. Beijing's state planner reaffirmed that more proactive macro policies will continue, including a national-level M&A fund and an AI industry scale target exceeding CNY 10 trillion. The better-than-expected print reduces near-term pressure for emergency stimulus and supports commodity demand, including oil and iron ore.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">China PMI Data Due Saturday — Bellwether for November Macro Trajectory</div>
+      <div class="news-why">Official PMI data for China releases Saturday. With Q3 GDP surprising on the upside but domestic demand structurally weak (fixed-asset investment fell 5.7% in H1), PMI will confirm whether the Q3 improvement is broadening or concentrated only in exports and high-value manufacturing. A manufacturing PMI above 50 would be constructive for commodity-linked assets globally, including Indian metals and mining stocks.</div>
+    </div>
+
+    <!-- APAC -->
+    <div class="region-label">APAC (Ex-China, India)</div>
+
+    <div class="news-card geo-alert">
+      <div class="news-tag">GEOPOLITICAL RISK</div>
+      <div class="news-headline">Strait of Hormuz Tensions Keep Brent Above $116 — APAC Oil Importers Under Pressure</div>
+      <div class="news-why">Brent closed at $116.93 on Thursday and holds above $116 this week as Strait of Hormuz shipping tensions persist. Japan, South Korea, and Australia are significant oil importers — elevated prices squeeze trade balances and add to domestic inflation. The Nikkei has broken the floor of its rising trend channel, and ASX futures point to a 0.5% decline on Monday. The BoJ meets Friday — any signal of policy normalization would add yen volatility to an already strained APAC picture.</div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-headline">ASX 200 Set to Open Lower Monday as Wall Street Weakness and Oil Fears Carry Over</div>
+      <div class="news-why">Australian markets open Monday with futures pointing down 0.5%, tracking Wall Street's Friday losses. The RBA rate hike probability has moved above 60% according to live markets, reflecting that elevated global inflation — driven partly by crude oil — is pushing central banks to maintain or increase restrictive policy. For Australian equities, this creates a dual pressure: higher domestic borrowing costs and weaker risk appetite from global institutional investors.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MARKETS SNAPSHOT -->
+  <div class="section">
+    <div class="section-header markets"><span class="dot dot-green"></span>Markets Snapshot</div>
+
+    <div class="region-label">Equities</div>
+    <div class="markets-grid">
+      <div class="metric-card">
+        <div class="metric-name">S&P 500</div>
+        <div class="metric-price">7,623.68</div>
+        <div class="metric-change down">−0.52% (Fri close)</div>
+        <div class="metric-reason">Mega-cap tech drag from Meta capex shock; equal-weight index outperformed</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Nasdaq Composite</div>
+        <div class="metric-price">25,955.34</div>
+        <div class="metric-change down">−0.21% (Fri close)</div>
+        <div class="metric-reason">Tech selloff partly offset by bond yield stabilization from 5.36% peak</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Dow Jones</div>
+        <div class="metric-price">52,215</div>
+        <div class="metric-change down">−1.2% (Fri close)</div>
+        <div class="metric-reason">Crude-driven inflation fears hit industrials; Dow down on third-straight weekly loss concern</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Nifty 50</div>
+        <div class="metric-price">22,600</div>
+        <div class="metric-change down">−0.39% (Fri close)</div>
+        <div class="metric-reason">4th consecutive decline; FII selling Rs 44K cr in Oct; crude headwind to import bill</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Sensex</div>
+        <div class="metric-price">73,124</div>
+        <div class="metric-change down">−0.17% (Fri close)</div>
+        <div class="metric-reason">Metals, realty, PSU banks led declines; IT relatively resilient</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Euro Stoxx 50</div>
+        <div class="metric-price">6,068.22</div>
+        <div class="metric-change down">−0.3% (Fri close)</div>
+        <div class="metric-reason">Hawkish ECB bets + oil pressure on European manufacturers</div>
+      </div>
+    </div>
+
+    <div class="region-label">Bonds</div>
+    <div class="markets-grid">
+      <div class="metric-card">
+        <div class="metric-name">US 10Y Yield</div>
+        <div class="metric-price">4.99%</div>
+        <div class="metric-change down">Elevated — near 19-yr highs</div>
+        <div class="metric-reason">Stabilized from 5.36% Sep peak; still restrictive; compresses equity valuations and EM flows</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Nikkei 225</div>
+        <div class="metric-price">62,693</div>
+        <div class="metric-change flat">Trend channel break</div>
+        <div class="metric-reason">BoJ decision Friday; yen volatility risk if normalization signal given</div>
+      </div>
+    </div>
+
+    <div class="region-label">Commodities</div>
+    <div class="markets-grid">
+      <div class="metric-card">
+        <div class="metric-name">Brent Crude</div>
+        <div class="metric-price">$116.93</div>
+        <div class="metric-change up">+3.82% (wk)</div>
+        <div class="metric-reason">Strait of Hormuz tensions persist; oil shock is primary inflation risk this week</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">WTI Crude</div>
+        <div class="metric-price">$103.27</div>
+        <div class="metric-change up">Elevated</div>
+        <div class="metric-reason">Brent-WTI spread wide at ~$13.66/bbl; US shale production offsetting some supply pressure</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-name">Gold</div>
+        <div class="metric-price">$4,007.90</div>
+        <div class="metric-change down">−1.29% (week)</div>
+        <div class="metric-reason">Gold had worst week in 4 months; fell to 3-month low near $4,000; real yields rising reduce appeal</div>
+      </div>
+    </div>
+
+    <div class="region-label">Crypto</div>
+    <div class="markets-grid">
+      <div class="metric-card">
+        <div class="metric-name">Bitcoin</div>
+        <div class="metric-price">~$80,797</div>
+        <div class="metric-change down">Range-bound</div>
+        <div class="metric-reason">BTC closed Oct 23 at ~$80,797; macro uncertainty and risk-off tone capping upside toward $85K</div>
+      </div>
+    </div>
+
+    <div class="region-label">FX</div>
+    <div class="markets-grid">
+      <div class="metric-card">
+        <div class="metric-name">EUR/USD</div>
+        <div class="metric-price">1.1203</div>
+        <div class="metric-change flat">Base case 1.11–1.13</div>
+        <div class="metric-reason">Supported by ECB hike expectations; risk: if Fed surprises hawkish Wednesday</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: AI WATCH -->
+  <div class="section">
+    <div class="section-header ai"><span class="dot dot-purple"></span>AI Watch</div>
+
+    <div class="ai-card">
+      <div class="ai-tag">Infrastructure / Capex</div>
+      <div class="news-headline">Big Tech AI Capex on Track for $725B in 2026 — Up 77% from 2025</div>
+      <div class="news-why">Meta, Microsoft, Alphabet, and Amazon combined spent a record $130B on AI infrastructure in Q1 2026 alone. Meta has raised its 2026 capex to $135–$145B; Alphabet guided $180–$190B. The 2026 collective spend is projected to reach $725B, up from $410B in 2025 — a 77% increase. This is the single most important structural driver of data center construction, semiconductor demand, and energy consumption globally. Alphabet and Microsoft report Q3 earnings Wednesday — their 2027 capex guidance will determine whether this spending cycle is accelerating or plateauing.</div>
+    </div>
+
+    <div class="ai-card">
+      <div class="ai-tag">Enterprise Adoption</div>
+      <div class="news-headline">Deutsche Telekom Targets €2.5B in AI Cost Savings; 17 Nations Set AI Research Priorities</div>
+      <div class="news-why">Enterprise AI deployment is now moving from pilot to budget line item. Deutsche Telekom put a hard €2.5B savings target on AI as of October 6. Seventeen countries coordinated AI priorities for government science research in early October. Microsoft recommends data governance frameworks before AI deployment across public sector entities. These signals collectively indicate that AI spend by enterprises will compound the hyperscaler capex cycle through demand for software, tooling, and inference infrastructure — directly constructive for NVIDIA, AMD, and enterprise SaaS platforms.</div>
+    </div>
+
+    <div class="ai-card">
+      <div class="ai-tag">Model / Frontier</div>
+      <div class="news-headline">Agentic AI, Claude Opus 5.5, and Sovereign AI Among October 2026's Defining Themes</div>
+      <div class="news-why">Anthropic launched Claude Opus 5.5 on September 22. AWS has made models available through Amazon Bedrock for enterprise deployment. October developments include EU AI Act enforcement milestones and deepening sovereign AI narratives from multiple governments. The agentic AI layer — where models take multi-step autonomous actions — is expected to become the primary battleground heading into 2027, as large firms race to embed agents into operational workflows before the productivity window narrows.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: KEY TAKEAWAYS -->
+  <div class="section">
+    <div class="section-header takeaways"><span class="dot dot-amber"></span>Key Takeaways</div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">01</div>
+      <div class="takeaway-text"><strong>This is a five central bank week.</strong> The Fed (Oct 28), Bank of Canada (Oct 28), ECB (Oct 29), and Bank of Japan (Oct 30) all decide within five days. A held Fed plus a hiking ECB is the most likely outcome — but the guidance language from Powell's press conference on Wednesday is the variable markets will price hardest. A hawkish hold could send yields back toward 5.36% and trigger another leg lower in equities.</div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">02</div>
+      <div class="takeaway-text"><strong>The oil shock is the most underappreciated risk.</strong> Brent at $116 is not a short-term blip. It reflects structural supply constraints from Strait of Hormuz tensions that do not resolve overnight. For India specifically, this translates directly into a wider current account deficit, higher inflation prints, and reduced space for an RBI rate cut. The Rs 3 lakh crore FII outflow story is partly crude-driven and may not reverse until oil prices correct meaningfully.</div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">03</div>
+      <div class="takeaway-text"><strong>Alphabet and Microsoft Q3 earnings on Wednesday are the market's real inflection test.</strong> S&P 500 earnings are running 30–32% above year-ago levels overall — a genuinely strong season. But markets are punishing capex surprises (Meta fell 6% despite a beat). If Alphabet or Microsoft announces 2027 AI capex materially above consensus, the question becomes whether AI monetization is growing fast enough to justify the spend. The answer will determine whether the Nasdaq's current support at 25,900 holds or breaks.</div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">04</div>
+      <div class="takeaway-text"><strong>DII resilience is buying time for Indian equities — not fixing the macro problem.</strong> DIIs have absorbed Rs 4.16 lakh crore against FII selling of Rs 2.7 lakh crore this year. This is structurally impressive and reflects the maturity of domestic retail participation through SIPs. However, if crude stays above $110 into Q4, corporate margins in autos, aviation, cement, and industrials will compress, and forward earnings estimates will need to be revised lower. Watch the Nifty 22,372 support closely — a sustained break opens a move toward 22,180.</div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">05</div>
+      <div class="takeaway-text"><strong>The AI capex supercycle is intact but entering a scrutiny phase.</strong> $725B of planned 2026 AI infrastructure spend is historically unprecedented. The market is no longer rewarding spending announcements blindly — it wants to see monetization evidence. Microsoft's AI business crossed $37B annualized revenue run rate in Q3 (up 123%), and Alphabet's Gemini API generates ~$15B annually. The companies that can show the revenue-to-capex ratio improving will outperform those that cannot into year-end.</div>
+    </div>
+  </div>
+
+  <!-- AUTHOR CARD -->
+  <div class="author-card">
+    <div class="author-avatar">YS</div>
+    <div>
+      <div class="author-label">Analysis By</div>
+      <div class="author-name">Yuvraj Sureka</div>
+      <div class="author-creds">Investment Banking · CFA Level II · Equity Research · Trading · Bloomberg Rank 4 World</div>
+      <div class="author-contact">linkedin.com/in/yuvrajsureka47 &nbsp;|&nbsp; yuvrajsureka47@gmail.com</div>
+    </div>
+  </div>
+  <div class="author-tagline">Macro research for the next generation of fund managers.</div>
+
+  <!-- SOURCES + DISCLAIMER -->
+  <div class="sources-line">
+    Sources: Bloomberg · Reuters · Business Standard · Moneycontrol · FRED · CNBC · Financial Times · ABC Markets · Ventura Securities · DIPAM · Grain Central
+  </div>
+  <div class="disclaimer">
+    This brief is AI-assisted and curated by <span class="dname">Yuvraj Sureka</span>. Data is reviewed before publishing but may contain errors. Not financial advice. Please verify all figures independently before making any investment decisions.
+  </div>
+
+</div>
 </body>
 </html>
