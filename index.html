@@ -1,333 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — October 27, 2026 | Yuvraj Sureka</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Daily Market Brief — October 28, 2026</title>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #131720;
+      --card: #1a1f2e;
+      --border: #252c3d;
+      --text: #e8eaf0;
+      --muted: #9ca3af;
+      --dim: #6b7280;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --green: #34d399;
+      --red: #f87171;
+      --amber: #fbbf24;
+      --orange: #fb923c;
+      --teal: #2dd4bf;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--bg);
+      padding: 36px 32px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .byline {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .byline span {
+      font-weight: 800;
+      color: var(--purple);
+    }
+    .brief-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .date-headline {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .mood {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .divider-gradient {
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
+      margin-bottom: 32px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px 48px;
+    }
+
+    /* ─── SECTION HEADER PILL ─── */
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1e2330;
+      border: 1px solid #2d3348;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .pill-macro { color: var(--blue); }
+    .pill-markets { color: var(--green); }
+    .pill-ai { color: var(--purple); }
+    .pill-takeaway { color: var(--amber); }
+
+    .section-block {
+      margin-bottom: 40px;
+    }
+
+    /* ─── REGION LABEL ─── */
+    .region-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 18px 0 10px;
+    }
+
+    /* ─── NEWS CARD ─── */
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .news-card.geo-risk {
+      border-left: 4px solid var(--red);
+      background: #1f1520;
+    }
+    .news-headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+    .news-body {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .news-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ─── MARKETS SNAPSHOT ─── */
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .metric-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .metric-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .metric-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .metric-change {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .metric-reason {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .up { color: var(--green); }
+    .down { color: var(--red); }
+    .flat { color: var(--muted); }
+
+    /* ─── AI WATCH CARD ─── */
+    .ai-card {
+      background: #16122e;
+      border: 1px solid #3b2f7e;
+      border-left: 4px solid var(--purple);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .ai-tag {
+      display: inline-block;
+      background: #2e1f6b;
+      color: var(--purple);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .ai-headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .ai-body {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── TAKEAWAYS ─── */
+    .takeaway-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .takeaway-item:last-child {
+      border-bottom: none;
+    }
+    .takeaway-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--border);
+      min-width: 32px;
+      line-height: 1.1;
+    }
+    .takeaway-text {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .takeaway-text strong {
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    /* ─── AUTHOR CARD ─── */
+    .author-card {
+      background: #0b0d13;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-meta {}
+    .author-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .author-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .author-creds {
+      font-size: 11px;
+      color: var(--purple);
+      margin-bottom: 3px;
+    }
+    .author-contact {
+      font-size: 11px;
+      color: var(--dim);
+    }
+
+    /* ─── DISCLAIMER ─── */
+    .disclaimer {
+      font-size: 11px;
+      color: var(--dim);
+      line-height: 1.6;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .disclaimer span {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    .sources-line {
+      font-size: 11px;
+      color: var(--dim);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .masthead, .wrapper { padding-left: 16px; padding-right: 16px; }
+      .date-headline { font-size: 22px; }
+      .snapshot-grid { grid-template-columns: 1fr 1fr; }
+      .author-card { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;background:#0d0f14;font-family:'Inter','Segoe UI',sans-serif;">
+<body>
 
-<div style="width:100%;max-width:860px;margin:0 auto;background:#0d0f14;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,0.4);color:#e8eaf0;box-sizing:border-box;">
-
-  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — October 27, 2026 curated by Yuvraj Sureka</h2>
+  <!-- Accessibility heading -->
+  <h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    Daily Market Brief — October 28, 2026 curated by Yuvraj Sureka
+  </h2>
 
   <!-- MASTHEAD -->
-  <div style="margin-bottom:8px;">
-    <div style="font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.08em;margin-bottom:6px;">
-      Curated by <span style="font-weight:800;color:#a78bfa;">Yuvraj Sureka</span>
-    </div>
-    <div style="font-size:11px;font-weight:700;color:#6b7280;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;">Daily Market Brief</div>
-    <div style="font-size:28px;font-weight:800;color:#ffffff;margin-bottom:6px;">Tuesday, October 27, 2026</div>
-    <div style="font-size:14px;color:#9ca3af;font-style:italic;">Risk-on caution. Tech leads. Oil retreats. Fed decision looms Wednesday.</div>
-  </div>
-  <div style="background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);height:2px;margin:24px 0;"></div>
-
-  <!-- SECTION 1: GLOBAL MACRO -->
-  <div style="margin-bottom:32px;">
-    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#60a5fa;margin-bottom:20px;">01 — Global Macro</div>
-
-    <!-- UNITED STATES -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;margin-top:4px;">United States</div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">FOMC Two-Day Meeting Begins — Hold Expected, But Hike Language Watched Closely</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">The Federal Reserve kicked off its October 27–28 meeting as markets price a 90.6% probability of no rate change. The Fed raised rates by 25 bps in September (to 3.75–4.00%) and all 19 policymakers voted for the hike. Markets have priced in at least 3 more hikes over the next 12 months. Wednesday's statement will be scrutinized for the pace of future tightening. This directly suppresses equity valuations by raising the discount rate, and the 10-year yield at ~4.99% reflects that pressure.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Mega-Cap Earnings Gauntlet This Week — Microsoft, Alphabet, Amazon Due</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Tuesday brings Coca-Cola, Boeing, Visa, and UPS results. Alphabet, Microsoft, and Amazon report later in the week. Markets are testing whether AI capital expenditure is translating into actual revenue — a Nasdaq selloff of 2.6% on October 22 showed investors are not giving free passes. With 173 S&P 500 companies reporting this week, earnings direction will co-determine where indices close the month.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">September Durable Goods and October Consumer Confidence Due Tuesday</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Core durable goods orders (ex-aircraft) are expected at +0.6% MoM, while the Conference Board Consumer Confidence is forecast at 80.7 versus 81.9 prior — a marginal softening. New home sales are also expected lower at 649K from 684K. Weak consumer data ahead of a Fed hold would signal that monetary tightening is biting, which complicates the Fed's calculus for December.</div>
-    </div>
-
-    <!-- INDIA -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">India</div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">October F&O Expiry Day — Nifty 50 Monthly Contracts Settle Today</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">October 27 is the expiry date for all NSE monthly contracts including Nifty, Bank Nifty, FinNifty, and all stock futures and options. India VIX was elevated (15.70) on October 21 and has been declining toward 13–14 range in recent sessions. On October 23, the Nifty futures closed at a discount to spot — a bearish signal heading into expiry. The Nifty 50 cash market has been trading in the 22,600–22,800 zone through October. Expiry-day pinning near key strikes will drive intraday volatility significantly.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">HDFC Bank, Reliance, Infosys Lead F&O Activity Through October Series</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Throughout the October series, HDFC Bank, Reliance, Infosys, Bharti Airtel, TCS, and ITC dominated F&O volumes. These names carry heavy index weight and their expiry-day positions will mechanically move the Nifty. Foreign flows via FII/DII positioning will determine whether the index holds 22,600 or breaks lower. The global risk-off sentiment from elevated US yields is a structural headwind for Indian equities even as domestic consumption data has been resilient.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">India VIX Recovery — Volatility Compression May Support Post-Expiry Bounce</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">India VIX dropped sharply 8% to 13.59 on October 6 and again 7.94% to 14.04 on October 13, showing volatility is pricing in a calmer near-term environment once the October expiry clears. Post-expiry, attention will shift to November series positioning and the trajectory of the US Fed decision on Wednesday. A Fed hold without hawkish language could trigger a relief rally in Indian indices.</div>
-    </div>
-
-    <!-- EUROPE -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">Europe</div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">ECB Meeting Begins Tomorrow (Oct 28–29) — 60% Market Probability of a Rate Hike to 2.75%</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">The European Central Bank raised rates to 2.50% on September 16, 2026, citing still-elevated inflation (3.2% y/y in August vs. 2% target). The October 29 decision is being watched for a potential hike to 2.75% — markets were pricing ~60% probability as of late September. Eurozone 2026 growth forecast is only 0.9%, meaning the ECB is hiking into a near-stagnation environment. This is stagflationary risk for European equities, particularly rate-sensitive sectors like real estate and utilities.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Europe Up ~0.81% on Average Overnight — Diverging From Asia's -0.47% Average</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">European equities have held resilient even as Asia pulled back overnight. The divergence reflects expectations that the ECB will be forced to pause after October if growth data disappoints further. Spanish unemployment came in at 9.8% (vs 9.9% prior), and Eurozone M3 money supply grew 3.6% y/y — both slightly better than expected. These readings reduce urgency for an immediate ECB hike, which is supportive of European risk assets in the short term.</div>
-    </div>
-
-    <!-- CHINA -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">China</div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">PBOC Reaffirms Ample Liquidity Support Ahead of October Politburo Economic Meeting</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">The People's Bank of China reaffirmed its commitment to maintaining ample liquidity and adjusting monetary policy tools in a timely manner in the second half of 2026. Full-year GDP growth forecast stands at 4.6% (TD Securities), against a government target range of 4.5–5.0%. Domestic consumption remains the structural weak point — export growth has held up, but the reliance on external demand makes China vulnerable to any global slowdown. The October Politburo meeting could announce supplementary budget-style stimulus if growth risks materialize.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">China's 15th Five-Year Plan Approved October 28 — Long-Term Structural Blueprint Set</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">China is set to formally approve the 15th Five-Year Plan (2026–2030) on October 28, targeting an average annual GDP growth of ~4.4% to double GDP from 2020 levels by 2035. The plan emphasizes high-tech manufacturing, AI, semiconductors, and reduced reliance on real estate as a growth driver. This structural pivot matters for global equity investors — it accelerates Chinese competition in technology sectors that US and European companies currently dominate.</div>
-    </div>
-
-    <!-- APAC -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;margin-top:20px;">APAC (ex-China, ex-India)</div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">RBNZ Raises Rate to 3.00% — New Zealand Tightening Despite Slowing Global Growth</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">The Reserve Bank of New Zealand is expected to raise its official cash rate from 2.75% to 3.00% on October 27. This signals that Oceanic central banks still face persistent inflation even as the global tightening cycle potentially nears its peak. Separately, Australia's CPI is forecast at 4.2% y/y (vs 4.0% prior), with the RBA Governor Bullock speaking Tuesday evening — hawkish commentary could push AUD higher and rattle rate-sensitive Australian equities.</div>
-    </div>
-
-    <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:16px;margin-bottom:10px;">
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">South Korea Q3 GDP Advance Estimate — Consensus at 0.7% QoQ</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">South Korea will release its Q3 2026 GDP advance estimate overnight (consensus: +0.7% QoQ vs. +0.6% prior). South Korea is a leading indicator for Asian technology and export demand given the heavy weight of Samsung, SK Hynix, and semiconductor supply chains. Stronger-than-expected GDP would be bullish for Asian tech stocks and would support the broader argument that EM Asia is decoupling from the US slowdown narrative.</div>
-    </div>
+  <div class="masthead">
+    <div class="byline">Curated by <span>Yuvraj Sureka</span></div>
+    <div class="brief-label">Daily Market Brief</div>
+    <div class="date-headline">Wednesday, October 28, 2026</div>
+    <div class="mood">Risk-on with caution. AI trade rips higher. Fed holds. Oil stays elevated. Bonds under pressure.</div>
+    <div class="divider-gradient"></div>
   </div>
 
-  <!-- SEPARATOR -->
-  <div style="background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);height:1px;margin:28px 0;"></div>
+  <!-- BODY -->
+  <div class="wrapper">
 
-  <!-- SECTION 2: MARKETS SNAPSHOT -->
-  <div style="margin-bottom:32px;">
-    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#34d399;margin-bottom:20px;">02 — Markets Snapshot</div>
+    <!-- ─── SECTION 1: GLOBAL MACRO ─── -->
+    <div class="section-block">
+      <div class="section-pill pill-macro">&#127758; Global Macro</div>
 
-    <!-- EQUITIES -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Equities</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;">
+      <!-- UNITED STATES -->
+      <div class="region-label">United States</div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">S&P 500</span>
-          <span style="font-size:11px;font-weight:700;color:#34d399;">+0.70%</span>
+      <div class="news-card">
+        <div class="news-headline">Fed Holds at 3.75–4.00% — December Hike Moves Into Focus</div>
+        <div class="news-body">
+          The FOMC held interest rates unchanged at the 3.75–4.00% range, as almost universally expected, with CME FedWatch showing a 90.6% probability of no action. However, <strong>Chairman Warsh declined to provide forward guidance</strong>, which markets are reading as a quiet signal that a 25bps December hike remains firmly on the table. September's hot CPI and PPI prints mean the door to further tightening is not closed. <strong>Why it matters:</strong> AI companies have been borrowing aggressively to fund infrastructure buildout — a December hike would raise their cost of capital directly, pressuring valuations across semiconductors and hyperscalers.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">7,676.77</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Monday close. Tech sector rotation lifted the index as FOMC week started positively. Prior close (Friday) was 7,623.68 after a 0.52% decline driven by oil surging to 6-month highs.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Nasdaq Composite</span>
-          <span style="font-size:11px;font-weight:700;color:#34d399;">+0.82%</span>
+      <div class="news-card">
+        <div class="news-headline">Anthropic Files S-1 on Nasdaq Under Ticker 'ANT'</div>
+        <div class="news-body">
+          Anthropic made its IPO filing public on October 26, targeting a roadshow beginning the week of November 9. The company, which crossed <strong>$47B annualised revenue</strong> in May 2026 and has seen 10x revenue growth for three consecutive years, is valued north of $380B. The filing coincides with Big Tech earnings week — Microsoft, Alphabet, and Amazon all report this week. <strong>Why it matters:</strong> The debut of a frontier AI lab on public markets is a structural inflection point. It will accelerate re-pricing of the private AI stack and test whether public investors value AI labs on revenue multiples or capability narratives.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">26,169.38</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Outperformed on enthusiasm over the upcoming Anthropic IPO and AI sector momentum. Nasdaq 100 futures up 1.15% Tuesday pre-market, led by semiconductor strength.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Dow Jones</span>
-          <span style="font-size:11px;font-weight:700;color:#34d399;">+0.28%</span>
+      <div class="news-card">
+        <div class="news-headline">Big Tech Earnings: Microsoft and Alphabet Report After Close</div>
+        <div class="news-body">
+          Microsoft (MSFT) and Alphabet (GOOGL) are both due to report Q3 earnings after market close today, alongside T-Mobile, ServiceNow, and GE Vernova. 83% of the roughly half of S&amp;P 500 companies that have already reported <strong>beat expectations per LSEG</strong>. Alphabet and Amazon have already disclosed <strong>billions in unrealised gains</strong> from their Anthropic stakes, while Microsoft faces an accounting markdown on its OpenAI position. <strong>Why it matters:</strong> Cloud and AI capex guidance from these two companies will set the tone for the market's AI-spend narrative going into year-end.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">52,361.58</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Blue-chip lagged tech. Dow futures +0.43% Tuesday pre-market. Boeing, Coca-Cola, and UPS report Tuesday — these names directly move the price-weighted Dow.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Nifty 50</span>
-          <span style="font-size:11px;font-weight:700;color:#9ca3af;">Expiry Day</span>
+      <!-- INDIA -->
+      <div class="region-label">India</div>
+
+      <div class="news-card">
+        <div class="news-headline">Nifty 50 Adds ~0.6% on October 27 as Global Cues Improve</div>
+        <div class="news-body">
+          The Nifty 50 crossed the 22,700 mark on October 27, recovering Friday's losses on the back of supportive global sentiment. Sensex opened October 28 lower by about 122 points, with persistently elevated Brent crude — now above $113 per barrel — keeping import-cost pressure high. FIIs remained net sellers in recent sessions, while DIIs have been absorbing. <strong>Why it matters:</strong> India's crude import bill swells with every dollar above $100/barrel on Brent, directly widening the current account deficit and pressuring the rupee, which has been hovering near 97/USD.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~22,650–22,800</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">October F&O expiry today. Nifty futures have been trading near this range. India VIX declining from 15.70 to ~13–14 range. Expiry-day pin risk near key strikes. October monthly contracts settle today.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">VIX (Fear Index)</span>
-          <span style="font-size:11px;font-weight:700;color:#34d399;">-5.45%</span>
+      <div class="news-card">
+        <div class="news-headline">India-US Trade Deal Optimism Supports IT Stocks; Geopolitical Risk Lingers</div>
+        <div class="news-body">
+          Markets have seen intermittent boosts from optimism over a potential <strong>India-US bilateral trade agreement</strong>, which has been lifting IT names like Infosys and TCS. However, geopolitical risk from an ongoing Iran-related conflict, elevated oil, and four consecutive weeks of FII selling through late October are structural drags on sentiment. <strong>Why it matters:</strong> India's equity market is caught between a fundamentally strong earnings season and a macro headwind combination of high oil, FII outflows, and a weak rupee — the balance of these forces will determine whether the Nifty can sustain above 22,700.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">18.39</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">VIX dropped sharply on Monday from ~19.45. Sub-20 VIX historically consistent with a risk-on regime, though FOMC uncertainty may push it back toward 20 by Wednesday.</div>
+      </div>
+
+      <!-- EUROPE -->
+      <div class="region-label">Europe</div>
+
+      <div class="news-card">
+        <div class="news-headline">UK Finance Minister Healey Delivers Autumn Budget — GBP Under Pressure</div>
+        <div class="news-body">
+          UK Finance Minister John Healey delivered the Autumn Budget on October 28, a closely watched fiscal event given expectations of <strong>tax increases</strong> aimed at filling a roughly £35B fiscal gap. Citi research flagged potential rises in dividend and consumption taxes. The GBP weakened ahead of and during the event, with EUR/GBP rising to its highest level since May 2024. Money markets are pricing in a <strong>25bps BoE rate cut as early as November</strong>, supported by Goldman Sachs. <strong>Why it matters:</strong> A contractionary fiscal budget combined with a dovish BoE pivot would structurally weaken sterling and unsettle UK gilt markets — a dynamic that echoes the Truss-era playbook, though far less extreme.
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-headline">ECB Expected to Hold Thursday; French Fiscal Stress Intensifies</div>
+        <div class="news-body">
+          The ECB meets tomorrow and is broadly expected to keep rates unchanged for the third consecutive meeting. Inflation in the Eurozone is contained and growth is stabilising, though Spain's Q3 GDP slowed to 0.6%. <strong>Standard &amp; Poor's downgraded France's sovereign rating</strong> citing fragile public finances, and French borrowing costs are diverging from Germany's. <strong>Why it matters:</strong> French sovereign stress is a tail risk for Eurozone bond markets. If spreads between French and German yields widen further, it could reignite concerns about Eurozone debt sustainability — a scenario the ECB is keenly watching.
+        </div>
+      </div>
+
+      <!-- CHINA -->
+      <div class="region-label">China</div>
+
+      <div class="news-card geo-risk">
+        <div class="news-headline">&#9888; China Manufacturing PMI Slips to 50.6 in October, Misses Estimate</div>
+        <div class="news-body">
+          The private RatingDog China Manufacturing PMI fell to <strong>50.6 in October</strong> versus 51.2 prior and a 50.8 consensus estimate. Export orders — a leading signal for global goods trade — declined sharply. China's official PMI had returned to barely above 50 in Q3 after months of contraction. <strong>Why it matters:</strong> A slipping PMI despite stimulus efforts signals that domestic demand and export competitiveness are both softening simultaneously. This is a bearish signal for global trade volumes and industrial metals, particularly copper, iron ore, and aluminium.
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-headline">China Trade Surplus on Track to Top $1 Trillion for Second Year Running</div>
+        <div class="news-body">
+          Despite softer PMI readings, China's overall trade surplus is on pace to exceed <strong>$1 trillion for the second consecutive year</strong>, driven by high-value exports in EVs, batteries, and tech hardware. Beijing continues to lean on export-led growth even as US-China tariff tensions remain present. <strong>Why it matters:</strong> A $1T trade surplus signals that China is exporting its deflationary overcapacity to the rest of the world — a structural drag on inflation in importing countries, but a source of growing political friction with trading partners in Europe and North America.
+        </div>
+      </div>
+
+      <!-- APAC -->
+      <div class="region-label">APAC (ex-China, ex-India)</div>
+
+      <div class="news-card">
+        <div class="news-headline">SK Hynix Surges 9% as Profit Soars Sevenfold; Samsung Jumps 8.5% Pre-Earnings</div>
+        <div class="news-body">
+          South Korea's Kospi led APAC gains with a <strong>6.1% weekly jump</strong>, powered by SK Hynix rallying 9% after unveiling a <strong>$45B shareholder return plan</strong> on sevenfold profit growth. Samsung Electronics rose 8.5% ahead of its own earnings Thursday. MSCI Asia Pacific climbed 1.2%. <strong>Why it matters:</strong> This is a direct read-through on AI-driven HBM (High Bandwidth Memory) demand. If SK Hynix and Samsung are printing record profits, it confirms that GPU and AI accelerator buildout is still running at full throttle — a bullish signal for Nvidia, AMD, and the broader semiconductor supply chain.
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-headline">RBNZ Holds at 2.75%; BoJ Rate Decision Due Friday</div>
+        <div class="news-body">
+          The Reserve Bank of New Zealand held rates steady at 2.75% today, in line with consensus. The Bank of Japan rate decision is due on Friday, with markets watching closely given ongoing yen weakness — the USD/JPY has been hovering near 157. <strong>Why it matters:</strong> Any hawkish surprise from the BoJ would trigger a sharp yen rally and unwind carry trades, a known risk for global risk assets given the size of yen-funded positions across equity and bond markets.
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2: MARKETS SNAPSHOT ─── -->
+    <div class="section-block">
+      <div class="section-pill pill-markets">&#128200; Markets Snapshot</div>
+
+      <div class="region-label">Equities</div>
+      <div class="snapshot-grid">
+
+        <div class="metric-card">
+          <div class="metric-label">S&amp;P 500</div>
+          <div class="metric-price">7,728</div>
+          <div class="metric-change up">+0.68% / +51.97</div>
+          <div class="metric-reason">Broad risk-on ahead of FOMC hold; Tech and chip names led. AI sentiment elevated by Anthropic S-1 filing.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Nasdaq Composite</div>
+          <div class="metric-price">26,509</div>
+          <div class="metric-change up">+1.3% intraday</div>
+          <div class="metric-reason">Chipmakers and mega-cap AI names surging. SOX gained 3.6%. Anthropic IPO buzz lifting the sector.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Dow Jones</div>
+          <div class="metric-price">52,377</div>
+          <div class="metric-change up">+0.03%</div>
+          <div class="metric-reason">Blue chips flat; AI concentration in Nasdaq dragging index divergence vs Dow to a multi-year high.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Nifty 50</div>
+          <div class="metric-price">~22,750</div>
+          <div class="metric-change flat">Cautious; approx. flat</div>
+          <div class="metric-reason">Opened lower October 28 on crude-cost pressure and FII selling. Recovered partially on global cues.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">VIX (Fear Index)</div>
+          <div class="metric-price">17.52</div>
+          <div class="metric-change down">-4.73%</div>
+          <div class="metric-reason">Volatility falling ahead of expected Fed hold — markets are not pricing in a surprise hike today.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Kospi (Korea)</div>
+          <div class="metric-price" style="font-size:16px;">SK Hynix +9%</div>
+          <div class="metric-change up">+6.1% weekly</div>
+          <div class="metric-reason">AI memory demand driving semiconductor profits to record highs. Samsung also +8.5% pre-earnings.</div>
+        </div>
+
+      </div>
+
+      <div class="region-label">Bonds</div>
+      <div class="snapshot-grid">
+        <div class="metric-card">
+          <div class="metric-label">US 10Y Treasury</div>
+          <div class="metric-price">~4.99%</div>
+          <div class="metric-change down">Rising; near multi-year highs</div>
+          <div class="metric-reason">Sticky inflation + Fed hawkishness + Mideast supply shock keeping yields elevated. 5%+ signals tightening financial conditions, most directly hitting long-duration AI capex borrowers.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">US 2Y Treasury</div>
+          <div class="metric-price">~4.79%</div>
+          <div class="metric-change flat">Steady; December hike priced</div>
+          <div class="metric-reason">Markets have already priced a second 2026 hike in December at ~90% probability. Short end holds elevated.</div>
+        </div>
+      </div>
+
+      <div class="region-label">Commodities</div>
+      <div class="snapshot-grid">
+
+        <div class="metric-card">
+          <div class="metric-label">WTI Crude</div>
+          <div class="metric-price">~$99–101</div>
+          <div class="metric-change down">Eased from above $103</div>
+          <div class="metric-reason">Pulled back from weekly highs as US-Iran diplomatic signals emerged, but the Strait of Hormuz risk premium remains. Goldman Sachs Q4 2026 forecast: $75/bbl WTI.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Brent Crude</div>
+          <div class="metric-price">~$113</div>
+          <div class="metric-change down">Slipping from $115+ peak</div>
+          <div class="metric-reason">Middle East conflict continues supporting a geo-risk premium of $15–20/bbl over fundamental supply-demand. Goldman Sachs Q4 target: $80/bbl if tensions ease.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Gold (Spot)</div>
+          <div class="metric-price">~$4,072</div>
+          <div class="metric-change down">Retreating from $4,380 ATH</div>
+          <div class="metric-reason">Safe-haven demand softened as equities rallied and risk-on sentiment improved. Still up 60%+ YTD. JPMorgan revised 2026 average target down to $5,243/oz from $5,708.</div>
+        </div>
+
+      </div>
+
+      <div class="region-label">Crypto</div>
+      <div class="snapshot-grid">
+        <div class="metric-card">
+          <div class="metric-label">Bitcoin (BTC)</div>
+          <div class="metric-price">$80,908</div>
+          <div class="metric-change up">+0.97%</div>
+          <div class="metric-reason">Trading near $80–81K range as markets await Fed outcome. Prediction market data confirms BTC above $114K was resolved YES for Oct 20–26. Fear and Greed Index: 51 (Neutral).</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Ethereum (ETH)</div>
+          <div class="metric-price">$2,350</div>
+          <div class="metric-change up">+1.12%</div>
+          <div class="metric-reason">Recovering alongside broader risk sentiment. ETH remains sensitive to macro rate expectations and DeFi activity levels.</div>
+        </div>
       </div>
 
     </div>
 
-    <!-- BONDS -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Bonds</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;">
+    <!-- ─── SECTION 3: AI WATCH ─── -->
+    <div class="section-block">
+      <div class="section-pill pill-ai">&#128161; AI Watch</div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">US 10Y Treasury</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">Rising</span>
+      <div class="ai-card">
+        <div class="ai-tag">IPO / Capital Markets</div>
+        <div class="ai-headline">Anthropic Files S-1 on Nasdaq, Roadshow Starts Nov 9 — Largest AI Lab IPO in History</div>
+        <div class="ai-body">
+          Anthropic publicly filed its IPO registration on October 26, applying to list on the Nasdaq under the ticker symbol <strong>ANT</strong>. Formal marketing (roadshow) is set to begin the week of November 9. The company hit <strong>$47B annualised revenue in May 2026</strong>, representing 10x growth for three consecutive years, and is reportedly seeking a valuation north of $380B. Major backers include Google, Amazon, Microsoft, and Nvidia. Claude models are Fable 5.5 (enterprise), with Mythos-class models in limited deployment. Strategic importance: the public listing of a frontier AI lab creates a new benchmark asset class for institutional investors, forces re-pricing of OpenAI's private valuation, and directly accelerates competitive pressure across the AI stack — potentially benefiting inference chip demand and cloud AI services.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~4.99%</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Near the psychologically significant 5% level. At these yield levels, equities face valuation pressure (higher discount rate) and bonds offer competitive returns. A break above 5% would signal renewed rate hike fears and likely pull equities lower.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">US 2Y Treasury</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">Elevated</span>
+      <div class="ai-card">
+        <div class="ai-tag">Earnings / Enterprise AI</div>
+        <div class="ai-headline">Microsoft and Alphabet Report Q3 After Close — AI Capex Guidance in Focus</div>
+        <div class="ai-body">
+          Both companies report Q3 2026 earnings after market close today. The single most important data point for markets is <strong>AI-related cloud revenue growth and forward capex guidance</strong>. Alphabet and Amazon have already disclosed multi-billion dollar unrealised mark-to-market gains from their Anthropic holdings, while Microsoft faces an accounting markdown on its OpenAI stake. Analysts are watching Azure AI growth and Google Cloud AI revenue as proof points that enterprise AI is moving beyond pilot programs into paid production deployments. Strategic importance: if capex guidance disappoints, it could signal that the AI infrastructure buildout is plateauing — a significant re-rating risk for the entire semiconductor ecosystem.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">4.686%</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">The 2Y is the most Fed-sensitive tenor. At 4.686%, it reflects markets still pricing additional hikes beyond October. Yield curve inverted (2Y above 10Y): historically a recession warning signal.</div>
       </div>
 
-    </div>
-
-    <!-- COMMODITIES -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Commodities</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;">
-
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">WTI Crude Oil</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">-1.86% to -1.99%</span>
+      <div class="ai-card">
+        <div class="ai-tag">Model Release Signal</div>
+        <div class="ai-headline">Claude Fable 5.5 Reportedly in Enterprise Circulation Ahead of Anthropic IPO</div>
+        <div class="ai-body">
+          Reports indicate that Anthropic's Claude Fable 5.5 — sitting in the company's Mythos model tier — has been shared with a limited set of enterprise partners, potentially as a pre-IPO demonstration of technical capability. The Anthropic product stack now sits above Claude Opus 5.5 and Claude Sonnet 5.5 in the API. Strategic importance: demonstrating frontier capability ahead of the roadshow is a deliberate narrative-building exercise. Investors will be benchmarking Anthropic's models against GPT-5 and Gemini Ultra to form a view on long-term competitive positioning before buying into the IPO.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~$101–102 / bbl</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Trump ruling out immediate military strikes against Iran directly deflated the geopolitical risk premium. Oil had surged ~6% the prior week on Iran fears and Houthi attacks on Saudi facilities. The retreat from near 6-month highs ($103.27 Friday close) is broadly equity-positive as it reduces near-term inflation fears.</div>
       </div>
+    </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Brent Crude</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">-1.68% to -1.87%</span>
+    <!-- ─── SECTION 4: KEY TAKEAWAYS ─── -->
+    <div class="section-block">
+      <div class="section-pill pill-takeaway">&#128270; Key Takeaways</div>
+
+      <div class="takeaway-item">
+        <div class="takeaway-num">01</div>
+        <div class="takeaway-text">
+          <strong>The Fed is on hold today, but December is live.</strong> Warsh's silence on forward guidance is itself a signal. With 10-year yields near 5%, inflation still sticky, and gasoline prices elevated, the second hike of 2026 in December is more probable than not (~90% per CME). This changes the discount rate conversation for long-duration assets — particularly AI infrastructure companies that have been borrowing to build.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~$114–115 / bbl</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Brent had breached $116 last Friday (4-year high) on Iran strike fears. Still elevated year-on-year by ~76%, which remains a sustained inflationary input globally — particularly for Europe and India that are net importers. The Brent-WTI spread (~$8.71–$13) has widened, indicating regional supply tightness in global markets.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Gold (XAU/USD)</span>
-          <span style="font-size:11px;font-weight:700;color:#34d399;">+0.44–0.63%</span>
+      <div class="takeaway-item">
+        <div class="takeaway-num">02</div>
+        <div class="takeaway-text">
+          <strong>Anthropic's IPO filing is the defining market event of Q4 2026.</strong> It creates a publicly traded frontier AI benchmark, accelerates OpenAI's own IPO timeline, and forces institutional allocators to take a view on AI lab valuations at scale. The roadshow beginning November 9 means this will dominate financial media through the rest of the year.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~$4,011–4,033 / oz</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Gold is holding above $4,000 — a level that was unthinkable 18 months ago. Safe-haven demand driven by geopolitical uncertainty (Middle East, Iran), persistent inflation, and central bank accumulation (especially PBOC). Gold's strength alongside rising real yields is unusual, signaling structural demand rather than just risk-off rotation.</div>
       </div>
 
-    </div>
-
-    <!-- CRYPTO -->
-    <div style="font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Crypto</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
-
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Bitcoin (BTC/USD)</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">-0.63% to -0.89%</span>
+      <div class="takeaway-item">
+        <div class="takeaway-num">03</div>
+        <div class="takeaway-text">
+          <strong>The cross-asset message from oil is inflationary, not recessionary.</strong> Brent near $113 reflects a geopolitical risk premium from Middle East tensions, not demand destruction. This keeps headline inflation elevated globally, limits the room for rate cuts in 2026–2027, and disproportionately pressures import-heavy economies like India, where the current account deficit is widening.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~$79,800–80,411</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">Bitcoin slipped below $80,000, tracking risk sentiment as the FOMC meeting looms. 24h range: $79,332–$80,680. Bitcoin ETF logged a net outflow of 2,123 BTC in a single day (Oct 27 snapshot). Market cap ~$1.61–1.62 trillion. BTC is consolidating in the $79,000–81,000 zone, with the $77,600 level being closely watched as key support if the Fed surprises hawkishly.</div>
       </div>
 
-      <div style="background:#1a1d26;border:1px solid #2d3348;border-radius:10px;padding:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;">Ethereum (ETH/USD)</span>
-          <span style="font-size:11px;font-weight:700;color:#f87171;">-1.12%</span>
+      <div class="takeaway-item">
+        <div class="takeaway-num">04</div>
+        <div class="takeaway-text">
+          <strong>SK Hynix's 9% move is the best real-time demand signal for AI hardware.</strong> Sevenfold profit growth on HBM chips is direct evidence that GPU and AI accelerator production is still running at capacity. If Samsung confirms a similar trend Thursday, this removes one of the major bear cases against the AI infrastructure trade — that hardware demand has peaked.
         </div>
-        <div style="font-size:22px;font-weight:800;color:#e8eaf0;margin-bottom:6px;">~$2,314</div>
-        <div style="font-size:11px;color:#9ca3af;line-height:1.5;">ETH underperforming BTC as risk sentiment stays cautious ahead of the Fed. The DeFi index was the only CoinDesk crypto index to gain on October 26, suggesting rotation within crypto toward yield-generating on-chain strategies rather than directional bets.</div>
+      </div>
+
+      <div class="takeaway-item">
+        <div class="takeaway-num">05</div>
+        <div class="takeaway-text">
+          <strong>Watch the next 72 hours: FOMC presser, Microsoft + Alphabet earnings, and BoJ on Friday.</strong> These three events together — Fed language on December, Big Tech AI guidance, and a potential BoJ hawkish shift — could move the USD/JPY carry trade, reset AI sector multiples, and define year-end positioning for global macro funds. Volatility, currently compressed at VIX 17.5, is likely to spike by Friday.
+        </div>
       </div>
 
     </div>
-  </div>
 
-  <!-- SEPARATOR -->
-  <div style="background:linear-gradient(90deg,#8b5cf6,#3b82f6,transparent);height:1px;margin:28px 0;"></div>
-
-  <!-- SECTION 3: AI WATCH -->
-  <div style="margin-bottom:32px;">
-    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:20px;">03 — AI Watch</div>
-
-    <div style="background:#1a1d26;border:1px solid #4c1d95;border-left:3px solid #a78bfa;border-radius:10px;padding:16px;margin-bottom:12px;">
-      <div style="display:inline-block;background:#2d1b69;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;color:#a78bfa;margin-bottom:10px;">IPO / CAPITAL MARKETS</div>
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Anthropic IPO — Largest AI Offering in History Imminent, Mid-November Now Expected</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Anthropic, the maker of Claude, is preparing its IPO with investment banks scheduling investor roadshows. Earlier targeted for October, the listing has shifted toward mid-November (post-US midterm elections). At a $965 billion Series H valuation, the IPO aims to raise approximately $60 billion — which would make it the largest tech IPO in history. Nasdaq was visibly driven Monday by excitement around the Anthropic offering, with Kiplinger reporting the index was "up 1% at 26,213 on enthusiasm over the upcoming Anthropic IPO." This is a watershed moment: the first major frontier AI company going public sets the benchmark valuation for all AI infrastructure companies and will directly reprice competitors like OpenAI (2027 IPO expected), Google DeepMind, and xAI.</div>
+    <!-- AUTHOR CARD -->
+    <div class="author-card">
+      <div class="author-avatar">YS</div>
+      <div class="author-meta">
+        <div class="author-label">Analysis by</div>
+        <div class="author-name">Yuvraj Sureka</div>
+        <div class="author-creds">Trading &nbsp;|&nbsp; CFA L2 Candidate &nbsp;|&nbsp; Investment Banking &nbsp;|&nbsp; Equity Research</div>
+        <div class="author-contact">linkedin.com/in/yuvrajsureka47 &nbsp;&bull;&nbsp; yuvrajsureka47@gmail.com</div>
+      </div>
     </div>
 
-    <div style="background:#1a1d26;border:1px solid #4c1d95;border-left:3px solid #a78bfa;border-radius:10px;padding:16px;margin-bottom:12px;">
-      <div style="display:inline-block;background:#2d1b69;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;color:#a78bfa;margin-bottom:10px;">COMPETITIVE DYNAMICS / MODEL RACE</div>
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Anthropic Considers New Claude Model Launch to Counter OpenAI's GPT-6 Astra</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Reuters reported in September 2026 that Anthropic is evaluating releasing a new frontier model ahead of its IPO, specifically to counter momentum from OpenAI's GPT-6 Astra. Anthropic's share of US enterprise AI spending climbed to 40% in Q1 2026, while OpenAI's fell from 50% to 27% over the same period. Prediction markets currently assign Anthropic an 88.5% probability of being rated the best AI model by November 1. A model launch ahead of the IPO would lock in enterprise contracts and strengthen the IPO narrative — making this a capital markets event as much as a technology one.</div>
+    <!-- SOURCES -->
+    <div class="sources-line">
+      Sources: Bloomberg &middot; Reuters &middot; Kiplinger &middot; Motley Fool &middot; Investing.com &middot; Schwab &middot; TradingEconomics &middot; InvestingLive &middot; FXStreet &middot; KuCoin &middot; CurrencyNews.co.uk
     </div>
 
-    <div style="background:#1a1d26;border:1px solid #4c1d95;border-left:3px solid #a78bfa;border-radius:10px;padding:16px;margin-bottom:12px;">
-      <div style="display:inline-block;background:#2d1b69;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;color:#a78bfa;margin-bottom:10px;">EARNINGS / AI SPEND SCRUTINY</div>
-      <div style="font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:6px;">Big Tech Earnings This Week Will Determine Whether AI Capex is Justified by Revenue</div>
-      <div style="font-size:12px;color:#9ca3af;line-height:1.6;">Alphabet, Microsoft, and Amazon all report this week. On October 22, the Nasdaq fell 2.6% as investors questioned "the financing and return profile of the AI build-out." The market is demanding that AI investment (data centers, compute, model training) show up in cloud revenue growth and enterprise software pricing power. If Microsoft Azure and Google Cloud guidance disappoint, it would be a major reset for AI-sector valuations globally — including impact on Indian IT majors like TCS and Infosys, which rely on these platforms for their enterprise contracts.</div>
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.
     </div>
-  </div>
 
-  <!-- SEPARATOR -->
-  <div style="background:linear-gradient(90deg,#f59e0b,#8b5cf6,transparent);height:1px;margin:28px 0;"></div>
+  </div><!-- /wrapper -->
 
-  <!-- SECTION 4: KEY TAKEAWAYS -->
-  <div style="margin-bottom:32px;">
-    <div style="display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fbbf24;margin-bottom:20px;">04 — Key Takeaways</div>
-
-    <div style="margin-bottom:0;">
-
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #1e2330;">
-        <div style="font-size:36px;font-weight:800;color:#2d3348;min-width:44px;line-height:1;">01</div>
-        <div style="font-size:13px;color:#e8eaf0;line-height:1.7;">The FOMC decision on Wednesday is the single largest risk event of the week. A hold with hawkish language (signaling more hikes ahead) will push the 10-year yield above 5%, compress equity valuations, and likely send BTC below $77,600. A hold with neutral language could trigger the next leg up for equities, particularly tech.</div>
-      </div>
-
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #1e2330;">
-        <div style="font-size:36px;font-weight:800;color:#2d3348;min-width:44px;line-height:1;">02</div>
-        <div style="font-size:13px;color:#e8eaf0;line-height:1.7;">Oil retreating from $103+ to ~$101 after Trump ruled out Iran strikes removes the most immediate inflation shock risk. However, Brent at ~$115 (up 76% year-on-year) remains structurally inflationary for both the ECB and India's current account. This cross-asset link — oil, CPI, rate expectations — remains the dominant macro thread across all regions.</div>
-      </div>
-
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #1e2330;">
-        <div style="font-size:36px;font-weight:800;color:#2d3348;min-width:44px;line-height:1;">03</div>
-        <div style="font-size:13px;color:#e8eaf0;line-height:1.7;">The Anthropic IPO is not just a technology event — it will price AI infrastructure as an asset class. The Nasdaq's behavior this week is partially tracking Anthropic IPO sentiment. If Alphabet, Microsoft, and Amazon disappoint on AI revenue this week, Anthropic's IPO roadshow faces headwinds. These are now linked.</div>
-      </div>
-
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #1e2330;">
-        <div style="font-size:36px;font-weight:800;color:#2d3348;min-width:44px;line-height:1;">04</div>
-        <div style="font-size:13px;color:#e8eaf0;line-height:1.7;">India's Nifty 50 faces dual pressure today: expiry-day volatility and global risk-off from pre-FOMC caution. Post-expiry (from tomorrow), the index typically sees a reset in positioning. The key watch is whether the November series opens with bullish or bearish bias — that will be determined by the Fed statement Wednesday and Nifty's ability to hold 22,600.</div>
-      </div>
-
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 0;">
-        <div style="font-size:36px;font-weight:800;color:#2d3348;min-width:44px;line-height:1;">05</div>
-        <div style="font-size:13px;color:#e8eaf0;line-height:1.7;">Watch in the next 24–72 hours: (a) FOMC statement Wednesday 2 PM ET — the language on the pace of future hikes is what markets will trade, not the hold itself; (b) Microsoft Azure and Google Cloud revenue guidance — the real AI monetization verdict; (c) ECB rate decision October 29 — a hike to 2.75% into a 0.9% growth environment would be the most hawkish major central bank decision globally this year.</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SEPARATOR -->
-  <div style="background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);height:1px;margin:28px 0;"></div>
-
-  <!-- AUTHOR CARD -->
-  <div style="background:#111827;border-radius:12px;padding:24px;display:flex;gap:20px;align-items:center;margin-bottom:20px;">
-    <div style="width:50px;height:50px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;">YS</div>
-    <div>
-      <div style="font-size:9px;font-weight:700;color:#6b7280;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Analysis By</div>
-      <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:4px;">Yuvraj Sureka</div>
-      <div style="font-size:11px;color:#a78bfa;margin-bottom:4px;">Trading &nbsp;|&nbsp; Pursuing CFA &nbsp;|&nbsp; Investment Banking &nbsp;|&nbsp; Equity Research</div>
-      <div style="font-size:11px;color:#6b7280;">linkedin.com/in/yuvrajsureka47 &nbsp;&nbsp; yuvrajsureka47@gmail.com &nbsp;&nbsp; +91 6001930875</div>
-    </div>
-  </div>
-  <div style="text-align:center;font-size:11px;color:#6b7280;font-style:italic;margin-bottom:16px;">Macro research for the next generation of fund managers.</div>
-
-  <!-- SOURCES -->
-  <div style="font-size:10px;color:#6b7280;margin-bottom:8px;">Sources: Bloomberg · Reuters · Kiplinger · Benzinga · Investing.com · Schwab · CoinGecko · CoinDesk · Trading Economics · Bybit · OKX · JM Financial · AlgoTest · Admiral Markets · ARY News · Crypto.news</div>
-
-  <!-- DISCLAIMER -->
-  <div style="font-size:10px;color:#4b5563;line-height:1.6;text-align:center;padding-top:12px;border-top:1px solid #1e2330;">
-    This brief is generated with the assistance of AI and is curated by <span style="color:#a78bfa;font-weight:700;">Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.
-  </div>
-
-</div>
 </body>
 </html>
