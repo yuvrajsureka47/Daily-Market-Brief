@@ -1,345 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0d0f14">
-<title>Daily Market Brief | Wednesday, November 11, 2026 | Yuvraj Sureka</title>
-<meta name="description" content="Daily global macro brief for Wednesday, November 11, 2026. Curated by Yuvraj Sureka.">
-<meta property="og:title" content="Daily Market Brief | Wednesday, November 11, 2026">
-<meta property="og:description" content="Hawkish repricing. Yields near 5%. Oil at two month lows. Gold and crypto soft.">
+<title>Daily Market Brief, November 12, 2026</title>
 <style>
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;padding:16px;background:#06070a;font-family:'Inter','Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif}
-.w{width:100%;max-width:860px;margin:0 auto;background:#0d0f14;color:#e8eaf0;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,.4)}
+body{margin:0;padding:16px;background:#05060a}
+.wrap{width:100%;max-width:860px;margin:0 auto;background:#0d0f14;color:#e8eaf0;font-family:'Inter','Segoe UI',sans-serif;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,.4)}
 .by{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:.08em;margin-bottom:6px}
-.by span{font-weight:800;color:#a78bfa}
-.lbl{font-size:11px;letter-spacing:.15em;font-weight:700;color:#6b7280;text-transform:uppercase}
-.date{font-size:28px;font-weight:800;color:#fff;margin-top:6px}
-.mood{font-size:14px;color:#9ca3af;font-style:italic;margin-top:8px}
-.snap{font-size:11px;color:#6b7280;line-height:1.7;margin-top:12px}
-.grad{background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);height:2px;margin:24px 0}
+.by b{font-weight:800;color:#a78bfa}
+.lab{font-size:11px;letter-spacing:.15em;font-weight:700;color:#6b7280;text-transform:uppercase}
+h1{font-size:28px;font-weight:800;color:#fff;margin:6px 0}
+.mood{font-size:14px;color:#9ca3af;font-style:italic;line-height:1.5}
+.snap{font-size:11px;color:#6b7280;margin-top:10px;line-height:1.6}
+.bar{height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);margin:24px 0}
 .sec{margin-bottom:40px}
 .pill{display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.hr{height:1px;background:#1e2330;margin-top:16px;margin-bottom:20px}
-.reg{font-size:10px;font-weight:700;letter-spacing:.12em;color:#6b7280;text-transform:uppercase;margin-bottom:12px}
-.rb{margin-bottom:24px}
-.card{background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:20px;border-left:3px solid #2d3348}
-.card.alert{background:#1a1015;border-left:3px solid #ef4444}
-.card h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:0 0 6px;line-height:1.35}
-.card p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0 0 8px}
-.card p b{color:#e8eaf0}
-.src{font-size:11px;color:#4b5563;line-height:1.5}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
-.m{background:#111520;border-radius:10px;padding:14px 16px;border:1px solid #1e2330}
-.mt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.mn{font-size:10px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:.05em}
-.st{font-size:10px;font-weight:700;letter-spacing:.06em;color:#6b7280;margin-top:3px}
-.st.live{color:#34d399}
+.c1{color:#60a5fa}.c2{color:#34d399}.c3{color:#a78bfa}.c4{color:#f59e0b}
+.ln{border:0;border-top:1px solid #1e2330;margin:16px 0 20px}
+.reg{font-size:10px;font-weight:700;letter-spacing:.12em;color:#6b7280;text-transform:uppercase;margin:24px 0 12px}
+.card{background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348}
+.card.alert{border-left-color:#ef4444;background:#1a1015}
+.al{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;color:#ef4444;text-transform:uppercase;margin-bottom:6px}
+.card h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:0 0 6px;line-height:1.4}
+.card p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0}
+.card p+p{margin-top:8px}
+.w{color:#60a5fa;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.m{background:#111520;border:1px solid #1e2330;border-radius:10px;padding:14px 16px}
+.mt{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mn{font-size:10px;text-transform:uppercase;color:#6b7280;font-weight:600}
 .chg{font-size:11px;font-weight:700;padding:2px 8px;border-radius:12px;white-space:nowrap}
-.up{background:#052e1a;color:#34d399}
-.dn{background:#2a0f0f;color:#f87171}
-.nu{background:#1e2330;color:#9ca3af}
+.up{background:#052e1a;color:#34d399}.dn{background:#2a0f0f;color:#f87171}.fl{background:#1e2330;color:#9ca3af}
 .px{font-size:20px;font-weight:800;color:#fff;margin-top:6px}
+.st{font-size:10px;font-weight:700;letter-spacing:.05em;margin-top:2px}
+.live{color:#34d399}.cls{color:#9ca3af}
 .rs{font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4}
-.ai{background:linear-gradient(135deg,#0f172a,#1a1f35);border-radius:10px;padding:16px 18px;border:1px solid #2d3348;margin-bottom:20px}
+.ai{background:linear-gradient(135deg,#0f172a,#1a1f35);border:1px solid #2d3348;border-radius:10px;padding:16px 18px;margin-bottom:14px}
 .tag{display:inline-block;background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase}
-.ai h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;line-height:1.35}
-.ai p{font-size:13px;color:#9ca3af;line-height:1.65;margin:0 0 8px}
-.ai p b{color:#e8eaf0}
-.tk{display:flex;gap:14px;align-items:flex-start}
-.tn{font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1}
-.tt{font-size:14px;color:#e8eaf0;line-height:1.6}
-.sep{height:1px;background:#1a1d27;margin:16px 0}
+.ai h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;line-height:1.4}
+.ai p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0}
+.ai p+p{margin-top:8px}
+.tk{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #1a1d27}
+.tk:last-child{border-bottom:0}
+.n{font-size:28px;font-weight:900;color:#2d3348;width:36px;flex-shrink:0;line-height:1}
+.tk div+div{font-size:14px;line-height:1.6;color:#e8eaf0}
 .stamp{margin-top:36px;padding:24px 28px;background:linear-gradient(135deg,#10121a,#13111f);border-radius:14px;border:1px solid #2d2545}
-.srow{display:flex;align-items:center;gap:20px}
+.au{display:flex;align-items:center;gap:20px}
 .av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:2px solid #a78bfa;flex-shrink:0;color:#fff;font-size:22px;font-weight:900;text-align:center;line-height:60px}
 .ab{font-size:9px;font-weight:800;letter-spacing:.18em;color:#6b7280;text-transform:uppercase;margin-bottom:6px}
-.nm{font-size:24px;font-weight:900;letter-spacing:.02em;color:#fff;text-shadow:0 0 24px rgba(167,139,250,.5)}
+.an{font-size:24px;font-weight:900;letter-spacing:.02em;color:#fff;text-shadow:0 0 24px rgba(167,139,250,.5)}
 .cr{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .cr span{background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600}
 .ct{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px}
-.ct a{color:#4b5563;font-size:10px;font-weight:500;text-decoration:none}
+.ct a{font-size:10px;font-weight:500;color:#4b5563;text-decoration:none}
 .ct a:hover{color:#9ca3af}
-.sl{height:1px;background:#1e2330;margin-top:16px}
+.sep{border-top:1px solid #1e2330;margin-top:16px}
 .tg{font-size:11px;color:#4b5563;font-style:italic;text-align:center;margin-top:14px}
-.srcs{background:#0a0c10;border-radius:10px;padding:12px 16px;margin-top:32px;font-size:11px;color:#6b7280;line-height:1.7}
-.srcs b{font-size:10px;text-transform:uppercase;color:#4b5563;font-weight:700;margin-right:6px}
-.disc{background:#0d0e14;border:1px solid #1e2330;border-radius:10px;padding:14px 18px;margin-top:16px}
-.disc .dl{font-size:9px;font-weight:800;letter-spacing:.15em;color:#4b5563;text-transform:uppercase;margin-bottom:6px}
-.disc .db{font-size:11px;color:#4b5563;line-height:1.6}
-.disc .db span{color:#a78bfa;font-weight:700}
-@media(max-width:560px){
-.w{padding:24px 16px}
-.date{font-size:24px}
-.srow{flex-direction:column;text-align:center}
-.cr,.ct{justify-content:center}
-.grid{grid-template-columns:1fr}
-}
+.src{background:#0a0c10;border-radius:10px;padding:12px 16px;margin-top:32px;font-size:11px;color:#6b7280;line-height:1.6}
+.src b,.dh{font-size:10px;font-weight:700;text-transform:uppercase;color:#4b5563}
+.dis{background:#0d0e14;border:1px solid #1e2330;border-radius:10px;padding:14px 18px;margin-top:16px}
+.dh{font-size:9px;font-weight:800;letter-spacing:.15em;margin-bottom:6px}
+.dis p{font-size:11px;color:#4b5563;line-height:1.6;margin:0}
+.dis span{color:#a78bfa;font-weight:700}
+@media(max-width:560px){.wrap{padding:24px 18px}.au{flex-direction:column;text-align:center}.cr,.ct{justify-content:center}h1{font-size:24px}}
 </style>
 </head>
 <body>
-<div class="w">
-<h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — Wednesday, November 11, 2026 curated by Yuvraj Sureka</h2>
+<div class="wrap">
 
-<!-- MASTHEAD -->
-<div class="by">Curated by <span>Yuvraj Sureka</span></div>
-<div class="lbl">Daily Market Brief</div>
-<div class="date">Wednesday, November 11, 2026</div>
-<div class="mood">Hawkish repricing. Yields near 5%. Oil at two month lows. Gold and crypto soft.</div>
-<div class="snap">Snapshot taken around 08:50 IST (03:20 UTC). Live prices: Nikkei, Kospi, Hang Seng, WTI, Brent, gold, bitcoin. Last close shown for markets that are shut or yet to open: US (cash equities open 20:00 IST, Treasuries closed for Veterans Day), Europe (opens 13:30 IST) and India (opens 09:15 IST). Every news item carries its source date. Anything outside a 24 hour window is flagged.</div>
-<div class="grad"></div>
+<div class="by">Curated by <b>Yuvraj Sureka</b></div>
+<div class="lab">Daily Market Brief</div>
+<h1>Thursday, November 12, 2026</h1>
+<div class="mood">Asian chips lead a tech rebound, but Nvidia’s leadership crisis drags US futures lower. The dollar and yields stay firm while gold and oil slip.</div>
+<div class="snap">Data snapshot: 8:50 AM IST (03:20 UTC). LIVE means the market was open at snapshot. CLOSE means the last session close. India, Europe and US cash markets are shut at snapshot, so their prices are the last close.</div>
+<div class="bar"></div>
 
-<!-- SECTION 1: GLOBAL MACRO -->
+<!-- GLOBAL MACRO -->
 <div class="sec">
-<div><span class="pill" style="color:#60a5fa">Global Macro</span></div>
-<div class="hr"></div>
+<span class="pill c1">Global Macro</span>
+<hr class="ln">
 
-<div class="rb">
-<div class="reg">United States</div>
-
-<div class="card">
-<h3>Hot October CPI locks in a December Fed hike</h3>
-<p>Headline CPI rose 0.4% in October against 0.3% expected, and core CPI rose 0.3% against 0.2%, its third straight 0.3% print. Fed Governor Waller said he backs a 25 basis point (0.25 percentage point) hike even if inflation cooled, and that 50 basis points should be considered if core ran at 0.3% or more. CME FedWatch shows about 88% odds of a 25 basis point hike and 11% for 50 or more.</p>
-<p><b>Why it matters:</b> The policy rate is 3.75% to 4.00%. Two 25 basis point hikes priced by March (LSEG) would lift the midpoint from 3.875% to 4.375%. Sticky core prices, not oil, are now the swing factor for equity valuations.</p>
-<div class="src">CNBC, Reuters, TheStreet | 10 Nov</div>
-</div>
-
-<div class="card">
-<h3>Treasuries sell off hard, 10 year yield ends at 4.98%</h3>
-<p>The 10 year yield rose about 10 basis points to 4.98% after briefly trading above 5%, one of the sharpest daily jumps in 19 months. The 2 year yield rose roughly 19 basis points to about 4.75%. A soft $42 billion 10 year auction added pressure, with foreign demand falling the most since 2016, per TheStreet.</p>
-<p><b>Why it matters:</b> The 2 year moved nearly twice as much as the 10 year, so the curve flattened by roughly 9 basis points. That is a policy repricing, not a growth scare. The US bond market is shut today for Veterans Day while US stocks trade, so equities get no live rate signal until Treasuries reopen on Thursday.</p>
-<div class="src">CNBC, CNN, TheStreet | 10 Nov</div>
-</div>
-
+<div class="reg" style="margin-top:0">United States</div>
 <div class="card alert">
-<h3>Iran denies talks and says Hormuz stays shut until seven conditions are met</h3>
-<p>Iran's security chief Mohsen Rezaei said no negotiations are under way and the Strait of Hormuz will not reopen unless Washington accepts seven conditions, including an end to the US naval blockade, sanctions relief and release of frozen funds. President Trump said the war is effectively over militarily while US forces stay ready to strike. Thirty seven ships were attacked in October, the most in any month of the war (Washington Institute).</p>
-<p><b>Why it matters:</b> Brent has slid from about $97 on Nov 5 to about $92, roughly 5%, on peace hopes that Tehran is publicly denying. Tanker attacks continue, so the risk to oil is skewed upward and a failed round of diplomacy could reverse the move fast.</p>
-<div class="src">Reuters, ABC News Australia | 10 to 11 Nov</div>
+<span class="al">Geopolitical risk</span>
+<h3>Nvidia falls about 8% after hours on reports its board may oust CEO Jensen Huang</h3>
+<p>The WSJ, NYT and CBS report that Nvidia’s board is weighing Huang’s removal after a second personal conduct allegation, on top of a board investigation opened on Nov 8. Shares dropped to roughly $159 after a 2.9% gain in the regular session. Nasdaq 100 futures are down 0.5% to 0.9% and S&amp;P 500 futures about 0.3%.</p>
+<p><span class="w">Why it matters:</span> Nvidia is the centrepiece of AI spending and has no named successor. Its earnings on Nov 17 now double as a vote on leadership, and a disorderly exit could unwind the tech rebound that powered Wednesday’s rally.</p>
 </div>
+<div class="card">
+<h3>Treasury trading reopens with the 10 year yield at 4.99% and the 2 year at 4.77%</h3>
+<p>Cash Treasuries were shut on Wednesday for Veterans Day, so Asia is the first window to price Tuesday’s hot October CPI and Fed Governor Waller’s warning that a 50 basis point hike is possible. The 2 year rose 4 basis points (0.04%) while the 30 year fell 2 to 5.33%, so the curve flattened. CME FedWatch shows about 87% odds of a 25 basis point December hike and 13% for 50. The Bloomberg Dollar Index is at its highest since May 2025.</p>
+<p><span class="w">Why it matters:</span> A flatter curve means traders expect tighter policy to slow growth later. A 10 year yield above 5% raises the discount rate on long dated earnings, which pressures AI valuations and supports the dollar at the expense of gold, the euro and Asian currencies.</p>
+</div>
+<div class="card alert">
+<span class="al">Geopolitical risk</span>
+<h3>US and Iran stay deadlocked as Hormuz reopening stalls</h3>
+<p>Iran’s security chief said no enriched nuclear material will leave the country, and Tehran wants sanctions relief and an end to the US naval blockade before it reopens the Strait of Hormuz. Washington says nuclear issues must be part of any first round. Attacks on ships in the strait continue.</p>
+<p><span class="w">Why it matters:</span> Brent is still about 21% below its level at the start of November on peace hopes, so a breakdown has room to snap back. Costlier oil would feed the inflation that is already pushing the Fed toward hikes.</p>
 </div>
 
-<div class="rb">
 <div class="reg">India</div>
-
 <div class="card">
-<h3>Indian markets reopen after the Diwali break with a gap up signal</h3>
-<p>NSE and BSE were shut on Nov 10 for Diwali Balipratipada and reopen today at 09:15 IST. Gift Nifty traded near 25,331 in early Indian hours against the Nifty 50's last close of 25,044.65, an implied gap up of about 286 points or 1.1%. The Sensex last closed at 81,106.65.</p>
-<p><b>Why it matters:</b> India missed Wall Street's 2.35% rally on Monday and Asia's Tuesday surge while closed, so part of the gap is catch up. Gift Nifty held near 25,330 even after the US selloff, which means the signal comes from oil relief and foreign buying. Crude is the key variable for the session.</p>
-<div class="src">Business Standard, Upstox, BusinessToday | 11 Nov, 07:45 IST. Index closes are from Nov 9 (markets shut Nov 10)</div>
+<h3>Nifty closes at 25,255.05, its highest since February, and GIFT Nifty points to a flat open</h3>
+<p>The Nifty rose 0.84% and the Sensex 0.95% to 81,879.40 on Wednesday, taking the Nifty up 9.55% in eight sessions. GIFT Nifty, the futures that signal the opening, was near 25,209 at 8:30 AM IST. Q2 results today include HAL, Vodafone Idea, NMDC, IRCTC and Ola Electric.</p>
+<p><span class="w">Why it matters:</span> Cheaper crude, with Brent near $92 against highs above $117, eases India’s import bill and inflation. After such a steep run, analysts expect consolidation, so earnings will decide direction.</p>
 </div>
-
 <div class="card">
-<h3>Foreign money returns, November FPI inflow reaches 53,739 crore rupees</h3>
-<p>Foreign portfolio investors have put 53,739 crore rupees into Indian equities in November, the biggest monthly inflow since September 2024, after pulling out 70,704 crore over the previous two months. On Nov 9 FIIs bought 7,212 crore while DIIs sold 7,173 crore, a near perfect offset, and FIIs have been net buyers for seven sessions. They are still net short 90,741 index futures contracts, a sign that part of the cash buying is hedged. 2026 remains a record year of outflows at 2.41 lakh crore.</p>
-<p><b>Why it matters:</b> The inflow is a rotation out of AI heavy US equities, not a verdict on Indian earnings. It can reverse as quickly as it arrived if Nasdaq stabilises or the dollar keeps rising (DXY +0.58% on Tuesday).</p>
-<div class="src">BusinessToday | 10 Nov. Daily FII and DII figures are from the latest session, Nov 9, because markets were shut on Nov 10</div>
+<h3>Foreign investors buy ₹12,563 crore while domestic funds sell ₹8,435 crore</h3>
+<p>FIIs (foreign institutional investors) have bought a net ₹65,735 crore in November, against net selling of ₹3.82 lakh crore for 2026 so far, per NSE provisional data. Their net short position in index futures fell from 2.4 lakh contracts on Oct 30 to about 70,000 on Nov 11.</p>
+<p><span class="w">Why it matters:</span> Much of the rally is short covering, meaning traders buying back bets against the market rather than fresh long conviction. With the dollar strong and the US 10 year near 5%, this foreign buying can reverse quickly.</p>
 </div>
-
 <div class="card">
-<h3>Rupee near a six month high, but the RBI forward book caps the move</h3>
-<p>The rupee touched 93.69 per dollar on Monday, its strongest in about six months, then eased to roughly 93.8 to 93.9 as state run banks bought dollars. Falling crude and FPI inflows drove the rally. The RBI's net short forward dollar position is about $239 billion, with 83% maturing beyond one year.</p>
-<p><b>Why it matters:</b> India imports about 90% of its crude, so lower Brent trims the import bill and eases inflation. Today's open tests whether oil relief outweighs the dollar's jump after the hot US CPI.</p>
-<div class="src">Deccan Chronicle, EBC, FXStreet (MUFG) | 9 to 10 Nov. Last interbank close was Nov 9</div>
-</div>
+<h3>MSCI adds LIC, Adani Green Energy, Coforge and Meesho; PI Industries exits</h3>
+<p>MSCI’s November review adds the four stocks to its India Standard Index and removes PI Industries. The quarterly review takes effect on Nov 30.</p>
+<p><span class="w">Why it matters:</span> Passive funds tracking the index must buy the additions and sell PI Industries on that date, creating a predictable flow window that can support these stocks into month end.</p>
 </div>
 
-<div class="rb">
 <div class="reg">Europe</div>
-
 <div class="card">
-<h3>STOXX 600 holds near its record as oil relief outweighs hot US CPI</h3>
-<p>The STOXX 600 closed about 0.6% higher, near its record high. The DAX rose 0.3%, the CAC 40 gained 0.55% and the FTSE 100 fell 0.3%. Banks led early gains of up to 2.6%, and Infineon rose as much as 6% after guiding to 2027 revenue growth above 20%.</p>
-<p><b>Why it matters:</b> Europe's low AI exposure is working as an advantage during the US tech selloff, and cheaper energy eases margin pressure. The strength is oil driven, so a Hormuz flare up would hit Europe harder than the US.</p>
-<div class="src">Reuters, Investing.com | 10 Nov</div>
+<h3>STOXX 600 and DAX close at record highs</h3>
+<p>The STOXX 600 rose 0.72% to 663.05, the DAX 1.20% to 26,662.77 and the FTSE 100 0.78% to 10,835.47. Siemens Energy jumped 10.8% on a higher 2027 margin outlook, CoreWeave’s guidance revived AI trades, and energy stocks ended an eight day slide.</p>
+<p><span class="w">Why it matters:</span> Europe is up about 2.7% since the US midterms against 0.5% for the S&amp;P 500, a sign money is rotating away from US AI exposure. SocGen sees limited upside by year end, so further gains depend on earnings.</p>
 </div>
-
 <div class="card">
-<h3>ECB hawks line up for a December hike</h3>
-<p>Bundesbank President Joachim Nagel said on Nov 10 there is a "strong case" for the ECB to raise rates in December. Euro zone core inflation held at 2.5% in October. The ECB would be tightening into slowing activity and French fiscal stress.</p>
-<p><b>Why it matters:</b> The euro is not being rewarded for tightening because the Fed is also hiking and US data is stronger, which keeps the dollar bid (DXY 102.25). A hike into weak growth raises the risk of a policy error.</p>
-<div class="src">Investing.com | 10 Nov</div>
+<h3>Euro near its 2026 lows as the dollar jumps</h3>
+<p>EUR/USD is at 1.1097, touching its weakest level since earlier this year, and GBP/USD is 1.3280 near a three week low. UK Q3 GDP is due at 12:30 PM IST today. UniCredit posted record Q3 net income of €3.26 billion, while Taylor Wimpey warned profit would land at the bottom of forecasts, citing higher mortgage rates.</p>
+<p><span class="w">Why it matters:</span> A weaker euro makes dollar priced energy dearer, complicating the ECB’s inflation fight. A soft UK GDP print plus housebuilder warnings would show higher rates are biting.</p>
 </div>
-
-<div class="card">
-<h3>Euro zone yields fall on cheaper energy, France stays the weak link</h3>
-<p>Germany's 10 year yield slid to 3.25% and France's to 4.69% on Nov 10 as Brent fell below $91 and European gas prices eased. Italy's fell to 4.26%.</p>
-<p><b>Why it matters:</b> The France to Germany spread is still about 144 basis points and Italy's is about 101. Any energy rebound or French political stress would show up first in OAT yields.</p>
-<div class="src">NewsBytes, Investing.com | 10 Nov</div>
-</div>
-</div>
-
-<div class="rb">
-<div class="reg">China</div>
-
-<div class="card">
-<h3>October exports jump 35% and the surplus passes $1 trillion for the year</h3>
-<p>Exports rose 35.2% year on year and imports 41.6%, with chip exports up 137.1%. The October surplus was $105.3 billion against $125.9 billion expected, the smallest since April, but the 10 month surplus reached $1.04 trillion, on track to beat 2025's $1.2 trillion record.</p>
-<p><b>Why it matters:</b> Growth is being carried by overseas demand for AI hardware while domestic spending stays weak. That sharpens trade tension with the EU and US and makes China's equity market a levered bet on global AI spending. The October miss came from surging imports, not weaker exports.</p>
-<div class="src">CNBC, Reuters, AP | Released Nov 10, 03:00 UTC. This is 24 hours 19 minutes before the snapshot and is kept because it is the latest official China print</div>
-</div>
-
-<div class="card">
-<h3>China and Hong Kong stocks slip as the global tech selloff spreads</h3>
-<p>The Hang Seng is down about 0.9% near 24,337, the Hang Seng Tech index about 1.1% and the CSI 300 about 0.4%. Asia opened lower tracking Wall Street's tech losses. The PBOC set the yuan fixing at 6.7191 per dollar. The CSI 300 fell 8.5% in October, its worst month since 2016.</p>
-<p><b>Why it matters:</b> State support, including central bank funding for share purchases, is holding up onshore sentiment, so weakness in global tech transmits directly into Hong Kong and mainland chip names.</p>
-<div class="src">CNBC, Business Recorder, TradingView | 10 to 11 Nov</div>
-</div>
-
 <div class="card alert">
-<h3>Microsoft lobbies against a US ban on Chinese optical transceivers</h3>
-<p>Microsoft has been pressing the Trump administration to drop a proposed ban on imports of Chinese optical transceivers, a key part of AI data centers. The FCC is working on the restriction over national security concerns, and tech lobbyists warn it could stall the data center rollout.</p>
-<p><b>Why it matters:</b> A ban would raise hyperscaler build costs and cut revenue for Chinese suppliers. The lobbying suggests supply for AI buildouts is already tight, which ties US AI capex to US China trade policy.</p>
-<div class="src">Reuters (via Daily Caller, Asianet) | 10 Nov</div>
-</div>
+<span class="al">Geopolitical risk</span>
+<h3>Russia Ukraine talks end without a breakthrough as US envoys meet Putin</h3>
+<p>The Abu Dhabi talks produced a prisoner exchange agreed in principle but no ceasefire. Witkoff and Kushner meet Putin this morning, then Zelenskyy in Dublin. A Ukrainian drone strike started a fire at Ust Luga, a main Russian oil export port, injuring three workers.</p>
+<p><span class="w">Why it matters:</span> Progress would ease Black Sea and energy supply risk for Europe. Failure keeps Russian export disruption in play, with wheat and European gas the most sensitive.</p>
 </div>
 
-<div class="rb">
+<div class="reg">China</div>
+<div class="card alert">
+<span class="al">Geopolitical risk</span>
+<h3>Washington turns up scrutiny of Nvidia chip flows to China</h3>
+<p>Reuters and CBS report that the Nvidia affair, which involves a Megaspeed executive US officials suspect of links to Chinese intelligence, has lawmakers planning to question the company on whether its chips reach China through third countries. The House China committee is preparing a subpoena for Huang, and President Trump said the FBI is examining the relationship.</p>
+<p><span class="w">Why it matters:</span> Tighter enforcement against chip diversion could bring new export curbs, hitting the Taiwan and Korea supply chain and raising the risk premium on China tech, which already shows in Hong Kong trading.</p>
+</div>
+<div class="card">
+<h3>Hong Kong falls while Shanghai edges up</h3>
+<p>The Hang Seng is down about 1.1% at 24,043.69 and the Shanghai Composite is up 0.4% at 3,694.28, as of about 8:00 AM IST. Alibaba fell 2.2% and Tencent 1.4% at the open, and an Nvidia linked inverse product in Hong Kong (a fund that gains when Nvidia falls) jumped 14%.</p>
+<p><span class="w">Why it matters:</span> Hong Kong holds the most liquid China tech exposure, so it absorbs global AI and rate shocks first. Mainland shares are less tied to US yields, which explains the split.</p>
+</div>
+<div class="card">
+<h3>SMIC reports today, Sands China leaves MSCI and two Hong Kong IPOs debut</h3>
+<p>SMIC, China’s largest chip foundry, reports after rising 3.7% on Wednesday. MSCI’s review deletes Sands China from its Hong Kong index, effective Nov 30. Hosin Electronics and Amicro Technology start trading today after raising a combined HK$1.78 billion.</p>
+<p><span class="w">Why it matters:</span> SMIC’s guidance is the best read on China’s domestic chip demand. The Sands China deletion means passive selling at month end, while the IPO proceeds show Hong Kong’s deal market still works despite the tech pullback.</p>
+</div>
+
 <div class="reg">APAC (excluding China and India)</div>
-
 <div class="card">
-<h3>Nikkei pushes above 61,000 as chips rebound, with the BoJ in focus</h3>
-<p>The Nikkei 225 is up about 0.9% near 61,002 after Tuesday's 2.87% jump to 60,459.58. The 10 year JGB yield rose about 5 basis points to 2.75%, and USD/JPY sits near 158. Many market participants expect the Bank of Japan to hike from 1.25% on Dec 18.</p>
-<p><b>Why it matters:</b> Japan's stocks are chip led while its yields climb, so a BoJ hike would land on a market that depends on the AI hardware cycle. A weak yen near 158 adds pressure on the BoJ to act.</p>
-<div class="src">Japan Times (Bloomberg), TradingView | 10 to 11 Nov</div>
+<h3>Asian chip stocks rally despite Nvidia’s after hours drop</h3>
+<p>The Kospi is up 1.2% at 5,463.98 and the Nikkei up 0.8% at 61,714.16 at the lunch break. TSMC rose 4.8% on Wednesday on strong October sales, and SK Hynix and Samsung led Korea.</p>
+<p><span class="w">Why it matters:</span> Memory and foundry demand is backed by orders, so chips are shrugging off the headline risk. But Korea and Taiwan carry the heaviest exposure to Nvidia’s supply chain, so a disorderly CEO exit would hit them hardest.</p>
 </div>
-
 <div class="card">
-<h3>Kospi extends its rebound as Taiwan tightens short selling rules</h3>
-<p>The Kospi is up about 1% near 5,294 after a 4.39% jump to 5,239.13 on Tuesday. Taiwan's regulators cut the short selling limit to 3% from 30% and raised margin requirements, and the TAIEX gained 2.52% on Tuesday.</p>
-<p><b>Why it matters:</b> The Kospi is concentrated in memory chipmakers, so it trades as a high beta proxy for AI hardware. Regulators leaning on short sellers shows how fragile sentiment has been after a hard week for chip stocks.</p>
-<div class="src">CNBC, Asia market recap | 10 to 11 Nov</div>
+<h3>Yen near 160 as Japan’s producer prices surge 7.1%</h3>
+<p>USD/JPY is at 159.60 after breaking above the Sept 24 high of 159.04, with 160.39 the next test. Japan’s October producer prices rose 7.1% from a year earlier, above expectations and September’s 6.8%.</p>
+<p><span class="w">Why it matters:</span> A weak yen lifts import costs and keeps inflation pressure on Japan, while US yields near 5% keep the dollar bid. A push through 160 raises the risk of official intervention, which would cause sharp yen swings.</p>
 </div>
-
 <div class="card">
-<h3>ASX 200 roughly flat as CBA flags rising mortgage stress</h3>
-<p>The ASX 200 is near 9,139, up about 0.1%, after Tuesday's 1.1% gain to 9,129. Commonwealth Bank's quarterly cash profit was A$2.8 billion, up 8% year on year, but home loan arrears rose 7 basis points to 0.8% and loan applications were 16% lower than a year ago. Australia's 10 year yield is about 5.05%, above the US 10 year at about 5.00%.</p>
-<p><b>Why it matters:</b> Higher rates are biting households even as bank profits hold. An Australian 10 year yield above the US level shows the global bond selloff is not confined to Treasuries.</p>
-<div class="src">ABC News Australia | 11 Nov</div>
-</div>
+<h3>Australian dollar hits a seven month low</h3>
+<p>AUD/USD fell to 0.6844, its weakest since March 31, with consumer inflation expectations data due today.</p>
+<p><span class="w">Why it matters:</span> The gap between a hawkish Fed and a more cautious RBA is widening, pushing capital toward the dollar. Higher imported inflation could complicate the RBA’s path.</p>
 </div>
 </div>
 
-<!-- SECTION 2: MARKETS SNAPSHOT -->
+<!-- MARKETS SNAPSHOT -->
 <div class="sec">
-<div><span class="pill" style="color:#34d399">Markets Snapshot</span></div>
-<div class="hr"></div>
+<span class="pill c2">Markets Snapshot</span>
+<hr class="ln">
+
+<div class="reg" style="margin-top:0">Equities</div>
 <div class="grid">
+<div class="m"><div class="mt"><span class="mn">S&amp;P 500</span><span class="chg up">+1.31%</span></div><div class="px">7,619.38</div><div class="st cls">CLOSE 11 NOV</div><div class="rs">Chip rebound and CoreWeave’s guidance lift. Futures now down 0.3% on Nvidia.</div></div>
+<div class="m"><div class="mt"><span class="mn">Nasdaq Composite</span><span class="chg up">+1.60%</span></div><div class="px">25,466.19</div><div class="st cls">CLOSE 11 NOV</div><div class="rs">Semiconductor index jumped 5.7% as AI names recovered.</div></div>
+<div class="m"><div class="mt"><span class="mn">Nasdaq 100</span><span class="chg up">+2.3%</span></div><div class="px">Up 2.3%</div><div class="st cls">CLOSE 11 NOV</div><div class="rs">Level not verified. Futures down 0.5% to 0.9% after Nvidia’s drop.</div></div>
+<div class="m"><div class="mt"><span class="mn">Nifty 50</span><span class="chg up">+0.84%</span></div><div class="px">25,255.05</div><div class="st cls">CLOSE 11 NOV, OPENS 9:15 AM IST</div><div class="rs">FII buying and cooler crude. GIFT Nifty near 25,209 signals a flat open.</div></div>
+<div class="m"><div class="mt"><span class="mn">Nikkei 225</span><span class="chg up">+0.8%</span></div><div class="px">61,714.16</div><div class="st live">LIVE 8:00 AM IST, LUNCH BREAK</div><div class="rs">Chip and auto stocks gain as oil eases.</div></div>
+<div class="m"><div class="mt"><span class="mn">Kospi</span><span class="chg up">+1.2%</span></div><div class="px">5,463.98</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Samsung and SK Hynix lead the memory chip rebound.</div></div>
+<div class="m"><div class="mt"><span class="mn">Hang Seng</span><span class="chg dn">−1.1%</span></div><div class="px">24,043.69</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Tech heavyweights fall as global AI risk is repriced.</div></div>
+<div class="m"><div class="mt"><span class="mn">Shanghai Composite</span><span class="chg up">+0.4%</span></div><div class="px">3,694.28</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Mainland shares are less exposed to US yields and the AI selloff.</div></div>
+<div class="m"><div class="mt"><span class="mn">STOXX 600</span><span class="chg up">+0.72%</span></div><div class="px">663.05</div><div class="st cls">CLOSE 11 NOV, RECORD</div><div class="rs">Siemens Energy and AI optimism, with energy stocks rebounding.</div></div>
+</div>
 
-<div class="m"><div class="mt"><div><div class="mn">S&amp;P 500</div><div class="st">LAST CLOSE, NOV 10</div></div><span class="chg dn">-0.38%</span></div><div class="px">7,520.93</div><div class="rs">Hot CPI revived Fed hike bets and Nvidia fell 5.5%. The index gave back 29 points of Monday's 173 point rally.</div></div>
+<div class="reg">Bonds and currencies</div>
+<div class="grid">
+<div class="m"><div class="mt"><span class="mn">US 10Y yield</span><span class="chg fl">Flat</span></div><div class="px">4.99%</div><div class="st live">LIVE, CASH REOPENED IN ASIA</div><div class="rs">Futures imply a break above 5% as hot CPI keeps Fed hikes in play. Equities face a higher discount rate.</div></div>
+<div class="m"><div class="mt"><span class="mn">USD/JPY</span><span class="chg dn">−0.16%</span></div><div class="px">159.60</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Near 160 as US yields keep the dollar bid. Intervention risk rises.</div></div>
+<div class="m"><div class="mt"><span class="mn">EUR/USD</span><span class="chg up">+0.05%</span></div><div class="px">1.1097</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Near 2026 lows as the dollar index sits at its highest since May 2025.</div></div>
+</div>
 
-<div class="m"><div class="mt"><div><div class="mn">Nasdaq Composite</div><div class="st">LAST CLOSE, NOV 10</div></div><span class="chg dn">-0.74%</span></div><div class="px">25,065.87</div><div class="rs">Rate sensitive tech took the hit, with the 10 year yield near 5% and Nvidia sharply lower.</div></div>
+<div class="reg">Commodities</div>
+<div class="grid">
+<div class="m"><div class="mt"><span class="mn">Brent crude</span><span class="chg dn">−0.77%</span></div><div class="px">$91.93</div><div class="st live">LIVE, ICE JAN FUTURES, 8:20 AM IST</div><div class="rs">Iran talks deadlocked, yet Brent is still about 21% below early November.</div></div>
+<div class="m"><div class="mt"><span class="mn">WTI crude</span><span class="chg dn">−1.2%</span></div><div class="px">$85.51</div><div class="st live">LIVE 8:00 AM IST</div><div class="rs">Down from the $86.53 settle on peace hopes and rising OPEC+ output.</div></div>
+<div class="m"><div class="mt"><span class="mn">Gold</span><span class="chg dn">−0.30%</span></div><div class="px">$3,988.60</div><div class="st live">LIVE, FUTURES, 8:50 AM IST</div><div class="rs">Spot slipped under $4,000 as rate hike odds rose. Gold trades as a rates story, not a haven.</div></div>
+</div>
 
-<div class="m"><div class="mt"><div><div class="mn">Nasdaq 100 (NDX)</div><div class="st">LAST CLOSE, NOV 10</div></div><span class="chg dn">-0.60%</span></div><div class="px">27,740.79</div><div class="rs">Nvidia, the largest AI weight, fell on the CEO probe. Higher yields compress growth valuations.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Nifty 50</div><div class="st">LAST CLOSE, NOV 9 (SHUT NOV 10)</div></div><span class="chg up">+0.23%</span></div><div class="px">25,044.65</div><div class="rs">Gift Nifty near 25,331 implies a gap up of about 286 points (+1.1%) on a two month low in Brent and FPI buying. Sensex closed at 81,106.65.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Nikkei 225</div><div class="st live">LIVE</div></div><span class="chg up">+0.90%</span></div><div class="px">61,002</div><div class="rs">Chip rebound continues after Tuesday's 2.87% jump. BoJ December hike bets and USD/JPY near 158 frame the yen.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Kospi</div><div class="st live">LIVE</div></div><span class="chg up">+1.04%</span></div><div class="px">5,294</div><div class="rs">Memory chip heavyweights extend Tuesday's 4.39% surge as Taiwan caps short selling to steady chip stocks.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Hang Seng</div><div class="st live">LIVE</div></div><span class="chg dn">-0.90%</span></div><div class="px">24,337</div><div class="rs">Overnight Wall Street tech selloff and Nvidia fallout. Hang Seng Tech is down about 1.1%.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">STOXX Europe 600</div><div class="st">LAST CLOSE, NOV 10</div></div><span class="chg up">+0.6%</span></div><div class="px">~660</div><div class="rs">Cheaper oil and low AI exposure kept Europe near a record despite the hot US CPI. Banks and Infineon led.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">US 10Y Yield</div><div class="st">LAST CLOSE, NOV 10 (BOND MARKET SHUT TODAY)</div></div><span class="chg up">+10bp</span></div><div class="px">4.98%</div><div class="rs">Hot CPI, Waller's 50 basis point talk and a soft auction. A higher yield hits equity multiples and gold, and keeps the Fed on a hiking path.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">US Dollar Index (DXY)</div><div class="st">LAST CLOSE, NOV 10</div></div><span class="chg up">+0.58%</span></div><div class="px">102.25</div><div class="rs">Hike repricing widened the US yield advantage. The 2 year yield rose about 19 basis points.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">WTI Crude</div><div class="st live">LIVE</div></div><span class="chg up">+0.57%</span></div><div class="px">$86.53</div><div class="rs">Bounces from a two month low ($86.04 settle) as Hormuz tanker attacks offset peace hopes. Iran denies talks.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Brent Crude</div><div class="st live">LIVE</div></div><span class="chg up">+0.78%</span></div><div class="px">$92.20</div><div class="rs">Settled at $91.49 on Tuesday and briefly dipped below $90 for the first time since August on US de-escalation signals.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Gold (spot)</div><div class="st live">LIVE</div></div><span class="chg up">+0.1%</span></div><div class="px">$4,036</div><div class="rs">Steadies after Tuesday's 2.7% plunge on Fed hike bets. Traders are watching $4,000 as support.</div></div>
-
-<div class="m"><div class="mt"><div><div class="mn">Bitcoin</div><div class="st live">LIVE, 24H CHANGE</div></div><span class="chg dn">-1.6%</span></div><div class="px">$73,570</div><div class="rs">Slides with risk assets as hike odds rise. Support sits at $72,700 to $73,000 and the Fear and Greed index is 29.</div></div>
-
+<div class="reg">Crypto</div>
+<div class="grid">
+<div class="m"><div class="mt"><span class="mn">Bitcoin</span><span class="chg up">+0.28%</span></div><div class="px">$74,013</div><div class="st live">LIVE, 24H, 7:35 AM IST</div><div class="rs">Range bound as MSCI drops Strategy and Metaplanet from indexes after Nov 30. Ether near $2,056.</div></div>
 </div>
 </div>
 
-<!-- SECTION 3: AI WATCH -->
+<!-- AI WATCH -->
 <div class="sec">
-<div><span class="pill" style="color:#a78bfa">AI Watch</span></div>
-<div class="hr"></div>
+<span class="pill c3">AI Watch</span>
+<hr class="ln">
 
 <div class="ai">
-<span class="tag">IPO and Capital Markets</span>
-<h3>Anthropic opens its roadshow at up to a $1.4 trillion valuation</h3>
-<p>An amended filing on Nov 10 sets a $70 to $78 price range for 825 million shares, raising up to $64.4 billion, plus a $26 billion private placement with cornerstone investors including Google, Nvidia and AMD. Trading on the Nasdaq under ANT is expected from Nov 19. The filing shows nearly $900 billion of compute and data center commitments against quarterly revenue of $17 billion, up twelvefold, and a $567 million operating loss. Separately, the company agreed to buy 1.7 gigawatts of gas generators for $3.4 billion (FT).</p>
-<p><b>Strategic importance:</b> The top of the range implies about $1.4 trillion fully diluted and about $1 trillion undiluted, below earlier Street estimates of up to $2 trillion. Commitments equal roughly 13 times annualised quarterly revenue ($68 billion, my calculation), so pricing tests how much the market will pay for AI growth after this week's selloff. About $90 billion of new paper arrives in the same weeks as Nvidia's governance overhang.</p>
-<div class="src" style="font-size:11px;color:#4b5563">Reuters, Yahoo Finance, Financial Times | 10 to 11 Nov</div>
+<span class="tag">IPO and Funding</span>
+<h3>Anthropic’s IPO is reportedly oversubscribed several times as it targets up to $90.4 billion</h3>
+<p>The roadshow began Nov 10 with 825 million Class A shares at $70 to $78 under the ticker ANT on Nasdaq, plus a $26 billion private placement from AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC. Bloomberg reports anchor orders several times covered. Pricing is expected Nov 18 and first trade Nov 19. The company reports run rate revenue of $81 billion at Oct 31, and the top of the range implies a valuation near $1.4 trillion.</p>
+<p><span class="w">Strategic importance:</span> It would be the largest IPO ever, ahead of SpaceX’s roughly $86 billion in June. Funds may trim megacap tech to make room, so supply is a short term headwind for the Nasdaq into pricing, while strong demand validates AI lab economics.</p>
 </div>
-
 <div class="ai">
-<span class="tag">Governance and Chips</span>
-<h3>Nvidia falls 5.5% as its board probes CEO Jensen Huang</h3>
-<p>Nvidia closed at $168.80, down 5.52%, on volume of 420.8 million shares, about 3.3 times its three month average of 127.2 million. The board opened an independent investigation into reports that Huang was the target of a foreign intelligence effort, after he admitted an affair. The stock is down about 10% over two sessions and has lost roughly $1.7 trillion in value since its Oct 6 record. Trump said the FBI is investigating. Wells Fargo cut its target to $300 from $315 and kept an Overweight rating.</p>
-<p><b>Strategic importance:</b> Nvidia is the largest AI weight in US indices, so key man risk feeds into the Nasdaq 100 and Asian chip names. Analysts see little threat to AI demand, but one expects the board review to take 4 to 6 weeks, leaving an overhang that runs through Nvidia's next earnings.</p>
-<div class="src" style="font-size:11px;color:#4b5563">CNBC, Motley Fool, Fortune | 10 Nov</div>
+<span class="tag">Infrastructure</span>
+<h3>CoreWeave surges 24.7% to $60.77 after raising its full year revenue outlook</h3>
+<p>The AI cloud provider now guides to $13.0 billion to $13.3 billion against $12.9 billion consensus and signalled an imminent investment grade loan. It was the biggest one day gain since June 2025, though shares fell about 7% after hours in sympathy with Nvidia, and IREN and Nebius each lost more than 4%.</p>
+<p><span class="w">Strategic importance:</span> Financing is the weak link in AI infrastructure. An investment grade loan would lower borrowing costs across AI cloud providers and ease the debt worries that drove last week’s selloff.</p>
 </div>
-
 <div class="ai">
-<span class="tag">AI Credit and Infrastructure</span>
-<h3>CoreWeave beats third quarter estimates and the shares jump after hours</h3>
-<p>Revenue was $3.66 billion against $3.55 billion expected, up about 167% from $1.37 billion a year earlier. Shares rose more than 7% in extended trading after a drop of over 40% in the past month. The company had more than $50 billion of debt as of June and has never turned a profit (LSEG).</p>
-<p><b>Strategic importance:</b> CoreWeave is the market's gauge for debt funded AI infrastructure. A beat eases, but does not remove, the worry about how durable AI demand is relative to the borrowing behind it, and it may set the tone for the US open.</p>
-<div class="src" style="font-size:11px;color:#4b5563">Reuters (via ABC News Australia) | Reported Nov 10 after the US close</div>
+<span class="tag">Leadership Risk</span>
+<h3>Nvidia’s crisis puts key person risk at the centre of AI hardware</h3>
+<p>Bernstein cut Nvidia to Market Perform with a $200 target, down from $400. Bloomberg reports the board is working with an outside firm to identify possible CEO replacements, including an interim chief. Nvidia has lost more than $450 billion in market value since the Nov 8 investigation began, and earnings arrive on Nov 17.</p>
+<p><span class="w">Strategic importance:</span> Nvidia’s results are the main catalyst before Anthropic prices on Nov 18. A weak print or a messy CEO exit would land just before the largest AI listing in history.</p>
 </div>
 </div>
 
-<!-- SECTION 4: KEY TAKEAWAYS -->
+<!-- KEY TAKEAWAYS -->
 <div class="sec" style="margin-bottom:0">
-<div><span class="pill" style="color:#f59e0b">Key Takeaways</span></div>
-<div class="hr"></div>
-
-<div class="tk"><div class="tn">1</div><div class="tt">Core inflation, not oil, is now setting equity risk. Brent hit a two month low and stocks still fell. Gold dropped 2.7%, about seven times the S&amp;P 500's 0.38% fall, while the dollar index rose 0.58% and bitcoin lost 1.6%. Everything moved with Fed hike odds.</div></div>
-<div class="sep"></div>
-
-<div class="tk"><div class="tn">2</div><div class="tt">The 10 year yield at 4.98% sits about 60 basis points above the implied policy peak of 4.375% (3.875% midpoint plus two hikes). That gap points to term premium, extra yield investors demand for holding long bonds, and the soft auction supports it. Watch 5.00% on the 10 year when Treasuries reopen Thursday.</div></div>
-<div class="sep"></div>
-
-<div class="tk"><div class="tn">3</div><div class="tt">Oil is priced for peace that Tehran publicly denies. Brent is down about 5% in a week to roughly $92, yet October saw a record 37 ship attacks. The skew is upward. India (about 90% crude import dependence) and euro zone periphery spreads (France to Germany at 144 basis points) are the most exposed.</div></div>
-<div class="sep"></div>
-
-<div class="tk"><div class="tn">4</div><div class="tt">The AI trade is splitting. Nvidia's key man risk and CoreWeave's debt load sit against roughly $90 billion of Anthropic IPO supply landing from Nov 19. Money is rotating toward Europe and emerging markets: FPIs put 53,739 crore rupees into India in November and the STOXX 600 is near a record.</div></div>
-<div class="sep"></div>
-
-<div class="tk"><div class="tn">5</div><div class="tt">Next 24 to 72 hours: India's open against a 1.1% implied gap up (today), US stocks trading with no Treasury market (today), Treasuries reopening (Thursday Nov 12), US producer prices (Friday Nov 13) and any Fed speakers. Levels to watch: gold $4,000, Brent $90, bitcoin $72,700.</div></div>
+<span class="pill c4">Key Takeaways</span>
+<hr class="ln">
+<div class="tk"><div class="n">1</div><div>Rates, not oil, are now the master variable. Brent is down about 21% since early November, yet the US 10 year sits at 4.99%, a December hike is priced near 87% and the dollar is at its highest since May 2025. Gold, bitcoin, the euro, the yen and the Australian dollar are all trading as expressions of US rate expectations.</div></div>
+<div class="tk"><div class="n">2</div><div>The AI rebound has a single point of failure. Chips, CoreWeave and Asia led Wednesday’s gains, yet Nvidia’s leadership crisis pulled futures lower within hours. Watch the sequence: Nvidia earnings Nov 17, Anthropic pricing Nov 18, first trade Nov 19.</div></div>
+<div class="tk"><div class="n">3</div><div>India’s rally is flow driven, and flows can reverse. FII buying and short covering lifted the Nifty 9.55% in eight sessions while domestic funds sold. Cheaper crude supports the story, but a US 10 year near 5% and a strong dollar are classic triggers for foreign selling.</div></div>
+<div class="tk"><div class="n">4</div><div>Oil’s risk premium is shrinking but not gone. Two diplomatic tests land in the next 24 hours: US envoys with Putin, and Iran’s refusal to move its enriched uranium. Good news extends the energy relief that helps Europe, Japan and India. Failure means a fast Brent rebound.</div></div>
+<div class="tk"><div class="n">5</div><div>Next 24 to 72 hours: today brings UK Q3 GDP at 12:30 PM IST, US jobless claims, earnings from Cisco, Applied Materials and Disney, and a possible Nvidia board decision. Tomorrow brings US PPI and the eurozone GDP flash. Then Nvidia results on Nov 17 and the Fed decision on Dec 9.</div></div>
 </div>
 
 <!-- AUTHOR STAMP -->
 <div class="stamp">
-<div class="srow">
+<div class="au">
 <div class="av">YS</div>
 <div>
 <div class="ab">Analysis by</div>
-<div class="nm">Yuvraj Sureka</div>
-<div class="cr">
-<span style="color:#f59e0b">Trading</span>
-<span style="color:#34d399">Pursuing CFA</span>
-<span style="color:#60a5fa">Investment Banking</span>
-<span style="color:#a78bfa;border-color:#a78bfa">Equity Research</span>
-</div>
+<div class="an">Yuvraj Sureka</div>
+<div class="cr"><span style="color:#f59e0b">Trading</span><span style="color:#34d399">Pursuing CFA</span><span style="color:#60a5fa">Investment Banking</span><span style="color:#a78bfa;border-color:#a78bfa">Equity Research</span></div>
 <div class="ct">
-<a href="https://www.linkedin.com/in/yuvrajsureka47" target="_blank" rel="noopener"><span style="font-size:14px;font-weight:700;color:#0077b5">L</span> linkedin.com/in/yuvrajsureka47</a>
+<a href="https://www.linkedin.com/in/yuvrajsureka47"><b style="color:#0077b5;font-size:14px">L</b> linkedin.com/in/yuvrajsureka47</a>
 <a href="mailto:yuvrajsureka47@gmail.com"><span style="font-size:12px">✉</span> yuvrajsureka47@gmail.com</a>
 <a href="tel:+916001930875"><span style="font-size:12px">☎</span> +91 6001930875</a>
 </div>
 </div>
 </div>
-<div class="sl"></div>
+<div class="sep"></div>
 <div class="tg">Macro research for the next generation of fund managers.</div>
 </div>
 
-<!-- SOURCES -->
-<div class="srcs"><b>Sources:</b> Reuters · CNBC · Bloomberg · CNN · Business Standard · BusinessToday · ABC News Australia · TheStreet · Investing.com · TechCrunch · Fortune · CoinGecko · TradingView</div>
+<div class="src"><b>Sources:</b> Bloomberg · Reuters · CNBC · AFP · CBS News · Business Standard · Saxo Bank Research · NSE provisional data · CME FedWatch</div>
 
-<!-- DISCLAIMER -->
-<div class="disc">
-<div class="dl">Disclaimer</div>
-<div class="db">This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While <span>Yuvraj Sureka</span> reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</div>
+<div class="dis">
+<div class="dh">Disclaimer</div>
+<p>This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</p>
 </div>
 
 </div>
