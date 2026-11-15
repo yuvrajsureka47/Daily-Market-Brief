@@ -3,208 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily Market Brief, Friday, November 13, 2026</title>
+<title>Daily Market Brief | Sunday, November 15, 2026 | Yuvraj Sureka</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;padding:16px;background:#05060a;font-family:'Inter','Segoe UI',sans-serif}
-.wrap{width:100%;max-width:860px;margin:0 auto;background:#0d0f14;color:#e8eaf0;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,.4)}
-.by{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:.08em;margin-bottom:6px}
-.by span{font-weight:800;color:#a78bfa}
-.lbl{font-size:11px;letter-spacing:.15em;font-weight:700;color:#6b7280;text-transform:uppercase}
-.date{font-size:28px;font-weight:800;color:#fff;margin:4px 0}
-.mood{font-size:14px;color:#9ca3af;font-style:italic}
-.asof{font-size:11px;color:#6b7280;line-height:1.6;margin-top:10px}
-.grad{height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);margin:24px 0}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#06070a;padding:24px 12px;font-family:'Inter','Segoe UI',Arial,sans-serif;color:#e8eaf0}
+.wrap{width:100%;max-width:860px;margin:0 auto;background:#0d0f14;color:#e8eaf0;padding:32px 28px;border-radius:16px;box-shadow:0 4px 40px rgba(0,0,0,.4);position:relative}
+.byline{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:.08em;margin-bottom:6px}
+.byline span{font-weight:800;color:#a78bfa}
+.label{font-size:11px;letter-spacing:.15em;font-weight:700;color:#6b7280;text-transform:uppercase}
+.date{font-size:28px;font-weight:800;color:#fff;margin:6px 0}
+.mood{font-size:14px;color:#9ca3af;font-style:italic;margin:0}
+.rule{height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,transparent);margin:24px 0}
 .sec{margin-bottom:40px}
+.sech{padding-bottom:16px;border-bottom:1px solid #1e2330;margin-bottom:20px}
 .pill{display:inline-block;background:#1e2330;border:1px solid #2d3348;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.line{height:1px;background:#1e2330;margin:16px 0 20px}
-.reg{font-size:10px;font-weight:700;letter-spacing:.12em;color:#6b7280;text-transform:uppercase;margin:24px 0 12px}
-.reg:first-of-type{margin-top:0}
-.card{background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:3px solid #2d3348}
+.reg{margin-bottom:24px}
+.region{font-size:10px;font-weight:700;letter-spacing:.12em;color:#6b7280;margin:0 0 12px;text-transform:uppercase}
+.card{background:#111520;border-radius:10px;padding:16px 18px;margin-bottom:20px;border-left:3px solid #2d3348}
 .card.alert{border-left-color:#ef4444;background:#1a1015}
-.card h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:0 0 6px;line-height:1.4}
-.card p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0 0 8px}
-.card p:last-child{margin:0}
-.card b{color:#e8eaf0;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.m{background:#111520;border:1px solid #1e2330;border-radius:10px;padding:14px 16px}
-.mt{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.mn{font-size:10px;text-transform:uppercase;color:#6b7280;font-weight:600}
+.h{font-size:15px;font-weight:700;color:#e8eaf0;margin:0 0 6px}
+.p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0}
+.p b{color:#e8eaf0;font-weight:700}
+.note{background:#111520;border:1px solid #2d3348;border-radius:10px;padding:16px 18px;margin-bottom:40px}
+.note .t{font-size:10px;font-weight:800;letter-spacing:.15em;color:#f59e0b;text-transform:uppercase;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.metric{background:#111520;border:1px solid #1e2330;border-radius:10px;padding:14px 16px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.name{font-size:10px;text-transform:uppercase;color:#6b7280;font-weight:600;letter-spacing:.04em}
+.st{display:block;font-size:10px;color:#4b5563;text-transform:none;font-weight:500;margin-top:2px}
 .chg{font-size:11px;font-weight:700;padding:2px 8px;border-radius:12px;white-space:nowrap}
-.up{background:#052e1a;color:#34d399}.dn{background:#2a0f0f;color:#f87171}.nu{background:#1e2330;color:#9ca3af}
-.px{font-size:20px;font-weight:800;color:#fff;margin-top:6px}
-.st{font-size:10px;font-weight:700;letter-spacing:.06em;margin-top:2px}
-.live{color:#34d399}.closed{color:#6b7280}.fut{color:#60a5fa}
+.up{background:#052e1a;color:#34d399}
+.dn{background:#2a0f0f;color:#f87171}
+.fl{background:#1e2330;color:#9ca3af}
+.price{font-size:20px;font-weight:800;color:#fff;margin-top:6px}
 .why{font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4}
-.gl{font-size:10px;font-weight:700;letter-spacing:.1em;color:#4b5563;text-transform:uppercase;margin:18px 0 10px}
-.ai{background:linear-gradient(135deg,#0f172a,#1a1f35);border:1px solid #2d3348;border-radius:10px;padding:16px 18px;margin-bottom:14px}
-.tag{display:inline-block;background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.08em}
-.ai h3{font-size:15px;font-weight:700;color:#e8eaf0;margin:8px 0 6px;line-height:1.4}
-.ai p{font-size:13px;color:#9ca3af;line-height:1.7;margin:0 0 8px}
-.ai p:last-child{margin:0}
-.kt{display:flex;gap:14px;align-items:flex-start}
-.kn{font-size:28px;font-weight:900;color:#2a3045;width:36px;flex-shrink:0;line-height:1}
-.kx{font-size:14px;color:#e8eaf0;line-height:1.6}
-.sep{height:1px;background:#1a1d27;margin:16px 0}
-.stamp{margin-top:36px;padding:24px 28px;background:linear-gradient(135deg,#10121a,#13111f);border-radius:14px;border:1px solid #2d2545}
-.sr{display:flex;align-items:center;gap:20px}
+.ai{background:linear-gradient(135deg,#0f172a,#1a1f35);border:1px solid #2d3348;border-radius:10px;padding:16px 18px;margin-bottom:20px}
+.tag{display:inline-block;background:#1e2a45;color:#60a5fa;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase}
+.ai .h{margin:8px 0 6px}
+.disc{font-size:11px;color:#6b7280;font-style:italic;margin-top:8px;line-height:1.6}
+.tk{display:flex;gap:14px;align-items:flex-start}
+.tk .n{font-size:28px;font-weight:900;color:#1e2330;width:36px;flex-shrink:0;line-height:1}
+.tk .t{font-size:14px;color:#e8eaf0;line-height:1.6}
+.tsep{height:1px;background:#1a1d27;margin:16px 0}
+.stamp{margin-top:36px;padding:24px 28px;background:linear-gradient(135deg,#10121a,#13111f);border-radius:14px;border:1px solid #2d2545;text-align:center}
+.srow{display:flex;align-items:center;gap:20px;text-align:left}
 .av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:2px solid #a78bfa;flex-shrink:0;color:#fff;font-size:22px;font-weight:900;text-align:center;line-height:60px}
-.ab{font-size:9px;font-weight:800;letter-spacing:.18em;color:#6b7280;text-transform:uppercase;margin-bottom:6px}
+.by{font-size:9px;font-weight:800;letter-spacing:.18em;color:#6b7280;text-transform:uppercase;margin-bottom:6px}
 .nm{font-size:24px;font-weight:900;letter-spacing:.02em;color:#fff;text-shadow:0 0 24px rgba(167,139,250,.5)}
-.cr{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.cr span{background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600}
-.ct{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:10px;font-weight:500;color:#4b5563}
-.tg{border-top:1px solid #1e2330;margin-top:16px;padding-top:16px;text-align:center;font-size:11px;color:#4b5563;font-style:italic}
-.src{background:#0a0c10;border-radius:10px;padding:12px 16px;margin-top:32px;font-size:11px;color:#6b7280;line-height:1.6}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pills span{background:#1a1f2e;border:1px solid #2d3348;border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600}
+.contacts{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px}
+.contacts a{font-size:10px;font-weight:500;color:#4b5563;text-decoration:none}
+.contacts a:hover{color:#9ca3af}
+.sline{height:1px;background:#1e2330;margin-top:16px}
+.tag2{font-size:11px;color:#4b5563;font-style:italic;margin:14px 0 0}
+.src{background:#0a0c10;border-radius:10px;padding:12px 16px;margin-top:32px}
 .src b{font-size:10px;text-transform:uppercase;color:#4b5563;font-weight:700}
+.src span{font-size:11px;color:#6b7280}
 .dis{background:#0d0e14;border:1px solid #1e2330;border-radius:10px;padding:14px 18px;margin-top:16px}
-.dis b{display:block;font-size:9px;font-weight:800;letter-spacing:.15em;color:#4b5563;text-transform:uppercase;margin-bottom:6px}
-.dis p{margin:0;font-size:11px;color:#4b5563;line-height:1.6}
-.dis span{color:#a78bfa;font-weight:700}
-@media(max-width:560px){.wrap{padding:24px 16px}.sr{flex-direction:column;text-align:center}.cr,.ct{justify-content:center}.date{font-size:23px}}
-</style>
+.dis .l{font-size:9px;font-weight:800;letter-spacing:.15em;color:#4b5563;text-transform:uppercase;margin-bottom:6px}
+.dis .b{font-size:11px;color:#4b5563;line-height:1.6;margin:0}
+.dis .b span{color:#a78bfa;font-weight:700}
+@media(max-width:560px){
+.wrap{padding:24px 16px}
+.date{font-size:23px}
+.srow{flex-direction:column;text-align:center}
+.pills,.contacts{justify-content:center}
+}
+a{color:#93b4ee;overflow-wrap:anywhere}.st{color:#9ca3af;line-height:1.45}.why{color:#9ca3af}.contacts a,.tag2,.dis .b,.dis .l,.src b{color:#9ca3af}.name{color:#a2a9b6}#btc-health{margin-top:6px;color:#fbbf24}</style>
 </head>
 <body>
-<div class="wrap">
-<h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief — Friday, November 13, 2026 curated by Yuvraj Sureka</h2>
+<div class="wrap" id="brief">
 
-<div class="by">Curated by <span>Yuvraj Sureka</span></div>
-<div class="lbl">Daily Market Brief</div>
-<div class="date">Friday, November 13, 2026</div>
-<div class="mood">Rates over fear. Yields above 5%. Oil firm. Gold at a one year low. Asia chips rebound.</div>
-<div class="asof">Data checked at 08:55 IST on Friday, 13 Nov 2026. Every item is from the last 24 hours. CLOSED means last official close (US and Europe reopen later today, India opens 09:15 IST). LIVE means the market is trading now and the figure is the latest reported. Asia cards show the prior close with today’s live move.</div>
-<div class="grad"></div>
+<h2 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Daily Market Brief - Sunday, November 15, 2026 curated by Yuvraj Sureka</h2>
 
-<div class="sec">
-<span class="pill" style="color:#60a5fa">Global Macro</span>
-<div class="line"></div>
+<div class="byline">Curated by <span>Yuvraj Sureka</span></div>
+<div class="label">Daily Market Brief</div>
+<div class="date">Sunday, November 15, 2026</div>
+<p class="mood">Weekend edition: Friday closes, fresh shipping-risk reports, and the week ahead for AI and inflation.</p>
+<div class="rule"></div>
 
-<div class="reg">United States</div>
-<div class="card"><h3>Fed hike bets harden after hot inflation, 10 year yield tops 5%</h3>
-<p>NY Fed’s Williams said inflation is stubbornly persistent and the Fed has more work to do. The 2 year yield rose about 15bp (1bp is 0.01%) to 4.88% and the 10 year to 5.10%. Futures price a December 9 hike as certain, with about 13% odds of a bigger 50bp move.</p>
-<p><b>Why it matters:</b> higher yields cut the present value of growth stocks, lift the dollar and weigh on gold and crypto.</p></div>
-<div class="card"><h3>Nvidia CEO resigns, stock falls 4.34% but indexes recover most losses</h3>
-<p>Jensen Huang resigned after reports of affairs, one with a woman US officials suspect is a Chinese spy. CFO Colette Kress is interim CEO. Nvidia closed at $166.19 after dropping more than 13% early. AMD and Broadcom rallied.</p>
-<p><b>Why it matters:</b> Nvidia anchors AI spending. Earnings on Nov 17 now test demand without its founder.</p></div>
-<div class="card alert"><h3>Trump keeps Iran blockade, Houthis claim strikes on Saudi energy sites</h3>
-<p>Trump said no deal is needed. The Houthis claimed attacks on a pumping station of the Saudi East West pipeline, a Yanbu facility and an Aramco building in Riyadh. Iran said four tankers were hit near Hormuz (not independently verified).</p>
-<p><b>Why it matters:</b> oil settled up about 3%, reviving the inflation fear that feeds rate hikes.</p></div>
+<div class="note"><div class="t">Data freshness · checked November 15</div><p class="p">This is a Sunday edition. Exchange snapshots below are <b>Friday, November 13 closes or settlements</b>, not prices from the past 24 hours. Local closing times are shown where available; date-only source observations are labelled. Weekend news is separated from dated context. <b>Bitcoin trades 24/7:</b> its source timestamp and update health appear in the card. A saved or stale quote is never labelled live.</p></div>
 
-<div class="reg">India</div>
-<div class="card"><h3>Nifty and Sensex end flat, GIFT Nifty signals a weak open</h3>
-<p>Nifty 50 closed at 25,299.35 (+0.18%) and Sensex at 81,911.01 (+0.04%) after a wide intraday swing. Realty rose 4% and banks gained, while autos lagged. GIFT Nifty (Nifty futures traded in GIFT City, an early read on the open) was near 25,200, down 109 points, at 08:45 IST.</p>
-<p><b>Why it matters:</b> a roughly 0.4% lower open tracks higher US yields and firm oil.</p></div>
-<div class="card"><h3>Foreign investors buy, domestic funds sell</h3>
-<p>FIIs (foreign institutional investors) were net buyers of about ₹7,831 crore on Nov 12, while DIIs (domestic institutions) net sold about ₹6,331 crore, per provisional data.</p>
-<p><b>Why it matters:</b> foreign buying despite 5% US yields props up large cap levels. A reversal would be the main downside risk.</p></div>
-<div class="card"><h3>Brent near $95 pressures an oil importing economy</h3>
-<p>India imports most of its crude, so Brent near $95 raises the import bill and inflation risk. Nifty Auto was Thursday’s weakest sector.</p>
-<p><b>Why it matters:</b> sustained oil strength limits room for easier policy and weighs on fuel sensitive sectors.</p></div>
 
-<div class="reg">Europe</div>
-<div class="card"><h3>European stocks hold near record on earnings</h3>
-<p>STOXX 600 rose 0.14% to 664.01, DAX 0.41% to 26,771.88 and FTSE 100 0.25% to 10,863.09. Siemens gained 1.7% after lifting its outlook on data center and electrification demand. UK Q3 GDP grew 0.7%.</p>
-<p><b>Why it matters:</b> Europe beat Wall Street, a sign of rotation away from US AI names toward earnings backed sectors.</p></div>
-<div class="card"><h3>ECB seen hiking in December as inflation hits 4%</h3>
-<p>All 71 economists in a Reuters poll (Nov 10 to 12) expect a 25bp hike to a 2.75% deposit rate in December. Euro area inflation reached 4% in October, a three year high, and over a third expect another hike in early 2027.</p>
-<p><b>Why it matters:</b> rising euro rates alongside US yields keep global financial conditions tight.</p></div>
-<div class="card alert"><h3>Energy risk builds into winter</h3>
-<p>The same poll flagged low gas storage ahead of winter, with Brent near $95 as shipping through Hormuz stays disrupted.</p>
-<p><b>Why it matters:</b> an energy shock lifts headline inflation and removes the ECB’s room to pause.</p></div>
-
-<div class="reg">China</div>
-<div class="card"><h3>Alibaba falls 7% on fears of tighter US chip access</h3>
-<p>On Thursday the Hang Seng fell 1.3%, Hang Seng Tech 2.4%, CSI 300 0.8% and the Shanghai Composite 0.7%. AI model makers Z.AI and MiniMax lost 9% and 8%.</p>
-<p><b>Why it matters:</b> Chinese cloud firms rely on advanced chips. Curbs on remote access would raise their costs and slow AI plans.</p></div>
-<div class="card"><h3>Domestic chip stocks surge on substitution hopes</h3>
-<p>Mainland chip suppliers jumped as the Nvidia crisis lifted hopes for local alternatives. SMIC guided Q4 revenue up 4% to 6% from the prior quarter.</p>
-<p><b>Why it matters:</b> policy driven localisation helps the SMIC supply chain and shrinks US vendor share in China.</p></div>
-<div class="card alert"><h3>US probes Singapore firm over chip diversion, Beijing denies spy claims</h3>
-<p>The Justice Department and Commerce are examining whether a Singapore company bought advanced Nvidia chips for China. China’s foreign ministry called the spying allegations groundless speculation.</p>
-<p><b>Why it matters:</b> raises odds of tighter export controls before Nvidia’s earnings, a risk for both sides.</p></div>
-
-<div class="reg">APAC</div>
-<div class="card"><h3>Taiwan led Thursday’s chip selloff, Korea and Japan rebound today</h3>
-<p>On Thursday the Taiex fell 2.63% to 43,091.87, Nikkei 0.70% to 60,819.36 and Kospi 0.61% to 5,342.73. Today Kospi is up about 2% and Nikkei about 1.7%. Bloomberg showed MSCI Asia Pacific up 0.7%.</p>
-<p><b>Why it matters:</b> Asia supplies the AI chain. Quick rebounds suggest investors are rotating inside chips, not leaving.</p></div>
-<div class="card"><h3>Korean chipmakers defy the Nvidia drop</h3>
-<p>Samsung Electronics rose 2.76% and SK hynix 2.63% by 10:30 KST on expectations of strong order growth.</p>
-<p><b>Why it matters:</b> memory demand is seen intact whatever happens to Nvidia’s leadership.</p></div>
-<div class="card"><h3>ASX 200 slips as miners fall with gold</h3>
-<p>The ASX 200 was down 0.76% at 9,077.6 at 2:00 pm AEDT, with materials down 1.4%. It remains about 2% below its record and on track for a third weekly gain.</p>
-<p><b>Why it matters:</b> gold at a one year low and higher yields hit resource shares, the index’s heaviest drag today.</p></div>
-</div>
-
-<div class="sec">
-<span class="pill" style="color:#34d399">Markets Snapshot</span>
-<div class="line"></div>
-
-<div class="gl">Equities</div>
-<div class="grid">
-<div class="m"><div class="mt"><span class="mn">S&amp;P 500</span><span class="chg dn">−0.35%</span></div><div class="px">7,592.40</div><div class="st closed">CLOSED · Nov 12</div><div class="why">Nvidia exit and a 5.10% 10 year yield offset a rebound from an early 1% drop. 377 of 500 stocks fell.</div></div>
-<div class="m"><div class="mt"><span class="mn">Nasdaq Composite</span><span class="chg dn">−0.39%</span></div><div class="px">25,366.09</div><div class="st closed">CLOSED · Nov 12</div><div class="why">Nvidia fell 4.34% while AMD and Broadcom gained on share hopes.</div></div>
-<div class="m"><div class="mt"><span class="mn">Russell 2000</span><span class="chg dn">−1.66%</span></div><div class="px">2,799.06</div><div class="st closed">CLOSED · Nov 12</div><div class="why">Small caps lagged as higher yields raise borrowing costs.</div></div>
-<div class="m"><div class="mt"><span class="mn">US futures (S&amp;P | Nasdaq 100)</span><span class="chg up">+0.3% | +0.4%</span></div><div class="px">Higher</div><div class="st fut">FUTURES · 08:30 IST</div><div class="why">Asian tech rebound and strong Anthropic IPO demand help. US PPI at 19:00 IST is the test.</div></div>
-<div class="m"><div class="mt"><span class="mn">Nifty 50</span><span class="chg up">+0.18%</span></div><div class="px">25,299.35</div><div class="st closed">CLOSED · Nov 12 · opens 09:15 IST</div><div class="why">Realty and banks led. GIFT Nifty near 25,200 (−109 pts) signals a softer open.</div></div>
-<div class="m"><div class="mt"><span class="mn">STOXX Europe 600</span><span class="chg up">+0.14%</span></div><div class="px">664.01</div><div class="st closed">CLOSED · Nov 12</div><div class="why">Earnings and Siemens’ upgrade offset AI weakness, just below a record.</div></div>
-<div class="m"><div class="mt"><span class="mn">Nikkei 225</span><span class="chg up">+1.7%</span></div><div class="px">60,819.36</div><div class="st live">LIVE · prior close shown</div><div class="why">Chip names rebound after Thursday’s 0.70% fall as Nvidia fears eased.</div></div>
-<div class="m"><div class="mt"><span class="mn">Kospi</span><span class="chg up">+2.0%</span></div><div class="px">5,342.73</div><div class="st live">LIVE · prior close shown</div><div class="why">Samsung and SK hynix lead on strong order expectations.</div></div>
-<div class="m"><div class="mt"><span class="mn">Hang Seng</span><span class="chg dn">−0.6%</span></div><div class="px">24,008.55</div><div class="st live">LIVE · prior close shown</div><div class="why">Tech weak after Alibaba’s 7% drop on US chip access fears.</div></div>
-<div class="m"><div class="mt"><span class="mn">ASX 200</span><span class="chg dn">−0.76%</span></div><div class="px">9,077.6</div><div class="st live">LIVE · 2:00 pm AEDT</div><div class="why">Miners fall with gold, materials down 1.4%.</div></div>
-</div>
-
-<div class="gl">Bonds</div>
-<div class="grid">
-<div class="m"><div class="mt"><span class="mn">US 10Y yield</span><span class="chg dn">+12bp</span></div><div class="px">5.10%</div><div class="st closed">CLOSED · Nov 12</div><div class="why">Hot CPI and Fed hike bets (change is versus Tuesday, bonds were shut Wednesday). Pressures equity valuations and keeps a December hike priced.</div></div>
-</div>
-
-<div class="gl">Commodities</div>
-<div class="grid">
-<div class="m"><div class="mt"><span class="mn">WTI crude</span><span class="chg up">+2.6%</span></div><div class="px">$88.74</div><div class="st fut">SETTLE Nov 12 · live about $88.5</div><div class="why">Houthi strikes on Saudi sites and Hormuz tanker attacks outweighed a US inventory build.</div></div>
-<div class="m"><div class="mt"><span class="mn">Brent crude</span><span class="chg up">+3.3%</span></div><div class="px">$95.82</div><div class="st fut">SETTLE Nov 12 · live about $95.4</div><div class="why">Still down about 2.5% on the week on hopes for an end to the conflict.</div></div>
-<div class="m"><div class="mt"><span class="mn">Gold (spot)</span><span class="chg up">+0.8%</span></div><div class="px">$3,910</div><div class="st live">LIVE · vs Thursday close $3,878</div><div class="why">Bouncing after a 2.76% fall to a one year low of $3,852. Yields and the dollar beat safe haven demand.</div></div>
-</div>
-
-<div class="gl">Crypto</div>
-<div class="grid">
-<div class="m"><div class="mt"><span class="mn">Bitcoin</span><span class="chg dn">−4.3% 24h</span></div><div class="px">$71,470</div><div class="st live">LIVE · 24h range $71,218 to $74,545</div><div class="why">Fed hike odds and ETF outflows (about $300M on Nov 11, a fifth straight day of redemptions).</div></div>
-</div>
-</div>
-
-<div class="sec">
-<span class="pill" style="color:#a78bfa">AI Watch</span>
-<div class="line"></div>
-<div class="ai"><span class="tag">IPO</span><h3>Anthropic IPO about six times oversubscribed</h3>
-<p>Bloomberg reported orders of roughly six times the shares offered. The sale covers 825 million shares at $70 to $78, raising up to $64.4 billion, or up to $90.4 billion with a private placement, at a valuation up to $1.4 trillion. Pricing is expected Nov 18 and Nasdaq trading Nov 19 as ANT. Existing backers get priority. Disclosure: Anthropic builds Claude, the AI assisting with this brief.</p>
-<p><b style="color:#e8eaf0">Why it matters:</b> the largest AI listing yet is a gauge of whether public investors still pay up for AI after the Nvidia shock.</p></div>
-<div class="ai"><span class="tag">LEADERSHIP AND POLICY</span><h3>Nvidia names interim CEO as export control scrutiny grows</h3>
-<p>Colette Kress is interim CEO and Harvey Jones is the first board chair. The shares closed at $166.19, about 31% below the Oct 6 record close of $239.24. The board says it has no reason to believe national security was compromised, while Washington probes chip diversion to China.</p>
-<p><b style="color:#e8eaf0">Why it matters:</b> Nov 17 earnings and any new export curbs could reset China revenue and AI chip supply expectations.</p></div>
-<div class="ai"><span class="tag">INFRASTRUCTURE DEAL</span><h3>SpaceX plans more than $74 billion of AI supercomputing campuses</h3>
-<p>About $50 billion for Cochise County, Arizona and up to $24 billion at Starbase, Texas, with on site power generation. Approvals are still pending, with steps due in December. AI computing now makes up over half of SpaceX’s $14.57 billion Q3 revenue.</p>
-<p><b style="color:#e8eaf0">Why it matters:</b> shows compute spending is still scaling, though power and permitting are the real constraints.</p></div>
-</div>
-
-<div class="sec">
-<span class="pill" style="color:#f59e0b">Key Takeaways</span>
-<div class="line"></div>
-<div class="kt"><div class="kn">1</div><div class="kx">Rates are beating fear. Gold fell 2.76% to a one year low despite tanker attacks and Saudi strikes, because a 5.10% 10 year yield and a dollar near its yearly high matter more right now than safe haven demand. Treat oil spikes as inflation news first.</div></div><div class="sep"></div>
-<div class="kt"><div class="kn">2</div><div class="kx">The AI trade is rotating, not breaking. Nvidia fell while AMD, Broadcom, Samsung and SK hynix rose, and the Anthropic book is about six times covered. But 377 of 500 S&amp;P stocks fell and small caps lost 1.66%, so risk appetite is narrow.</div></div><div class="sep"></div>
-<div class="kt"><div class="kn">3</div><div class="kx">Export controls are now an equity factor. Alibaba lost 7% while Chinese chip suppliers surged, and the Singapore probe keeps the diversion story alive. Hang Seng Tech and SMIC are the cleanest read.</div></div><div class="sep"></div>
-<div class="kt"><div class="kn">4</div><div class="kx">Central banks are tightening while energy prices stay high. Futures price a Fed hike on December 9, all 71 economists polled expect an ECB hike, and Brent sits near $95. A pause is hard to justify until oil or inflation cools.</div></div><div class="sep"></div>
-<div class="kt"><div class="kn">5</div><div class="kx">Next 24 to 72 hours: US PPI (producer price index, what producers charge) at 19:00 IST, consensus +0.4% month on month and core +0.3%. Then Nvidia earnings Nov 17, Anthropic pricing Nov 18 and debut Nov 19, and FOMC minutes (due Nov 19, 12:30 AM IST). A hot PPI raises odds of a 50bp Fed move. A soft one would likely ease yields and help gold and bitcoin.</div></div>
-</div>
-
+<div class="sec"><div class="sech"><span class="pill" style="color:#60a5fa">Global Macro</span></div><div class="reg"><p class="region">United States</p><div class="card"><p class="h">Inflation keeps rate-hike risk in focus</p><p class="p">Friday context: October US producer prices rose 6.5% year on year. Reuters reported markets expected at least a 25-basis-point December Fed increase, with roughly a 10% chance of 50 basis points at the time of its closing report. <b>Why it matters:</b> higher borrowing costs remain a risk for growth-stock valuations. Market probabilities are dated estimates, not a promise of the next decision.</p><p class="disc"><a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card"><p class="h">Nvidia falls 2.01%; Nasdaq and S&amp;P 500 retreat</p><p class="p">Friday cash close: the S&amp;P 500 fell 0.40% to 7,561.67 and the Nasdaq Composite lost 0.91% to 25,136.27. The Dow rose 0.10% to 52,347.55. Nvidia closed at $162.85, down 2.01%. The S&amp;P 500 still gained 2.51% for the week. <b>Why it matters:</b> technology weakness and a positive weekly return can coexist; the Friday decline was not a market-wide weekly loss. <a href="https://finance.yahoo.com/markets/article/nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-144818245.html" target="_blank" rel="noopener noreferrer">Nvidia closing quote</a></p><p class="disc"><a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card alert"><p class="h">Weekend Hormuz report remains unverified</p><p class="p">Fresh weekend news: Iran's navy said three tankers caught fire on Saturday, November 14, after hitting mines in the Strait of Hormuz, according to a Reuters report published at 04:30 IST today. <b>Reuters could not immediately verify the reports.</b> Treat this as an attributed claim, not a confirmed incident. <b>Why it matters:</b> renewed shipping disruption would add oil-supply risk.</p><p class="disc"><a href="https://theprint.in/world/irans-navy-says-three-tankers-on-fire-after-hitting-mines-in-hormuz/3099065/" target="_blank" rel="noopener noreferrer">Source</a></p></div></div><div class="reg"><p class="region">India</p><div class="card"><p class="h">Inflation and crude weigh on Dalal Street</p><p class="p">Friday close: Nifty 50 fell 0.61% to 25,144.30 and Sensex declined 0.39% to 81,592.45. October CPI was 6.09%, above the RBI's 6% upper tolerance limit, while food inflation was 8.94%. <b>Why it matters:</b> higher input costs and inflation complicate the rate outlook. The Nifty nevertheless gained 0.45% for the week.</p><p class="disc"><a href="https://economictimes.indiatimes.com/markets/stocks/news/sensex-nifty-snap-3-day-rally-as-oil-inflation-worries-weigh/articleshow/135820525.cms" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card"><p class="h">Friday flows: foreign buyers, domestic sellers</p><p class="p">Provisional cash-market data for <b>Friday, November 13</b>: FIIs bought a net <b>₹5,736.55 crore</b>; DIIs sold a net <b>₹2,253.58 crore</b>. These replace Thursday's older figures. Cash flows are not the same measure as total FPI investment across all assets. <b>Why it matters:</b> positive foreign buying did not prevent the index from falling on Friday.</p><p class="disc"><a href="https://www.moneycontrol.com/markets/fii-dii-data/" target="_blank" rel="noopener noreferrer">Source</a></p></div></div><div class="reg"><p class="region">Europe</p><div class="card"><p class="h">STOXX 600 closes at 664.14 after a strong week</p><p class="p">The STOXX 600 ended Friday little changed at 664.14 and gained more than 2% over the week, its best week since late June. Technology fell 1.3% on Friday, while the Euro STOXX banks index rose more than 4% over the week. <b>Why it matters:</b> the sector mix supported Europe even as AI-linked shares weakened.</p><p class="disc"><a href="https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/european-shares-end-best-week-june-strong-earnings-lift-sentiment" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card"><p class="h">Richemont closes down 3.8%, not 7%</p><p class="p">Reuters' closing report put Richemont's decline at <b>3.8%</b> after weaker-than-expected jewellery-unit sales in its second quarter. The larger 7% move cited in earlier coverage was not the closing move. <b>Why it matters:</b> intraday headlines and final-session returns must not be mixed.</p><p class="disc"><a href="https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/european-shares-end-best-week-june-strong-earnings-lift-sentiment" target="_blank" rel="noopener noreferrer">Source</a></p></div></div><div class="reg"><p class="region">China</p><div class="card"><p class="h">Hong Kong and mainland shares finish lower</p><p class="p">Friday close: Hang Seng fell 1.55% to 23,637.60; Shanghai Composite lost 0.59% to 3,634.35. Regional coverage linked caution to the Nvidia leadership change and technology-sector sentiment. <b>Why it matters:</b> sentiment around global chips is reaching Asian equity markets.</p><p class="disc"><a href="https://en.moneyandbanking.co.th/2026/286994/" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card"><p class="h">Monday activity data is the next domestic test</p><p class="p">LBBW's calendar lists October industrial production and retail sales for <b>Monday, November 16</b>. Its published consensus is 5.3% year-on-year industrial-production growth and 0.8% retail-sales growth. These are forecasts, not reported results. <b>Why it matters:</b> the releases will give a fresh reading on domestic demand.</p><p class="disc"><a href="https://www.lbbw.de/group/news-and-service/research/economic-calendar/economic-calendar_ajorqffjk6_e.html" target="_blank" rel="noopener noreferrer">Source</a></p></div></div><div class="reg"><p class="region">APAC (ex China and India)</p><div class="card"><p class="h">Japan gains while South Korea falls</p><p class="p">Friday close: Nikkei 225 gained 0.53% to 61,142.35; South Korea's Kospi fell 0.98% to 5,290.53. <b>Why it matters:</b> regional markets did not move uniformly, so Japan should not be described as proof of a broad Asian rebound.</p><p class="disc"><a href="https://en.moneyandbanking.co.th/2026/286994/" target="_blank" rel="noopener noreferrer">Source</a></p></div><div class="card"><p class="h">Japan GDP: Monday, November 16 at 08:50 JST</p><p class="p">Japan's Cabinet Office schedules the first estimate of July-September GDP for <b>08:50 JST on Monday, November 16</b>, equivalent to <b>05:20 IST Monday</b> or 23:50 UTC Sunday. <b>Why it matters:</b> this is the next official growth reading, not data already released.</p><p class="disc"><a href="https://www.esri.cao.go.jp/jp/sna/kouhyou/kouhyou_top.html" target="_blank" rel="noopener noreferrer">Source</a></p></div></div></div><div class="sec"><div class="sech"><span class="pill" style="color:#34d399">Markets Snapshot</span></div><div class="grid"><div class="metric"><div class="top"><div class="name">S&amp;P 500<span class="st">Closed · Nov 13, 16:00 EST</span></div><div class="chg dn">-0.40%</div></div><div class="price">7,561.67</div><div class="why">Cash index. Weekly +2.51%. <a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Nasdaq Composite<span class="st">Closed · Nov 13, 16:00 EST</span></div><div class="chg dn">-0.91%</div></div><div class="price">25,136.27</div><div class="why">Cash index. Weekly +2.27%. <a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Dow Jones<span class="st">Closed · Nov 13, 16:00 EST</span></div><div class="chg up">+0.10%</div></div><div class="price">52,347.55</div><div class="why">Cash index. Weekly +2.07%. <a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Nvidia<span class="st">Closed · Nov 13, 16:00 EST</span></div><div class="chg dn">-2.01%</div></div><div class="price">&#36;162.85</div><div class="why">Regular-session close, not after-hours. <a href="https://finance.yahoo.com/markets/article/nvidia-stock-slips-as-investors-digest-ceo-exit-rest-of-chip-sector-falls-144818245.html" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Nifty 50<span class="st">Closed · Nov 13, 15:30 IST</span></div><div class="chg dn">-0.61%</div></div><div class="price">25,144.30</div><div class="why">Cash index. Weekly +0.45%. <a href="https://economictimes.indiatimes.com/markets/stocks/news/sensex-nifty-snap-3-day-rally-as-oil-inflation-worries-weigh/articleshow/135820525.cms" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Sensex<span class="st">Closed · Nov 13, 15:30 IST</span></div><div class="chg dn">-0.39%</div></div><div class="price">81,592.45</div><div class="why">Cash index. Weekly +0.70%. <a href="https://economictimes.indiatimes.com/markets/stocks/news/sensex-nifty-snap-3-day-rally-as-oil-inflation-worries-weigh/articleshow/135820525.cms" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Nikkei 225<span class="st">Closed · Nov 13, 15:30 JST</span></div><div class="chg up">+0.53%</div></div><div class="price">61,142.35</div><div class="why">Friday cash close. <a href="https://en.moneyandbanking.co.th/2026/286994/" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Hang Seng<span class="st">Closed · Nov 13 closing session</span></div><div class="chg dn">-1.55%</div></div><div class="price">23,637.60</div><div class="why">Friday cash close. <a href="https://en.moneyandbanking.co.th/2026/286994/" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">STOXX 600<span class="st">Closed · Nov 13 closing session</span></div><div class="chg fl">Flat</div></div><div class="price">664.14</div><div class="why">Reuters describes the close as little changed. <a href="https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/european-shares-end-best-week-june-strong-earnings-lift-sentiment" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">US 10Y par yield<span class="st">Nov 13 official daily observation</span></div><div class="chg fl">+5 bp day</div></div><div class="price">5.15%</div><div class="why">Treasury par yield, not a live traded-bond quote. Prior observation: 5.10%. Source gives date only. <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?_format=csv&amp;type=daily_treasury_yield_curve" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">WTI futures<span class="st">Closed · Nov 13 settlement</span></div><div class="chg dn">-0.20%</div></div><div class="price">&#36;88.56</div><div class="why">USD/barrel. Reuters final settlement; exact timestamp not supplied. <a href="https://www.brecorder.com/news/40448966" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Brent futures<span class="st">Closed · Nov 13 settlement</span></div><div class="chg fl">+0.02%</div></div><div class="price">&#36;95.84</div><div class="why">USD/barrel. Reuters final settlement; exact timestamp not supplied. <a href="https://www.brecorder.com/news/40448966" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Gold · COMEX Dec 2026<span class="st">Closed · Nov 13 dated quote</span></div><div class="chg up">+0.03%</div></div><div class="price">&#36;3,886.30</div><div class="why">USD/troy ounce. Bloomberg GC1:COM, December contract. Not spot gold; exact timestamp not supplied. <a href="https://www.bloomberg.com/markets/commodities/futures/metals" target="_blank" rel="noopener noreferrer">Source</a></div></div><div class="metric"><div class="top"><div class="name">Bitcoin<span class="st" id="btc-status">Saved snapshot · 2026-11-15 06:31:33 UTC</span></div><div class="chg dn" id="btc-chg">-4.21% (24h)</div></div><div class="price" id="btc-price">$64,514</div><div class="why">CoinGecko BTC/USD aggregate. Trades 24/7. Source timestamp shown, not retrieval time. <a href="https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&amp;vs_currencies=usd&amp;include_24hr_change=true&amp;include_last_updated_at=true" target="_blank" rel="noopener noreferrer">Source</a><div id="btc-health" role="status">Checking for a fresh quote; saved snapshot is not live.</div></div></div></div></div><div class="sec"><div class="sech"><span class="pill" style="color:#a78bfa">AI Watch</span></div><div class="ai"><span class="tag">Leadership &amp; earnings</span><p class="h">Nvidia results are the first test of its interim leadership</p><p class="p">Dated context: Nvidia announced Jensen Huang's immediate resignation on November 12 and appointed CFO Colette Kress interim CEO, with Harvey C. Jones as board chair. The company says results arrive Tuesday, November 17 at approximately 13:20 Pacific time, followed by a 14:00 call. <b>Strategic importance:</b> guidance and customer commitments will matter more than unsupported speculation about successors or personal allegations.</p><p class="disc"><a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank" rel="noopener noreferrer">Nvidia announcement and earnings schedule</a></p></div><div class="ai"><span class="tag">Capital markets</span><p class="h">Anthropic's expected listing tests AI investor appetite</p><p class="p">Dated context: Reuters reported on November 13 that Anthropic aims to raise up to $64.4 billion through 825 million shares, at a valuation up to $1.4 trillion, with trading expected to begin Thursday, November 19. <b>Strategic importance:</b> a large new AI listing could compete for investor capital. These are reported offering plans, not completed fundraising or a guaranteed debut.</p><p class="disc"><a href="https://www.investing.com/news/stock-market-news/nvidia-results-anthropic-ipo-pose-tests-for-tumultuous-ai-trade-5024815" target="_blank" rel="noopener noreferrer">Reuters preview</a> · Disclosure: Claude, used in preparing the original draft, is made by Anthropic.</p></div></div><div class="sec"><div class="sech"><span class="pill" style="color:#f59e0b">Key Takeaways</span></div><div class="tk"><div class="n">1</div><div class="t">Rates remain a valuation risk. The official November 13 US 10-year par yield was 5.15%, versus 5.10% at the preceding observation. This is a daily Treasury curve measure, not a Sunday live yield.</div></div><div class="tsep"></div><div class="tk"><div class="n">2</div><div class="t">AI sentiment is uneven. Nvidia's 2.01% Friday fall and the Nasdaq Composite's 0.91% decline sit alongside a 2.51% weekly gain for the S&amp;P 500. Separate daily moves from weekly performance.</div></div><div class="tsep"></div><div class="tk"><div class="n">3</div><div class="t">Oil balances supply and disruption risk. Friday settlements were $95.84 Brent and $88.56 WTI. Saturday's tanker reports are Iranian claims that Reuters could not verify; they must not be treated as confirmed supply losses.</div></div><div class="tsep"></div><div class="tk"><div class="n">4</div><div class="t">India's foreign buying is not an all-clear. Friday provisional cash flows show FII buying of ₹5,736.55 crore and DII selling of ₹2,253.58 crore, but Nifty still fell 0.61% as inflation concerns weighed.</div></div><div class="tsep"></div><div class="tk"><div class="n">5</div><div class="t">The week ahead: Monday November 16 brings Japan GDP and China activity data; Tuesday November 17 brings US retail sales and Nvidia results; Wednesday November 18 brings FOMC minutes; Anthropic trading is expected Thursday November 19. Listing plans and economic-release schedules can change.</div></div></div>
+<!-- AUTHOR STAMP -->
 <div class="stamp">
-<div class="sr"><div class="av">YS</div>
-<div><div class="ab">Analysis by</div><div class="nm">Yuvraj Sureka</div>
-<div class="cr"><span style="color:#f59e0b">Trading</span><span style="color:#34d399">Pursuing CFA</span><span style="color:#60a5fa">Investment Banking</span><span style="color:#a78bfa;border-color:#a78bfa">Equity Research</span></div>
-<div class="ct"><span><b style="color:#0077b5">L</b> linkedin.com/in/yuvrajsureka47</span><span>✉ yuvrajsureka47@gmail.com</span><span>☎ +91 6001930875</span></div></div></div>
-<div class="tg">Macro research for the next generation of fund managers.</div>
+<div class="srow">
+<div class="av">YS</div>
+<div>
+<div class="by">Analysis by</div>
+<div class="nm">Yuvraj Sureka</div>
+<div class="pills">
+<span style="color:#f59e0b">Trading</span>
+<span style="color:#34d399">Pursuing CFA</span>
+<span style="color:#60a5fa">Investment Banking</span>
+<span style="color:#a78bfa;border-color:#a78bfa">Equity Research</span>
+</div>
+<div class="contacts">
+<a href="https://linkedin.com/in/yuvrajsureka47"><b style="color:#0077b5;font-size:14px">L</b> linkedin.com/in/yuvrajsureka47</a>
+<a href="mailto:yuvrajsureka47@gmail.com"><span style="font-size:12px">✉</span> yuvrajsureka47@gmail.com</a>
+<a href="tel:+916001930875"><span style="font-size:12px">☎</span> +91 6001930875</a>
+</div>
+</div>
+</div>
+<div class="sline"></div>
+<p class="tag2">Macro research for the next generation of fund managers.</p>
 </div>
 
-<div class="src"><b>Sources:</b> Bloomberg · Reuters · CNBC · Business Standard · Kitco · Yahoo Finance · Korea Herald · Business Recorder · Nvidia SEC filing</div>
-<div class="dis"><b>Disclaimer</b><p>This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. While Yuvraj reviews the data before publishing, AI-generated content may contain errors or inaccuracies. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</p></div>
+<div class="src"><b>Sources and calendar</b><p class="p"><a href="https://www.moneycontrol.com/news/business/s-p-500-nasdaq-end-lower-as-nvidia-uncertainty-weighs-on-tech-shares-14080000.html/amp" target="_blank" rel="noopener noreferrer">Reuters US close</a> · <a href="https://economictimes.indiatimes.com/markets/stocks/news/sensex-nifty-snap-3-day-rally-as-oil-inflation-worries-weigh/articleshow/135820525.cms" target="_blank" rel="noopener noreferrer">ET India close</a> · <a href="https://www.moneycontrol.com/markets/fii-dii-data/" target="_blank" rel="noopener noreferrer">Provisional flows</a> · <a href="https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/european-shares-end-best-week-june-strong-earnings-lift-sentiment" target="_blank" rel="noopener noreferrer">Reuters Europe</a> · <a href="https://en.moneyandbanking.co.th/2026/286994/" target="_blank" rel="noopener noreferrer">Asia close</a> · <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?_format=csv&amp;type=daily_treasury_yield_curve" target="_blank" rel="noopener noreferrer">US Treasury</a> · <a href="https://www.brecorder.com/news/40448966" target="_blank" rel="noopener noreferrer">Reuters oil</a> · <a href="https://www.bloomberg.com/markets/commodities/futures/metals" target="_blank" rel="noopener noreferrer">Bloomberg gold</a> · <a href="https://theprint.in/world/irans-navy-says-three-tankers-on-fire-after-hitting-mines-in-hormuz/3099065/" target="_blank" rel="noopener noreferrer">Reuters weekend report</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank" rel="noopener noreferrer">Nvidia</a> · <a href="https://www.investing.com/news/stock-market-news/nvidia-results-anthropic-ipo-pose-tests-for-tumultuous-ai-trade-5024815" target="_blank" rel="noopener noreferrer">Reuters AI preview</a> · <a href="https://www.lbbw.de/group/news-and-service/research/economic-calendar/economic-calendar_ajorqffjk6_e.html" target="_blank" rel="noopener noreferrer">LBBW calendar</a> · <a href="https://www.esri.cao.go.jp/jp/sna/kouhyou/kouhyou_top.html" target="_blank" rel="noopener noreferrer">Japan Cabinet Office</a> · <a href="https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&amp;vs_currencies=usd&amp;include_24hr_change=true&amp;include_last_updated_at=true" target="_blank" rel="noopener noreferrer">CoinGecko</a></p></div>
+
+<div class="dis">
+<div class="l">Disclaimer</div>
+<p class="b">This brief is generated with the assistance of AI and is curated by <span>Yuvraj Sureka</span>. Data and news have been checked against the linked sources, but errors or later revisions remain possible. Readers are strongly encouraged to independently verify all figures, news items, and market data before making any financial decisions. This is not financial advice.</p>
 </div>
+
+</div>
+
+<script>
+(function () {
+  var p=document.getElementById('btc-price'),c=document.getElementById('btc-chg'),s=document.getElementById('btc-status'),h=document.getElementById('btc-health');
+  var last=1794724293, saved=true;
+  function stamp(t){return new Date(t*1000).toISOString().replace('T',' ').replace('.000Z',' UTC');}
+  function age(){var stale=Date.now()/1000-last>300; s.textContent=(stale?'Stale quote':saved?'Saved snapshot':'Fresh quote')+' · '+stamp(last);if(stale)h.textContent='Quote is more than 5 minutes old. Not live; awaiting a newer provider timestamp.';}
+  async function load(){
+    var ac=new AbortController(),timer=setTimeout(function(){ac.abort();},10000);
+    try{
+      var r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true',{signal:ac.signal,cache:'no-store'}); if(!r.ok)throw Error('HTTP '+r.status);
+      var d=(await r.json()).bitcoin,t=Number(d.last_updated_at),v=Number(d.usd),ch=Number(d.usd_24h_change);
+      if(!Number.isFinite(v)||v<=0||!Number.isFinite(ch)||!Number.isFinite(t)||t<=0||t>Date.now()/1000+60||t<last)throw Error('Invalid or older provider data');
+      last=t;saved=false;p.textContent='$'+Math.round(v).toLocaleString('en-US');c.textContent=(ch>=0?'+':'-')+Math.abs(ch).toFixed(2)+'% (24h)';c.className='chg '+(ch>=0?'up':'dn');
+      h.textContent='Provider timestamp checked. Refresh attempt every minute while this page is open.';age();
+    }catch(e){saved=true;h.textContent='Update unavailable. Showing the last dated snapshot, not a live quote.';s.textContent='Saved snapshot · '+stamp(last);}
+    finally{clearTimeout(timer);}
+  }
+  age();load();setInterval(load,60000);setInterval(age,15000);
+})();
+</script>
 </body>
 </html>
